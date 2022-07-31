@@ -5,4 +5,16 @@
 //  Created by Антон Бондаренко on 31.07.2022.
 //
 
-import Foundation
+import UIKit
+
+extension UITableViewCell {
+    
+    static var identifier: String {
+        get { return String(describing: self)}
+    }
+    
+    static var nib: UINib {
+        get { return UINib(nibName: identifier, bundle: nil) }
+    }
+}
+

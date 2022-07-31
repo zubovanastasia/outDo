@@ -7,30 +7,51 @@
 
 import UIKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    lazy var factory: Factory = { return Factory() }()
+    var appCoordinator: AppCoordinator?
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UINavigationBar.appearance().titleTextAttributes = Styles.shared.getAttributes(Styles.shared.view.navbarPrC)
+
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: Assets.shared.appbarBack)
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: Assets.shared.appbarBack)
+        UINavigationBar.appearance().tintColor = Styles.shared.getFontColor(Styles.shared.view.navbarPr)
+
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 0.1), NSAttributedString.Key.foregroundColor: UIColor.clear]
+        UIBarButtonItem.appearance().setTitleTextAttributes(attributes, for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes(attributes, for: .highlighted)
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let navigationController = UINavigationController()
+        let router = RouterImpl(rootController: navigationController)
+        appCoordinator = factory.coordinatorFactory.makeAppCoordinator(router: router)
+        appCoordinator?.onSignOut = { [weak self] in
+            self?.factory.clear()
+        }
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        appCoordinator?.start()
+        
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        var deviceProvider = factory.providerFactory.deviceProvider
+        deviceProvider.isBackground = true
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        var deviceProvider = factory.providerFactory.deviceProvider
+        deviceProvider.isBackground = false
+        application.applicationIconBadgeNumber = 0
     }
-
-
+    
+    func restart() {
+        self.factory.clear()
+        appCoordinator?.restart()
+    }
 }
-

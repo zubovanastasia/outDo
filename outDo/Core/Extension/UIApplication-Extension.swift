@@ -5,4 +5,11 @@
 //  Created by Антон Бондаренко on 31.07.2022.
 //
 
-import Foundation
+import UIKit
+
+extension UIApplication {
+    
+    var keyWindow: UIWindow? {
+        return UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+    }
+}

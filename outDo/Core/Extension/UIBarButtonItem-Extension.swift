@@ -5,4 +5,12 @@
 //  Created by Антон Бондаренко on 31.07.2022.
 //
 
-import Foundation
+import UIKit
+
+extension UIBarButtonItem {
+    
+    var style: String {
+        get { return "" }
+        set { Styles.shared.applyStyle(newValue, self) }
+    }
+}

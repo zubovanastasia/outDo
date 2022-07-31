@@ -5,4 +5,8 @@
 //  Created by Антон Бондаренко on 31.07.2022.
 //
 
-import Foundation
+struct ApiResponseError: Codable {
+    
+    var code: Int
+    var message: String
+}
