@@ -97,7 +97,7 @@
 		63998CBF289597A000266599 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63998CC8289597A200266599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63998CCB289597A200266599 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		63998CCD289597A200266599 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63998CCD289597A200266599 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = outDo/Environments/Info.plist; sourceTree = SOURCE_ROOT; };
 		A01702B42896C29400E81C73 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		A01702B82896C5B400E81C73 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		A01702BA2896C5C800E81C73 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -227,16 +227,8 @@
 				A01702F52896CDBB00E81C73 /* Data */,
 				A01702F22896CD7500E81C73 /* Entity */,
 				63998CD72896B32800266599 /* Flows */,
-				63998CD42896B14400266599 /* Helpers */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		63998CD42896B14400266599 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		63998CD52896B1C500266599 /* Resources */ = {
@@ -834,7 +826,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SH6GQ28Y76;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = outDo/Info.plist;
+				INFOPLIST_FILE = outDo/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -866,7 +858,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SH6GQ28Y76;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = outDo/Info.plist;
+				INFOPLIST_FILE = outDo/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

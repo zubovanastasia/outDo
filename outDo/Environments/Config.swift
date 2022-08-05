@@ -18,5 +18,5 @@ class Config {
 
     let persistentContainerName = "outDo"
     
-    let urlApi = "http://srv176287.hoster-test.ru/outDo/api/"
+    let urlApi = "http://srv176287.hoster-test.ru/outdo/api/"
 }
