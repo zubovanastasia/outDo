@@ -12,7 +12,7 @@ import Combine
 
 protocol AuthRequestFactory: AbstractRequestFactory {
     
-    func signInByPassword(with credentials: AuthCredentials) -> AnyPublisher<AFDataResponse<AuthSignInByPasswordResponse>, Never>
+    func signIn(with credentials: AuthCredentials) -> AnyPublisher<AFDataResponse<AuthSignInResponse>, Never>
     func signOut() -> AnyPublisher<AFDataResponse<AuthSignOutResponse>, Never>
 }
 
@@ -38,8 +38,8 @@ class AuthRequestFactoryImpl: AuthRequestFactory {
         self.stopwatch = stopwatch
     }
     
-    func signInByPassword(with credentials: AuthCredentials) -> AnyPublisher<AFDataResponse<AuthSignInByPasswordResponse>, Never> {
-        let request = AuthSignInByPasswordRequest(
+    func signIn(with credentials: AuthCredentials) -> AnyPublisher<AFDataResponse<AuthSignInResponse>, Never> {
+        let request = AuthSignInRequest(
             baseUrl: baseUrl,
             stopwatch: stopwatch,
             authCredentials: credentials,

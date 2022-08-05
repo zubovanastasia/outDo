@@ -100,15 +100,15 @@ class AppCoordinator: BaseCoordinator {
     
     private func runMainFlow() {
         makeApiDeviceSave()
-//        let coordinator = coordinatorFactory.makeMainCoordinator(router: router)
-//        coordinator.finishFlow = { [weak self, weak coordinator] in
-//            self?.isFirstLaunch = false
-//            self?.isAuthed = false
-//            self?.start()
-//            self?.removeDependency(coordinator)
-//        }
-//        self.addDependency(coordinator)
-//        coordinator.start()
+        let coordinator = coordinatorFactory.makeMainCoordinator(router: router)
+        coordinator.finishFlow = { [weak self, weak coordinator] in
+            self?.isFirstLaunch = false
+            self?.isAuthed = false
+            self?.start()
+            self?.removeDependency(coordinator)
+        }
+        self.addDependency(coordinator)
+        coordinator.start()
     }
     
     // MARK: - Api

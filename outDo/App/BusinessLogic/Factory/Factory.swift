@@ -77,6 +77,7 @@ protocol CoordinatorFactory: AnyObject {
     func makeAppCoordinator(router: Router) -> AppCoordinator
     func makeLaunchCoordinator(router: Router) -> LaunchCoordinator
     func makeLoginCoordinator(router: Router) -> LoginCoordinator
+    func makeMainCoordinator(router: Router) -> MainCoordinator
 }
 
 class CoordinatorFactoryImpl: CoordinatorFactory {
@@ -98,11 +99,23 @@ class CoordinatorFactoryImpl: CoordinatorFactory {
     
     // MARK: - Screen
     func makeLaunchCoordinator(router: Router) -> LaunchCoordinator {
-        return LaunchCoordinator(router: router, screenFactory: screenFactory)
+        return LaunchCoordinator(
+            router: router,
+            screenFactory: screenFactory)
     }
     
     func makeLoginCoordinator(router: Router) -> LoginCoordinator {
-        return LoginCoordinator(router: router, screenFactory: screenFactory, coordinatorFactory: self)
+        return LoginCoordinator(
+            router: router,
+            screenFactory: screenFactory,
+            coordinatorFactory: self)
+    }
+    
+    func makeMainCoordinator(router: Router) -> MainCoordinator {
+        return MainCoordinator(
+            router: router,
+            screenFactory: screenFactory,
+            coordinatorFactory: self)
     }
 }
 
@@ -174,6 +187,7 @@ protocol ScreenFactory: AnyObject {
     // MARK: - Screens
     func makeLaunchScreen() -> LaunchVC
     func makeLoginScreen() -> LoginVC
+    func makeMainScreen() -> MainVC
 }
 
 class ScreenFactoryImpl: ScreenFactory {
@@ -199,6 +213,17 @@ class ScreenFactoryImpl: ScreenFactory {
         let interactor = LoginInteractorImpl(authProvider: providerFactory.authProvider)
         let presenter = LoginPresenterImpl(interactor: interactor)
         let viewController = LoginVC(presenter: presenter)
+        
+        interactor.presenter = presenter
+        presenter.view = viewController
+        
+        return viewController
+    }
+    
+    func makeMainScreen() -> MainVC {
+        let interactor = MainInteractorImpl()
+        let presenter = MainPresenterImpl(interactor: interactor)
+        let viewController = MainVC(presenter: presenter)
         
         interactor.presenter = presenter
         presenter.view = viewController

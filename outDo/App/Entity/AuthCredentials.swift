@@ -12,7 +12,6 @@ struct AuthCredentials: Codable {
     var login: String
     var password: String
     var token: String
-    var refreshToken: String
     var session: String
     
     init(login: String) {
@@ -23,7 +22,6 @@ struct AuthCredentials: Codable {
         self.login = login
         self.password = password
         self.token = ""
-        self.refreshToken = ""
         self.session = ""
     }
     
@@ -31,16 +29,14 @@ struct AuthCredentials: Codable {
         login = json?["login"] as? String ?? ""
         password = json?["password"] as? String ?? ""
         token = json?["token"] as? String ?? ""
-        refreshToken = json?["refreshToken"] as? String ?? ""
         session = json?["session"] as? String ?? ""
     }
     
-    init(_ loginCredentials: AuthCredentials, _ tokenCredentials: AuthSignInByPasswordResponseResult) {
+    init(_ loginCredentials: AuthCredentials, _ tokenCredentials: AuthSignInResponseResult) {
         login = loginCredentials.login
         password = loginCredentials.password
         token = tokenCredentials.token
         session = tokenCredentials.session
-        refreshToken = tokenCredentials.refreshToken
     }
     
 }

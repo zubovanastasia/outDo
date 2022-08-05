@@ -42,8 +42,8 @@
 		A01702FB2896CE6E00E81C73 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01702FA2896CE6E00E81C73 /* AuthService.swift */; };
 		A01702FD2896CE9600E81C73 /* AuthStatusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01702FC2896CE9600E81C73 /* AuthStatusProvider.swift */; };
 		A01702FF2896CEBC00E81C73 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01702FE2896CEBC00E81C73 /* AuthCredentials.swift */; };
-		A01703032896CEF300E81C73 /* AuthSignInByPasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01703022896CEF300E81C73 /* AuthSignInByPasswordResponse.swift */; };
-		A01703092896CF6C00E81C73 /* AuthSignInByPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01703082896CF6C00E81C73 /* AuthSignInByPasswordRequest.swift */; };
+		A01703032896CEF300E81C73 /* AuthSignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01703022896CEF300E81C73 /* AuthSignInResponse.swift */; };
+		A01703092896CF6C00E81C73 /* AuthSignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01703082896CF6C00E81C73 /* AuthSignInRequest.swift */; };
 		A017030B2896CFC400E81C73 /* AuthSignOutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017030A2896CFC400E81C73 /* AuthSignOutRequest.swift */; };
 		A017030D2896CFEE00E81C73 /* AuthSignOutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017030C2896CFEE00E81C73 /* AuthSignOutResponse.swift */; };
 		A017030F2896D00F00E81C73 /* ApiMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017030E2896D00F00E81C73 /* ApiMethod.swift */; };
@@ -90,6 +90,11 @@
 		A017036D2896DD6300E81C73 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A017036A2896DD6300E81C73 /* SourceSansPro-Regular.ttf */; };
 		A017036E2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A017036B2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf */; };
 		A017036F2896DD6300E81C73 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A017036C2896DD6300E81C73 /* SourceSansPro-Light.ttf */; };
+		A0466463289D5F030011035E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466462289D5F030011035E /* MainCoordinator.swift */; };
+		A0466467289D5F6F0011035E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466465289D5F6F0011035E /* MainVC.swift */; };
+		A0466468289D5F6F0011035E /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0466466289D5F6F0011035E /* MainVC.xib */; };
+		A046646A289D5FD50011035E /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466469289D5FD50011035E /* MainInteractor.swift */; };
+		A046646C289D5FF00011035E /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046646B289D5FF00011035E /* MainPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,8 +134,8 @@
 		A01702FA2896CE6E00E81C73 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A01702FC2896CE9600E81C73 /* AuthStatusProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatusProvider.swift; sourceTree = "<group>"; };
 		A01702FE2896CEBC00E81C73 /* AuthCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentials.swift; sourceTree = "<group>"; };
-		A01703022896CEF300E81C73 /* AuthSignInByPasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInByPasswordResponse.swift; sourceTree = "<group>"; };
-		A01703082896CF6C00E81C73 /* AuthSignInByPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInByPasswordRequest.swift; sourceTree = "<group>"; };
+		A01703022896CEF300E81C73 /* AuthSignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInResponse.swift; sourceTree = "<group>"; };
+		A01703082896CF6C00E81C73 /* AuthSignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInRequest.swift; sourceTree = "<group>"; };
 		A017030A2896CFC400E81C73 /* AuthSignOutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignOutRequest.swift; sourceTree = "<group>"; };
 		A017030C2896CFEE00E81C73 /* AuthSignOutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignOutResponse.swift; sourceTree = "<group>"; };
 		A017030E2896D00F00E81C73 /* ApiMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiMethod.swift; sourceTree = "<group>"; };
@@ -177,6 +182,11 @@
 		A017036A2896DD6300E81C73 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		A017036B2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		A017036C2896DD6300E81C73 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		A0466462289D5F030011035E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A0466465289D5F6F0011035E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		A0466466289D5F6F0011035E /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
+		A0466469289D5FD50011035E /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		A046646B289D5FF00011035E /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +267,7 @@
 			children = (
 				A01703592896D7B700E81C73 /* LaunchScreen */,
 				A017035E2896D7DC00E81C73 /* LoginScreen */,
+				A0466464289D5F580011035E /* MainScreen */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -414,7 +425,7 @@
 		A01703012896CEEB00E81C73 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				A01703022896CEF300E81C73 /* AuthSignInByPasswordResponse.swift */,
+				A01703022896CEF300E81C73 /* AuthSignInResponse.swift */,
 				A017030C2896CFEE00E81C73 /* AuthSignOutResponse.swift */,
 				A01703262896D24800E81C73 /* DeviceSaveResponse.swift */,
 				A01703302896D30F00E81C73 /* ProfileGetResponse.swift */,
@@ -434,7 +445,7 @@
 		A01703072896CF5800E81C73 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				A01703082896CF6C00E81C73 /* AuthSignInByPasswordRequest.swift */,
+				A01703082896CF6C00E81C73 /* AuthSignInRequest.swift */,
 				A017030A2896CFC400E81C73 /* AuthSignOutRequest.swift */,
 				A01703242896D1FC00E81C73 /* DeviceSaveRequest.swift */,
 				A017032E2896D2FA00E81C73 /* ProfileGetRequest.swift */,
@@ -495,6 +506,7 @@
 				A01703532896D6D200E81C73 /* AppCoordinator.swift */,
 				A01703552896D77500E81C73 /* LaunchCoordinator.swift */,
 				A01703572896D78D00E81C73 /* LoginCoordinator.swift */,
+				A0466462289D5F030011035E /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -527,6 +539,17 @@
 				A017036B2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A0466464289D5F580011035E /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A0466465289D5F6F0011035E /* MainVC.swift */,
+				A0466466289D5F6F0011035E /* MainVC.xib */,
+				A0466469289D5FD50011035E /* MainInteractor.swift */,
+				A046646B289D5FF00011035E /* MainPresenter.swift */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,6 +616,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0466468289D5F6F0011035E /* MainVC.xib in Resources */,
 				A01703622896D7EF00E81C73 /* LoginVC.xib in Resources */,
 				A017035D2896D7CE00E81C73 /* LaunchVC.xib in Resources */,
 				A01703682896DA9600E81C73 /* Main.storyboard in Resources */,
@@ -624,14 +648,16 @@
 				A01703292896D26B00E81C73 /* ProfileProvider.swift in Sources */,
 				A01703642896D94F00E81C73 /* LoginPresenter.swift in Sources */,
 				A017030D2896CFEE00E81C73 /* AuthSignOutResponse.swift in Sources */,
+				A0466463289D5F030011035E /* MainCoordinator.swift in Sources */,
 				A01703352896D38800E81C73 /* RequestFactory.swift in Sources */,
 				A01702DE2896C8A400E81C73 /* UIView-Extension.swift in Sources */,
 				A01702B52896C29400E81C73 /* Factory.swift in Sources */,
 				A01703562896D77500E81C73 /* LaunchCoordinator.swift in Sources */,
 				A01703422896D45400E81C73 /* CustomDecodableSerializer.swift in Sources */,
+				A046646C289D5FF00011035E /* MainPresenter.swift in Sources */,
 				A017033B2896D3E700E81C73 /* ProfileRequestFactory.swift in Sources */,
 				A017031A2896D13400E81C73 /* DeviceProvider.swift in Sources */,
-				A01703092896CF6C00E81C73 /* AuthSignInByPasswordRequest.swift in Sources */,
+				A01703092896CF6C00E81C73 /* AuthSignInRequest.swift in Sources */,
 				A01702E82896C98A00E81C73 /* KeychainItemAccessibility.swift in Sources */,
 				A01703512896D65E00E81C73 /* ApiError.swift in Sources */,
 				A01702CC2896C7D800E81C73 /* UrlComponents-Extension.swift in Sources */,
@@ -670,7 +696,8 @@
 				63998CC0289597A000266599 /* AppDelegate.swift in Sources */,
 				A01702BE2896C67A00E81C73 /* CALayer-Extension.swift in Sources */,
 				A017032D2896D2B900E81C73 /* ProfileService.swift in Sources */,
-				A01703032896CEF300E81C73 /* AuthSignInByPasswordResponse.swift in Sources */,
+				A01703032896CEF300E81C73 /* AuthSignInResponse.swift in Sources */,
+				A046646A289D5FD50011035E /* MainInteractor.swift in Sources */,
 				A01702C42896C71800E81C73 /* Double-Extension.swift in Sources */,
 				A017034F2896D5E500E81C73 /* ApiResponseError.swift in Sources */,
 				A01702C02896C6C500E81C73 /* DataRequest-Extension.swift in Sources */,
@@ -679,6 +706,7 @@
 				A01702FB2896CE6E00E81C73 /* AuthService.swift in Sources */,
 				A01703662896D95A00E81C73 /* LoginInteractor.swift in Sources */,
 				A01702CA2896C7BE00E81C73 /* URL-Extension.swift in Sources */,
+				A0466467289D5F6F0011035E /* MainVC.swift in Sources */,
 				A01703312896D30F00E81C73 /* ProfileGetResponse.swift in Sources */,
 				A01703482896D4A500E81C73 /* Config.swift in Sources */,
 				A017034B2896D54C00E81C73 /* ActivityHelper.swift in Sources */,

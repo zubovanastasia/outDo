@@ -5,15 +5,15 @@
 //  Created by Антон Бондаренко on 31.07.2022.
 //
 
-struct AuthSignInByPasswordResponse: Codable {
+struct AuthSignInResponse: Codable {
     
-    var result: AuthSignInByPasswordResponseResult?
+    var result: AuthSignInResponseResult?
     var error: ApiResponseError?
 }
 
-struct AuthSignInByPasswordResponseResult: Codable {
+struct AuthSignInResponseResult: Codable {
     
+    var code: Int
     var token: String
-    var refreshToken: String
     var session: String
 }

@@ -8,7 +8,7 @@
 import Alamofire
 import Foundation
 
-struct AuthSignInByPasswordRequest: RequestRouter {
+struct AuthSignInRequest: RequestRouter {
     
     let id = NSUUID().uuidString
     var baseUrl: URL
@@ -16,7 +16,7 @@ struct AuthSignInByPasswordRequest: RequestRouter {
     let path: String = ""
     
     var action = ""
-    let method = ApiMethod.signInByPassword
+    let method = ApiMethod.signIn
     var time = ""
     var signature = ""
     
@@ -43,7 +43,7 @@ struct AuthSignInByPasswordRequest: RequestRouter {
                 "method": method,
                 "action": action,
                 "params": [
-                    "username": authCredentials.login,
+                    "login": authCredentials.login,
                     "token": authCredentials.token,
                     "time": time,
                     "signature": signature,

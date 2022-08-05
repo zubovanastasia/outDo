@@ -38,6 +38,10 @@ class AuthRepositoryImpl: AuthRepository {
     
     init(keychainWrapper: KeychainWrapper) {
         self.keychainWrapper = keychainWrapper
+        // MARK: - Debug setting
+        if Config.alwaysAuth {
+            clear()
+        }
     }
     
     func clear() {

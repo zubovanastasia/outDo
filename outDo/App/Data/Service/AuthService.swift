@@ -35,7 +35,7 @@ class AuthServiceImpl: AuthService {
    
     func signIn(with credentials: AuthCredentials) -> AnyPublisher<(Bool, String?), Never> {
         let authRequest = requestFactory.makeAuthRequestFactory()
-        anyCancellable = authRequest.signInByPassword(with: credentials)
+        anyCancellable = authRequest.signIn(with: credentials)
             .sink { [weak self] data in
                 ActivityHelper.shared.remove(data.request?.httpBody)
                 if case .success(let response) = data.result {
