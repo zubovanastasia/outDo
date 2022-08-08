@@ -156,6 +156,7 @@ class ProviderFactoryImpl: ProviderFactory {
 // MARK: - Repository
 protocol RepositoryFactory: AnyObject {
     
+    var signUpRepository: SignUpRepository { get }
     var authRepository: AuthRepository { get }
     var deviceRepository: DeviceRepository { get }
     var profileRepository: ProfileRepository { get }
@@ -165,17 +166,20 @@ protocol RepositoryFactory: AnyObject {
 
 class RepositoryFactoryImpl: RepositoryFactory {
     
+    var signUpRepository: SignUpRepository
     var authRepository: AuthRepository
     var deviceRepository: DeviceRepository
     var profileRepository: ProfileRepository
     
     init(keychainWrapper: KeychainWrapper, userDefaultsProvider: UserDefaultsProvider, stopwatch: Stopwatch) {
+        signUpRepository = SignUpRepositoryImpl(keychainWrapper: keychainWrapper)
         authRepository = AuthRepositoryImpl(keychainWrapper: keychainWrapper)
         deviceRepository = DeviceRepositoryImpl(userDefaultsProvider: userDefaultsProvider, timezone: stopwatch.timezone)
         profileRepository = ProfileRepositoryImpl(userDefaultsProvider: userDefaultsProvider)
     }
     
     func clear() {
+        signUpRepository.clear()
         authRepository.clear()
         profileRepository.clear()
     }
@@ -257,7 +261,7 @@ class ServiceFactoryImpl: ServiceFactory {
     lazy var authService: AuthService = {
         return AuthServiceImpl(
             authRepository: repositoryFactory.authRepository,
-            requestFactory: requestFactory)
+            requestFactory: requestFactory, signUpRepository: repositoryFactory.signUpRepository)
     }()
     
     lazy var deviceService: DeviceService = {

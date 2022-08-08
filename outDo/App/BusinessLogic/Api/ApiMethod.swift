@@ -16,6 +16,9 @@ struct ApiMethod {
     
     // Profile
     static let profileGet = "ProfileGet"
+    
+    // Sign up
+    static let signUp = "Register"
 }
 
 

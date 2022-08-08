@@ -25,6 +25,7 @@ protocol RequestRouter: URLRequestConvertible {
     var id: String { get }
     var method: String { get }
     var authCredentials: AuthCredentials { get }
+    var signUpCredentials: SignUpCredentials { get }
     var deviceRepository: DeviceRepository { get }
     var profileRepository: ProfileRepository { get }
     var time: String { get }

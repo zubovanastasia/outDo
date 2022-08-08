@@ -7,7 +7,6 @@
 
 import Alamofire
 import Foundation
-
 import Combine
 
 protocol AuthRequestFactory: AbstractRequestFactory {
@@ -17,7 +16,6 @@ protocol AuthRequestFactory: AbstractRequestFactory {
 }
 
 class AuthRequestFactoryImpl: AuthRequestFactory {
-    
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
@@ -48,7 +46,6 @@ class AuthRequestFactoryImpl: AuthRequestFactory {
         ActivityHelper.shared.add(request.id)
         return self.request(request: request)
     }
-    
     func signOut() -> AnyPublisher<AFDataResponse<AuthSignOutResponse>, Never> {
         let request = AuthSignOutRequest(
             baseUrl: baseUrl,
