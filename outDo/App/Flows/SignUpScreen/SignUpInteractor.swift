@@ -10,7 +10,7 @@ import Combine
 
 protocol SignUpInteractor: AnyObject {
     
-    func onTapSignUp(login: String, password: String, confirmPassword: String)
+    func onTapSignUp(credentials: SignUpCredentials, confirmPassword: String)
 }
 
 final class SignUpInteractorImpl: SignUpInteractor {
@@ -23,35 +23,39 @@ final class SignUpInteractorImpl: SignUpInteractor {
         self.signUpProvider = signUpProvider
     }
     
-    func onTapSignUp(login: String, password: String, confirmPassword: String) {
-        guard login.isValidEmail, password.isValidPassword, confirmPassword.isValidPassword else {
-            if !login.isValidEmail {
-                presenter?.showErrorLogin()
-                // TODO: Toast
-            }
-            if !password.isValidPin {
-                presenter?.showErrorPassword()
-                // TODO: Toast
-            }
-            if !confirmPassword.isValidPassword {
-                presenter?.showErrorConfirmPassword()
-                // TODO: Toast
-            }
+    func onTapSignUp(credentials: SignUpCredentials, confirmPassword: String) {
+        guard !credentials.name.isEmpty else {
+            presenter?.showError(for: .name)
+            // TODO: Toast
             return
         }
         
-        if password != confirmPassword {
+        guard credentials.login.isValidEmail else {
+            presenter?.showError(for: .login)
+            // TODO: Toast
+            return
+        }
+                  
+        guard credentials.password.isValidPassword else {
+            presenter?.showError(for: .password)
+            // TODO: Toast
+            return
+        }
+        
+        guard credentials.password == confirmPassword else {
+            presenter?.showError(for: .confirm)
             // TODO: toast
             return
         }
         
-        signUpRequestCancellable = signUpProvider.signUp(with: SignUpCredentials(login: login, password: password, name: ""))
+        signUpRequestCancellable = signUpProvider.signUp(with: credentials)
             .sink(receiveValue: { [weak self] isSuccess, message in
-                if !isSuccess {
+                if isSuccess {
+                    self?.presenter?.onSignUp()
                     // TODO: toast message
                 }
                 else {
-                    self?.presenter?.onSignUp?()
+                    // TODO: toast message
                 }
             })
     }

@@ -11,19 +11,19 @@ import UIKit
 protocol SignUpPresenter: AnyObject{
     
     // MARK: - Coordinator
-    var onSignUp: VoidClosure? { get set }
+    var onBack: VoidClosure? { get set }
     
-    func onTapSignUp(login: String, password: String, confirmPassword: String)
-    func showErrorLogin()
-    func showErrorPassword()
-    func showErrorConfirmPassword()
+    func onTapSignUp(credentials: SignUpCredentials, confirmPassword: String)
+    func onSignUp()
+    func showError(for textfield: TSignUpTextField)
     func updateData()
+    func viewWillDisappear(_ isMovingFromParent: Bool)
 }
 
 final class SignUpPresenterImpl: SignUpPresenter {
    
     // MARK: - Coordinator
-    var onSignUp: VoidClosure?
+    var onBack: VoidClosure?
     
     private var interactor: SignUpInteractor
     weak var view: (UIViewController & SignUpView)?
@@ -32,29 +32,31 @@ final class SignUpPresenterImpl: SignUpPresenter {
         self.interactor = interactor
     }
     
-    func onTapSignUp(login: String, password: String, confirmPassword: String) {
+    func onSignUp() {
+        view?.navigationController?.popViewController(animated: true)
+    }
+    
+    func onTapSignUp(credentials: SignUpCredentials, confirmPassword: String) {
         interactor.onTapSignUp(
-            login: login,
-            password: password,
+            credentials: credentials,
             confirmPassword: confirmPassword)
     }
     
-    func showErrorLogin() {
-        view?.showErrorLogin()
-    }
-    
-    func showErrorPassword() {
-        view?.showErrorPassword()
-    }
-    
-    func showErrorConfirmPassword() {
-        view?.showErrorConfirmPassword()
+    func showError(for textfield: TSignUpTextField) {
+        view?.showError(for: textfield)
     }
     
     func updateData() {
-        view?.setPlaceholderLogin(Locales.value("vc_signUp_login"))
-        view?.setPlaceholderPassword(Locales.value("vc_signUp_password"))
-        view?.setPlaceholderConfirmPassword(Locales.value("vc_signUp_confirmPassword"))
+        view?.setPlaceholder(Locales.value("vc_signUp_name"), for: .name)
+        view?.setPlaceholder(Locales.value("vc_signUp_login"), for: .login)
+        view?.setPlaceholder(Locales.value("vc_signUp_password"), for: .password)
+        view?.setPlaceholder(Locales.value("vc_signUp_confirmPassword"), for: .confirm)
         view?.setTitleSignUp(Locales.value("vc_signUp_button"))
+    }
+    
+    func viewWillDisappear(_ isMovingFromParent: Bool) {
+        if isMovingFromParent {
+            self.onBack?()
+        }
     }
 }

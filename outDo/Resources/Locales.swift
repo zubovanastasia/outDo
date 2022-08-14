@@ -25,9 +25,10 @@ class Locales {
         "vc_login_signIn": "Войти",
         
         "vc_signUp_login": "Почта",
+        "vc_signUp_name": "Имя",
         "vc_signUp_password": "Пароль",
         "vc_signUp_confirmPassword": "Подтвердите пароль",
-        "vc_signUp_button": "Зарегестрироваться",
+        "vc_signUp_button": "Зарегистрироваться",
         
 //        "vc_critical_title": "Sorry, critical data error",
 //        "vc_critical_title_internet": "No Internet connection available",

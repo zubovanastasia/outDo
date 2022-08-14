@@ -24,7 +24,7 @@ class SignUpCoordinator: BaseCoordinator {
     // MARK: - Current Flow
     private func startSignUpFlow() {
         let screen = screenFactory.makeSignUpScreen()
-        screen.presenter.onSignUp = { [weak self] in
+        screen.presenter.onBack = { [weak self] in
             self?.finishFlow?()
         }
         router.push(screen)

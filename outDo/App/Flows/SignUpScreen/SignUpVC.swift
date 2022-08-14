@@ -8,20 +8,30 @@
 import UIKit
 import Combine
 
+enum TSignUpTextField {
+    case name, login, password, confirm
+}
+
 protocol SignUpView {
     
-    func setPlaceholderLogin(_ value: String)
-    func setPlaceholderPassword(_ value: String)
-    func setPlaceholderConfirmPassword(_ value: String)
+    func setPlaceholder(_ value: String, for textfield: TSignUpTextField)
+    func showError(for textfield: TSignUpTextField)
+    
+//    func setPlaceholderLogin(_ value: String)
+//    func setPlaceholderName(_ value: String)
+//    func setPlaceholderPassword(_ value: String)
+//    func setPlaceholderConfirmPassword(_ value: String)
     func setTitleSignUp(_ value: String)
-    func showErrorLogin()
-    func showErrorPassword()
-    func showErrorConfirmPassword()
+//    func showErrorLogin()
+//    func showErrorName()
+//    func showErrorPassword()
+//    func showErrorConfirmPassword()
 }
 
 final class SignUpVC: UIViewController, SignUpView {
-  
+    
     // MARK: - Outlets
+    @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var loginTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var confirmPasswordTextField: UITextField!
@@ -48,10 +58,16 @@ final class SignUpVC: UIViewController, SignUpView {
         updateData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter.viewWillDisappear(isMovingFromParent)
+    }
+    
     // MARK: - Private methods
     private func configure() {
         self.view.backgroundColor = Styles.shared.color.vc
-        loginTextField.style = Styles.shared.tfs.odPrT
+        nameTextField.style = Styles.shared.tfs.odPrT
+        loginTextField.style = Styles.shared.tfs.odPrM
         passwordTextField.style = Styles.shared.tfs.odPrM
         confirmPasswordTextField.style = Styles.shared.tfs.odPrB
         signUpButton.style = Styles.shared.button.bevelDfSc
@@ -70,13 +86,16 @@ final class SignUpVC: UIViewController, SignUpView {
     
     // MARK: - Taps
     @IBAction private func onTapSignUp(_ sender: UIButton) {
-        guard let login = loginTextField.text,
+        guard let name = nameTextField.text,
+              let login = loginTextField.text,
               let password = passwordTextField.text,
               let confirmPassword = confirmPasswordTextField.text
         else { return }
         presenter.onTapSignUp(
-            login: login,
-            password: password,
+            credentials: SignUpCredentials(
+                login: login,
+                password: password,
+                name: name),
             confirmPassword: confirmPassword)
     }
     
@@ -94,32 +113,38 @@ final class SignUpVC: UIViewController, SignUpView {
 // MARK: - SignUpView.
 extension SignUpVC {
     
-    func setPlaceholderLogin(_ value: String) {
-        loginTextField.setPlaceholer(value, with: Styles.shared.tfs.odPh)
+    func setPlaceholder(_ value: String, for textfield: TSignUpTextField) {
+        let input: UITextField
+        switch textfield {
+        case .name:
+            input = nameTextField
+        case .login:
+            input = loginTextField
+        case .password:
+            input = passwordTextField
+        case .confirm:
+            input = confirmPasswordTextField
+        }
+        input.setPlaceholer(value, with: Styles.shared.tfs.odPh)
     }
-    
-    func setPlaceholderPassword(_ value: String) {
-        passwordTextField.setPlaceholer(value, with: Styles.shared.tfs.odPh)
-    }
-    
-    func setPlaceholderConfirmPassword(_ value: String) {
-        confirmPasswordTextField.setPlaceholer(value, with: Styles.shared.tfs.odPh)
-    }
-    
+        
     func setTitleSignUp(_ value: String) {
         signUpButton.setTitle(value, for: .normal)
     }
     
-    func showErrorLogin() {
-        loginTextField.showTfOdError()
-    }
-    
-    func showErrorPassword() {
-        passwordTextField.showTfOdError()
-    }
-    
-    func showErrorConfirmPassword() {
-        confirmPasswordTextField.showTfOdError()
+    func showError(for textfield: TSignUpTextField) {
+        let input: UITextField
+        switch textfield {
+        case .name:
+            input = nameTextField
+        case .login:
+            input = loginTextField
+        case .password:
+            input = passwordTextField
+        case .confirm:
+            input = confirmPasswordTextField
+        }
+        input.showTfOdError()
     }
 }
 
