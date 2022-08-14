@@ -23,6 +23,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="R4h-Ln-Yo5">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="outDo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YO6-YT-7R6">
                     <rect key="frame" x="112" y="407.5" width="190.5" height="91"/>
                     <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="72"/>
@@ -34,9 +37,16 @@
             <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="YO6-YT-7R6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0Jx-CD-g9X"/>
+                <constraint firstItem="R4h-Ln-Yo5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8Bz-8u-T5W"/>
                 <constraint firstItem="YO6-YT-7R6" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="G6A-DC-QgI"/>
+                <constraint firstAttribute="bottom" secondItem="R4h-Ln-Yo5" secondAttribute="bottom" id="KdU-OV-amB"/>
+                <constraint firstItem="R4h-Ln-Yo5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TYx-Jj-bUC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R4h-Ln-Yo5" secondAttribute="trailing" id="rSB-Qn-kbC"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="122"/>
+            <point key="canvasLocation" x="137.68115942028987" y="121.875"/>
         </view>
     </objects>
+    <resources>
+        <image name="bg" width="1080" height="1078"/>
+    </resources>
 </document>

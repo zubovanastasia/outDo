@@ -78,6 +78,7 @@ protocol CoordinatorFactory: AnyObject {
     func makeLaunchCoordinator(router: Router) -> LaunchCoordinator
     func makeLoginCoordinator(router: Router) -> LoginCoordinator
     func makeMainCoordinator(router: Router) -> MainCoordinator
+    func makeSignUpCoordinator(router: Router) -> SignUpCoordinator
 }
 
 class CoordinatorFactoryImpl: CoordinatorFactory {
@@ -117,6 +118,12 @@ class CoordinatorFactoryImpl: CoordinatorFactory {
             screenFactory: screenFactory,
             coordinatorFactory: self)
     }
+    
+    func makeSignUpCoordinator(router: Router) -> SignUpCoordinator {
+        return SignUpCoordinator(
+            router: router,
+            screenFactory: screenFactory)
+    }
 }
 
 // MARK: - Provider
@@ -126,6 +133,7 @@ protocol ProviderFactory: AnyObject {
     var authStatusProvider: AuthStatusProvider { get }
     var deviceProvider: DeviceProvider { get }
     var profileProvider: ProfileProvider { get }
+    var signUpProvider: SignUpProvider { get }
 }
 
 class ProviderFactoryImpl: ProviderFactory {
@@ -150,6 +158,10 @@ class ProviderFactoryImpl: ProviderFactory {
     
     var profileProvider: ProfileProvider {
         get { return ProfileProviderImpl(profileService: serviceFactory.profileService) }
+    }
+    
+    var signUpProvider: SignUpProvider {
+        get { return SignUpProviderImpl(authService: serviceFactory.authService) }
     }
 }
 
@@ -188,6 +200,7 @@ protocol ScreenFactory: AnyObject {
     func makeLaunchScreen() -> LaunchVC
     func makeLoginScreen() -> LoginVC
     func makeMainScreen() -> MainVC
+    func makeSignUpScreen() -> SignUpVC
 }
 
 class ScreenFactoryImpl: ScreenFactory {
@@ -230,6 +243,17 @@ class ScreenFactoryImpl: ScreenFactory {
         
         return viewController
     }
+    
+    func makeSignUpScreen() -> SignUpVC {
+        let interactor = SignUpInteractorImpl(signUpProvider: providerFactory.signUpProvider)
+        let presenter = SignUpPresenterImpl(interactor: interactor)
+        let viewController = SignUpVC(presenter: presenter)
+        
+        interactor.presenter = presenter
+        presenter.view = viewController
+        
+        return viewController
+    }
 }
 
 // MARK: - Service
@@ -262,8 +286,8 @@ class ServiceFactoryImpl: ServiceFactory {
     
     lazy var deviceService: DeviceService = {
         return  DeviceServiceImpl(
-        repositoryFactory: repositoryFactory,
-        requestFactory: requestFactory)
+            repositoryFactory: repositoryFactory,
+            requestFactory: requestFactory)
     }()
     
     lazy var profileService: ProfileService = {

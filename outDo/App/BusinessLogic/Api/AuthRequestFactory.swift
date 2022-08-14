@@ -7,13 +7,13 @@
 
 import Alamofire
 import Foundation
-
 import Combine
 
 protocol AuthRequestFactory: AbstractRequestFactory {
     
     func signIn(with credentials: AuthCredentials) -> AnyPublisher<AFDataResponse<AuthSignInResponse>, Never>
     func signOut() -> AnyPublisher<AFDataResponse<AuthSignOutResponse>, Never>
+    func signUp(with credentials: SignUpCredentials) -> AnyPublisher<AFDataResponse<AuthSignUpResponse>, Never>
 }
 
 class AuthRequestFactoryImpl: AuthRequestFactory {
@@ -56,6 +56,17 @@ class AuthRequestFactoryImpl: AuthRequestFactory {
             authRepository: authRepository,
             deviceRepository: deviceRepository,
             profileRepository: profileRepository)
+        return self.request(request: request)
+    }
+    
+    func signUp(with credentials: SignUpCredentials) -> AnyPublisher<AFDataResponse<AuthSignUpResponse>, Never> {
+        let request = AuthSignUpRequest(
+            baseUrl: baseUrl,
+            stopwatch: stopwatch,
+            credentials: credentials,
+            deviceRepository: deviceRepository,
+            profileRepository: profileRepository)
+        ActivityHelper.shared.add(request.id)
         return self.request(request: request)
     }
 }

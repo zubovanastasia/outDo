@@ -13,7 +13,7 @@ protocol DeviceProvider {
     
     var device: Device { get }
     var isBackground: Bool { get set }
-    
+    @discardableResult
     func save() -> AnyPublisher<AFDataResponse<DeviceSaveResponse>, Never>
 }
 

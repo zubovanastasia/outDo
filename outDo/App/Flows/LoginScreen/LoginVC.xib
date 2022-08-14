@@ -28,6 +28,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="vdt-SC-fNW">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TgD-jy-pjX">
                     <rect key="frame" x="57" y="353.5" width="300" height="99"/>
                     <subviews>
@@ -49,7 +52,7 @@
                                 <constraint firstAttribute="height" constant="50" id="V7J-Ct-MPq"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
                                 <action selector="onEditingDidBegin:" destination="-1" eventType="editingDidBegin" id="adX-mC-4IH"/>
                                 <action selector="onEditingDidEnd:" destination="-1" eventType="editingDidEnd" id="RYi-V3-TPf"/>
@@ -75,10 +78,10 @@
                         <action selector="onTapSignIn:" destination="-1" eventType="touchUpInside" id="lrF-Dj-XVZ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qia-RD-L0q">
-                    <rect key="frame" x="125" y="791" width="164" height="31"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Зарегистрироваться"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qia-RD-L0q">
+                    <rect key="frame" x="119.5" y="788" width="175" height="34"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Зарегистрироваться"/>
                     <connections>
                         <action selector="onTapSignUp:" destination="-1" eventType="touchUpInside" id="Tfr-eJ-VQS"/>
                     </connections>
@@ -87,17 +90,22 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="vdt-SC-fNW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0mM-BD-43B"/>
                 <constraint firstItem="TgD-jy-pjX" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="5aD-aM-THb"/>
                 <constraint firstItem="TgD-jy-pjX" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-50" id="A77-VP-7QY"/>
                 <constraint firstItem="qia-RD-L0q" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="FmT-wq-cAN"/>
                 <constraint firstItem="daR-r3-qOZ" firstAttribute="top" secondItem="TgD-jy-pjX" secondAttribute="bottom" constant="30" id="KjG-lJ-B59"/>
+                <constraint firstAttribute="bottom" secondItem="vdt-SC-fNW" secondAttribute="bottom" id="Qp6-tD-JXM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qia-RD-L0q" secondAttribute="bottom" constant="40" id="c9f-k4-IQ7"/>
+                <constraint firstItem="vdt-SC-fNW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hqZ-dC-ZjP"/>
                 <constraint firstItem="daR-r3-qOZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="juL-zB-p0N"/>
+                <constraint firstItem="vdt-SC-fNW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mYt-Qt-hYP"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="95"/>
+            <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
         </view>
     </objects>
     <resources>
+        <image name="bg" width="5000" height="3500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -10,7 +10,7 @@ struct ApiMethod {
     // Auth
     static let signIn = "AuthSignIn"
     static let signOut = "AuthSignOut"
-    
+    static let signUp = "AuthSignUp"
     // Device
     static let deviceSave = "DeviceSave"
     

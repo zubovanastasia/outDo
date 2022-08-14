@@ -8,17 +8,17 @@
 import Combine
 
 protocol AuthService {
-    
     var isAuthed: Bool { get }
     var credentials: AuthCredentials { get }
     
     func signIn(with credentials: AuthCredentials) -> AnyPublisher<(Bool, String?), Never>
+    func signUp(with credentials: SignUpCredentials) -> AnyPublisher<(Bool, String?), Never>
     @discardableResult
     func signOut() -> AnyPublisher<(Bool, String?), Never>
 }
 
 class AuthServiceImpl: AuthService {
-   
+    
     private var authRepository: AuthRepository
     
     var isAuthed: Bool { return !authRepository.data.token.isEmpty }
@@ -45,6 +45,23 @@ class AuthServiceImpl: AuthService {
                         return
                     }
                     self?.authRepository.data = AuthCredentials(credentials, result)
+                    self?.subject.send((true, nil))
+                }
+            }
+        return subject.eraseToAnyPublisher()
+    }
+    
+    func signUp(with credentials: SignUpCredentials) -> AnyPublisher<(Bool, String?), Never> {
+        let authRequest = requestFactory.makeAuthRequestFactory()
+        anyCancellable = authRequest.signUp(with: credentials)
+            .sink { [weak self] data in
+                ActivityHelper.shared.remove(data.request?.httpBody)
+                if case .success(let response) = data.result {
+                    guard response.result != nil else {
+                        let message = response.error?.message ?? Locales.value("dialog_text_apiError_signUp")
+                        self?.subject.send((false, message))
+                        return
+                    }
                     self?.subject.send((true, nil))
                 }
             }

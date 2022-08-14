@@ -41,14 +41,13 @@ class AppCoordinator: BaseCoordinator {
         
         if isAuthed {
             profileProvider.profileGet(completion: { [weak self] response in
-                // MARK: TODO
-                //Socket.shared.create()
                 if response == nil {
                     self?.isAuthed = false
                     self?.runLoginFlow()
                 }
                 else {
                     self?.runMainFlow()
+                    self?.deviceProvider.save()
                 }
             })
         }

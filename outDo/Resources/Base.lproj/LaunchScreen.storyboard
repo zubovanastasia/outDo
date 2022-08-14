@@ -21,6 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="BtV-Lu-4ZB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="outDo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itB-8P-5Ur">
                                 <rect key="frame" x="112" y="407.5" width="190.5" height="91"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="72"/>
@@ -31,14 +34,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="BtV-Lu-4ZB" secondAttribute="bottom" id="8I9-23-IiT"/>
+                            <constraint firstItem="BtV-Lu-4ZB" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="K2P-RF-RCa"/>
                             <constraint firstItem="itB-8P-5Ur" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VKM-3R-xaN"/>
                             <constraint firstItem="itB-8P-5Ur" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="aIE-NG-u5O"/>
+                            <constraint firstItem="BtV-Lu-4ZB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p9G-Cy-HXE"/>
+                            <constraint firstItem="BtV-Lu-4ZB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yAp-Md-5V0"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg" width="5000" height="3500"/>
+    </resources>
 </document>

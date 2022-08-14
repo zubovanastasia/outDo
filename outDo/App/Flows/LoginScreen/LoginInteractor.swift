@@ -11,6 +11,7 @@ import Combine
 protocol LoginInteractor: AnyObject {
     
     func onTapSignIn(login: String, password: String)
+    func onTapSignUp()
 }
 
 final class LoginInteractorImpl: LoginInteractor {
@@ -54,6 +55,10 @@ final class LoginInteractorImpl: LoginInteractor {
                     self?.presenter?.onSignIn?()
                 }
             })
+    }
+    
+    func onTapSignUp() {
+        presenter?.onSignUp?()
     }
 }
 

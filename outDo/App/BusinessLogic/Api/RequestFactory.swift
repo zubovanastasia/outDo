@@ -50,7 +50,6 @@ class RequestFactory {
             stopwatch: stopwatch,
             repositoryFactory: repositoryFactory)
     }
-    
     func makeProfileRequestFactory() -> ProfileRequestFactory {
         return ProfileRequestFactoryImpl(
             errorParser: makeErrorParser(),

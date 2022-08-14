@@ -37,7 +37,7 @@ class Styles {
     let tfs = TextfieldStyles()
     let view = ViewStyles()
     
-    let c = Colors()
+    let color = Colors()
     let fs = FontSizes()
     
     private let fontR = "SourceSansPro-Regular"
@@ -47,19 +47,23 @@ class Styles {
     private var tfFonts = [String:UIFont]()
     
     init() {
-        tf[button.bevelDfPr] = MFont(fs.fs24, fontB, c.cffffff, NSTextAlignment.left)
-        tf[button.bevelDfSc] = MFont(fs.fs24, fontB, c.c646464, NSTextAlignment.left)
-        tf[button.bevelSmPr] = MFont(fs.fs20, fontB, c.cffffff, NSTextAlignment.left)
-        tf[button.bevelSmSc] = MFont(fs.fs20, fontB, c.c646464, NSTextAlignment.left)
-        tf[button.sharpLgPr] = MFont(fs.fs28, fontB, c.cffffff, NSTextAlignment.left)
+        tf[button.bevelDfPr] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left)
+        tf[button.bevelDfSc] = MFont(fs.fs24, fontB, color.c646464, NSTextAlignment.left)
+        tf[button.bevelSmPr] = MFont(fs.fs20, fontB, color.cffffff, NSTextAlignment.left)
+        tf[button.bevelSmSc] = MFont(fs.fs20, fontB, color.c646464, NSTextAlignment.left)
+        tf[button.quietDfSc] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left)
+        tf[button.quietDfSc + "Down"] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left, false, 0.7)
+        tf[button.sharpLgPr] = MFont(fs.fs28, fontB, color.cffffff, NSTextAlignment.left)
         
-        tf[label.r18main] = MFont(fs.fs18, fontR, c.c000000, NSTextAlignment.left)
+        tf[label.r18main] = MFont(fs.fs18, fontR, color.c000000, NSTextAlignment.left)
         
-        tf[tfs.olPh] = MFont(fs.fs24, fontR, c.c000000, NSTextAlignment.left, false, 0.4)
-        tf[tfs.olPr] = MFont(fs.fs24, fontB, c.c000000, NSTextAlignment.left)
+        tf[tfs.odPh] = MFont(fs.fs24, fontR, color.cffffff, NSTextAlignment.left, false, 0.4)
+        tf[tfs.odPr] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left)
+        tf[tfs.olPh] = MFont(fs.fs24, fontR, color.c000000, NSTextAlignment.left, false, 0.4)
+        tf[tfs.olPr] = MFont(fs.fs24, fontB, color.c000000, NSTextAlignment.left)
 
-        tf[view.navbarPr] = MFont(fs.fs20, fontB, c.c000000, NSTextAlignment.left, false, 0.55)
-        tf[view.navbarPrC] = MFont(fs.fs20, fontB, c.c000000, NSTextAlignment.center, false, 0.55)
+        tf[view.navbarPr] = MFont(fs.fs20, fontB, color.c000000, NSTextAlignment.left, false, 0.55)
+        tf[view.navbarPrC] = MFont(fs.fs20, fontB, color.c000000, NSTextAlignment.center, false, 0.55)
     }
     
     func getFontStyle(_ style: String) -> MFont {
@@ -186,6 +190,13 @@ class Colors {
     let switchThumb  = UIColor(rgb: 0xffffff)
     let sep = UIColor(rgb: 0x000000, a: 0.09)
     
+    let tfOdBorderUp = UIColor(rgb: 0xffffff)
+    let tfOdBorderFocused = UIColor(rgb: 0xaaaaaa)
+    let tfOdBorderError = UIColor(rgb: 0xf9b290)
+    let tfOdBgUp = UIColor(rgb: 0xffffff, a: 0)
+    let tfOdBgFocused = UIColor(rgb: 0xffffff, a: 0.05)
+    let tfOdBgError = UIColor(rgb: 0xf9b290)
+    
     let tfOlBorderUp = UIColor(rgb: 0xdddddd)
     let tfOlBorderFocused = UIColor(rgb: 0xdadada)
     let tfOlBorderError = UIColor(rgb: 0xf9b290)
@@ -224,6 +235,7 @@ class ButtonStyles {
     let bevelSmPr = "bevelSmPr"
     let bevelSmSc = "bevelSmSc"
     let circleDfPlus = "circleDfPlus"
+    let quietDfSc = "quietDfSc"
     let sharpLgPr = "sharpLgPr"
     let swtch = "swtch"
     
@@ -242,6 +254,7 @@ class ButtonStyles {
         case bevelSmPr: setStyleBevelSmPr(style, button)
         case bevelSmSc: setStyleBevelSmSc(style, button)
         case circleDfPlus: setStyleCircleDfPlus(style, button)
+        case quietDfSc: setStyleQuietDfSc(style, button)
         case sharpLgPr: setStyleSharpLgPr(style, button)
         case Styles.shared.view.navbarPr: setStyleNavbarPr(style, button)
         default:
@@ -286,8 +299,8 @@ class ButtonStyles {
 
     private func setStyleBevelDfPr(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.c.buttonPrUp,
-                       downColor: Styles.shared.c.buttonPrDown,
+                       upColor: Styles.shared.color.buttonPrUp,
+                       downColor: Styles.shared.color.buttonPrDown,
                        height: sizeDf,
                        cornerRadius: cornerDf,
                        fontStyle: style)
@@ -295,8 +308,8 @@ class ButtonStyles {
 
     private func setStyleBevelDfSc(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.c.buttonScUp,
-                       downColor: Styles.shared.c.buttonScDown,
+                       upColor: Styles.shared.color.buttonScUp,
+                       downColor: Styles.shared.color.buttonScDown,
                        height: sizeDf,
                        cornerRadius: cornerDf,
                        fontStyle: style)
@@ -304,8 +317,8 @@ class ButtonStyles {
     
     private func setStyleBevelSmPr(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.c.buttonPrUp,
-                       downColor: Styles.shared.c.buttonPrDown,
+                       upColor: Styles.shared.color.buttonPrUp,
+                       downColor: Styles.shared.color.buttonPrDown,
                        height: sizeSm,
                        cornerRadius: cornerSm,
                        fontStyle: style)
@@ -313,8 +326,8 @@ class ButtonStyles {
 
     private func setStyleBevelSmSc(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.c.buttonScUp,
-                       downColor: Styles.shared.c.buttonScDown,
+                       upColor: Styles.shared.color.buttonScUp,
+                       downColor: Styles.shared.color.buttonScDown,
                        height: sizeSm,
                        cornerRadius: cornerSm,
                        fontStyle: style)
@@ -322,8 +335,8 @@ class ButtonStyles {
 
     private func setStyleCircleDfPlus(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.c.buttonFlowUp,
-                       downColor: Styles.shared.c.buttonFlowDown,
+                       upColor: Styles.shared.color.buttonFlowUp,
+                       downColor: Styles.shared.color.buttonFlowDown,
                        height: sizeDf,
                        cornerRadius: sizeDf / 2,
                        fontStyle: "")
@@ -332,18 +345,23 @@ class ButtonStyles {
         button.setImage(UIImage(named: Assets.shared.buttonFlowPlus), for: .normal)
     }
     
+    private func setStyleQuietDfSc(_ style: String, _ button: UIButton) {
+        setTextFont(style, button)
+        setTextFont("\(quietDfSc)Down", button, .highlighted)
+    }
+    
     private func setStyleNavbarPr(_ style: String, _ button: UIButton) {
         setTextFont(style, button)
     }
 
     private func setStyleSharpLgPr(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.c.buttonPrUp,
-                       downColor: Styles.shared.c.buttonPrDown,
+                       upColor: Styles.shared.color.buttonPrUp,
+                       downColor: Styles.shared.color.buttonPrDown,
                        height: sizeLg,
                        cornerRadius: 0,
                        fontStyle: style)
-        button.setDisabledBackgroundColor(Styles.shared.c.buttonPrDisabled)
+        button.setDisabledBackgroundColor(Styles.shared.color.buttonPrDisabled)
     }
 
     private func setStyleNavbarPr(_ style: String, _ button: UIBarButtonItem) {
@@ -353,10 +371,10 @@ class ButtonStyles {
     }
     
     private func setStyleSwtch(_ style: String, _ switchButton: UISwitch) {
-        switchButton.onTintColor = Styles.shared.c.switchBgOn
-        switchButton.tintColor = Styles.shared.c.switchBgOff
-        switchButton.thumbTintColor = Styles.shared.c.switchThumb
-        switchButton.backgroundColor = Styles.shared.c.switchBgOff
+        switchButton.onTintColor = Styles.shared.color.switchBgOn
+        switchButton.tintColor = Styles.shared.color.switchBgOff
+        switchButton.thumbTintColor = Styles.shared.color.switchThumb
+        switchButton.backgroundColor = Styles.shared.color.switchBgOff
         switchButton.layer.cornerRadius = switchButton.bounds.height / 2
     }
 }
@@ -377,6 +395,11 @@ class LabelStyles {
 // MARK: - Textfield
 class TextfieldStyles {
     
+    let odPh = "odPh"
+    let odPr = "odPr"
+    let odPrT = "odPrT"
+    let odPrM = "odPrM"
+    let odPrB = "odPrB"
     let olPh = "olPh"
     let olPr = "olPr"
     let olPrT = "olPrT"
@@ -394,6 +417,10 @@ class TextfieldStyles {
         case olPrT: setStyleOlPrT(style, textfield)
         case olPrM: setStyleOlPrM(style, textfield)
         case olPrB: setStyleOlPrB(style, textfield)
+        case odPr: setStyleOdPr(style, textfield)
+        case odPrT: setStyleOdPrT(style, textfield)
+        case odPrM: setStyleOdPrM(style, textfield)
+        case odPrB: setStyleOdPrB(style, textfield)
         default:
             print("no tf style \(style)")
         }
@@ -463,6 +490,29 @@ class TextfieldStyles {
         textview.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -2)
         textview.tintColor = Styles.shared.getFontColor(olPr)
         setTextFont(olPr, textview: textview)
+    }
+    
+    private func setStyleOdCommon(_ style: String, _ textfield: UITextField, _ cornerRadius: CGFloat = 0) {
+        setStyleCommon(textfield, odPr, odPh, cornerRadius)
+        textfield.showTfOdUp()
+    }
+    
+    private func setStyleOdPr(_ style: String, _ textfield: UITextField) {
+        setStyleOdCommon(style, textfield, cornerDf)
+    }
+    
+    private func setStyleOdPrT(_ style: String, _ textfield: UITextField) {
+        setStyleOdCommon(style, textfield)
+        textfield.setTopCornerRadius(value: cornerDf)
+    }
+    
+    private func setStyleOdPrM(_ style: String, _ textfield: UITextField) {
+        setStyleOdCommon(style, textfield)
+    }
+    
+    private func setStyleOdPrB(_ style: String, _ textfield: UITextField) {
+        setStyleOdCommon(style, textfield)
+        textfield.setBottomCornerRadius(value: cornerDf)
     }
 }
 
