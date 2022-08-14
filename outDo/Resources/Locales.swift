@@ -17,8 +17,19 @@ class Locales {
     }
     
     static private let data: [String:String] = [
-        "dialog_text_apiError_signInByPassword": "Ошибка входа",
-        "dialog_text_apiError_signUp": "Ошибка регистрации",
+        "apiErrorText_signInByPassword": "Ошибка входа",
+        "apiErrorText_signUp": "Ошибка регистрации",
+        
+        "alert_text_signUpSuccess": "Пользователь успешно создан. Теперь вы можете войти.",
+        "alert_title_auth": "Профиль",
+        
+        "dialog_button_close": "Закрыть",
+        
+        "toast_signUpWrongConfirm": "Пароли не совпадают",
+        "toast_signUpWrongLogin": "Введите корректную почту (логин)",
+        "toast_signUpWrongName": "Введите имя",
+        "toast_signUpWrongPassword": "Введите корректный пароль",
+        "toast_wrongLoginPassword": "Ошибка логин/пароля",
         
         "vc_login_login": "Логин (почта)",
         "vc_login_password": "Пароль",

@@ -40,7 +40,7 @@ class AuthServiceImpl: AuthService {
                 ActivityHelper.shared.remove(data.request?.httpBody)
                 if case .success(let response) = data.result {
                     guard let result = response.result else {
-                        let message = response.error?.message ?? Locales.value("dialog_text_apiError_signInByPassword")
+                        let message = response.error?.message ?? Locales.value("apiErrorText_signInByPassword")
                         self?.subject.send((false, message))
                         return
                     }
@@ -58,7 +58,7 @@ class AuthServiceImpl: AuthService {
                 ActivityHelper.shared.remove(data.request?.httpBody)
                 if case .success(let response) = data.result {
                     guard response.result != nil else {
-                        let message = response.error?.message ?? Locales.value("dialog_text_apiError_signUp")
+                        let message = response.error?.message ?? Locales.value("apiErrorText_signUp")
                         self?.subject.send((false, message))
                         return
                     }

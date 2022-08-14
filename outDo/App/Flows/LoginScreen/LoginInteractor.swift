@@ -27,8 +27,7 @@ final class LoginInteractorImpl: LoginInteractor {
     
     func onTapSignIn(login: String, password: String) {
         guard login.isValidEmail, password.isValidPassword else {
-            // TODO: Show Toast
-            //DialogBuilder.shared.showToast(Locales.value("dialog_text_wrongLoginPassword"))
+            DialogBuilder.shared.showToast(Locales.value("toast_wrongLoginPassword"))
             if !login.isValidEmail {
                 presenter?.showErrorLogin()
             }
@@ -41,15 +40,14 @@ final class LoginInteractorImpl: LoginInteractor {
         authRequestCancellable = authProvider.signIn(with: AuthCredentials(login: login, password: password))
             .sink(receiveValue: { [weak self] isAuthed, message in
                 if !isAuthed {
-                    // TODO: Show Alert
-//                    DialogBuilder.shared.showAlert(AlertData(
-//                        title: Locales.value("dialog_title_auth"),
-//                        text: message ?? "",
-//                        buttons: [
-//                            AlertButtonData(
-//                                title: Locales.value("dialog_button_close"),
-//                                completion: nil)]
-//                        ))
+                    DialogBuilder.shared.showAlert(AlertData(
+                        title: Locales.value("alert_title_auth"),
+                        text: message ?? "",
+                        buttons: [
+                            AlertButtonData(
+                                title: Locales.value("dialog_button_close"),
+                                completion: nil)]
+                        ))
                 }
                 else {
                     self?.presenter?.onSignIn?()

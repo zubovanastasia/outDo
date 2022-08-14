@@ -28,7 +28,7 @@ struct MFont {
     }
 }
 
-class Styles {
+final class Styles {
     
     static let shared = Styles()
     
@@ -55,7 +55,9 @@ class Styles {
         tf[button.quietDfSc + "Down"] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left, false, 0.7)
         tf[button.sharpLgPr] = MFont(fs.fs28, fontB, color.cffffff, NSTextAlignment.left)
         
+        tf[label.r16ffffffC] = MFont(fs.fs16, fontR, color.cffffff, NSTextAlignment.center)
         tf[label.r18main] = MFont(fs.fs18, fontR, color.c000000, NSTextAlignment.left)
+        tf[label.b20mainC] = MFont(fs.fs20, fontB, color.c000000, NSTextAlignment.center)
         
         tf[tfs.odPh] = MFont(fs.fs24, fontR, color.cffffff, NSTextAlignment.left, false, 0.4)
         tf[tfs.odPr] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left)
@@ -163,7 +165,7 @@ class Styles {
 }
 
 // MARK: - Colors
-class Colors {
+final class Colors {
     
     let dialogDark = UIColor(rgb: 0x000000, a: 0.3)
     let toast = UIColor(rgb: 0x333333)
@@ -228,12 +230,14 @@ class FontSizes {
 }
 
 // MARK: - Button
-class ButtonStyles {
+final class ButtonStyles {
     
     let bevelDfPr = "bevelDfPr"
     let bevelDfSc = "bevelDfSc"
     let bevelSmPr = "bevelSmPr"
     let bevelSmSc = "bevelSmSc"
+    let dialogDfPr = "bevelDfPr"
+    let dialogDfSc = "bevelDfSc"
     let circleDfPlus = "circleDfPlus"
     let quietDfSc = "quietDfSc"
     let sharpLgPr = "sharpLgPr"
@@ -253,6 +257,8 @@ class ButtonStyles {
         case bevelDfSc: setStyleBevelDfSc(style, button)
         case bevelSmPr: setStyleBevelSmPr(style, button)
         case bevelSmSc: setStyleBevelSmSc(style, button)
+        case dialogDfPr: setStyleBevelDfPr(style, button)
+        case dialogDfSc: setStyleBevelDfSc(style, button)
         case circleDfPlus: setStyleCircleDfPlus(style, button)
         case quietDfSc: setStyleQuietDfSc(style, button)
         case sharpLgPr: setStyleSharpLgPr(style, button)
@@ -380,9 +386,11 @@ class ButtonStyles {
 }
 
 // MARK: - Label
-class LabelStyles {
+final class LabelStyles {
     
+    let r16ffffffC = "r16ffffffC"
     let r18main = "r18main"
+    let b20mainC = "b20mainC"
     
     func applyStyle(_ style: String, _ label: UILabel) {
         let fontStyle = Styles.shared.getFontStyle(style)
@@ -393,7 +401,7 @@ class LabelStyles {
 }
 
 // MARK: - Textfield
-class TextfieldStyles {
+final class TextfieldStyles {
     
     let odPh = "odPh"
     let odPr = "odPr"
@@ -517,11 +525,13 @@ class TextfieldStyles {
 }
 
 // MARK: - View
-class ViewStyles {
+final class ViewStyles {
     
     let navbarPr = "navbarPr"
     let navbarPrC = "navbarPrC"
 
+    let popup = "popup"
+    
     let cornerDf: CGFloat = 10
     let cornerPopup: CGFloat = 15
     let sizeNavbar: CGFloat = 44
@@ -558,10 +568,17 @@ class ViewStyles {
     }
     
     func applyStyle(_ style: String, _ view: UIView) {
-//        switch style {
-//        default:
-//            print("no view style \(style)")
-//        }
+        switch style {
+        case popup: setStylePopup(style, view)
+        default:
+            print("no view style \(style)")
+        }
+    }
+    
+    private func setStylePopup(_ style: String, _ view: UIView) {
+        view.backgroundColor = Styles.shared.color.vc
+        view.layer.cornerRadius = cornerPopup
+        Styles.shared.addShadow(view, x: 0, y: 6, a: 0.2, blur: 10, cornerRadius: cornerPopup)
     }
 }
 

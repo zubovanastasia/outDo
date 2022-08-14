@@ -64,6 +64,8 @@ final class Factory: FactoryIssue {
         coordinatorFactory = CoordinatorFactoryImpl(
             screenFactory: screenFactory,
             providerFactory: providerFactory)
+        
+        DialogBuilder.shared.screenFactory = screenFactory
     }
     
     func clear() {
@@ -196,6 +198,13 @@ class RepositoryFactoryImpl: RepositoryFactory {
 // MARK: - Screen
 protocol ScreenFactory: AnyObject {
     
+    // MARK: - Drawer
+    func makeNavigationDrawerPopup() -> NavigationDrawerPopup
+    
+    // MARK: - Popups
+    func makeAlertPopup(data: AlertData) -> AlertPopup
+    func makeToastPopup(message: String) -> ToastPopup
+    
     // MARK: - Screens
     func makeLaunchScreen() -> LaunchVC
     func makeLoginScreen() -> LoginVC
@@ -215,6 +224,29 @@ class ScreenFactoryImpl: ScreenFactory {
         self.providerFactory = providerFactory
         self.userDefaultsProvider = userDefaultsProvider
         self.stopwatch = stopwatch
+    }
+    
+    // MARK: - Drawer
+    func makeNavigationDrawerPopup() -> NavigationDrawerPopup {
+        let interactor = NavigationDrawerInteractorImpl(profileProvider: providerFactory.profileProvider)
+        let presenter = NavigationDrawerPresenterImpl(interactor: interactor)
+        let viewController = NavigationDrawerPopup(presenter: presenter)
+
+        interactor.presenter = presenter
+        presenter.view = viewController
+        
+        return viewController
+    }
+    
+    // MARK: - Popups
+    func makeAlertPopup(data: AlertData) -> AlertPopup {
+        return AlertPopup(
+            data: data,
+            deviceProvider: providerFactory.deviceProvider)
+    }
+    
+    func makeToastPopup(message: String) -> ToastPopup {
+        return ToastPopup(message: message)
     }
     
     // MARK: - Screens

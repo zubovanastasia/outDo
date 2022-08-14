@@ -13,6 +13,7 @@ protocol DeviceProvider {
     
     var device: Device { get }
     var isBackground: Bool { get set }
+    var isIpad: Bool { get }
     @discardableResult
     func save() -> AnyPublisher<AFDataResponse<DeviceSaveResponse>, Never>
 }
@@ -32,6 +33,10 @@ class DeviceProviderImpl: DeviceProvider {
     var isBackground: Bool {
         get { return deviceService.isBackground }
         set { deviceService.isBackground = newValue }
+    }
+    
+    var isIpad: Bool {
+        return UIDevice.current.userInterfaceIdiom == .pad
     }
     
     func save() -> AnyPublisher<AFDataResponse<DeviceSaveResponse>, Never> {

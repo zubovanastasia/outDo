@@ -26,25 +26,25 @@ final class SignUpInteractorImpl: SignUpInteractor {
     func onTapSignUp(credentials: SignUpCredentials, confirmPassword: String) {
         guard !credentials.name.isEmpty else {
             presenter?.showError(for: .name)
-            // TODO: Toast
+            DialogBuilder.shared.showToast(Locales.value("toast_signUpWrongName"))
             return
         }
         
         guard credentials.login.isValidEmail else {
             presenter?.showError(for: .login)
-            // TODO: Toast
+            DialogBuilder.shared.showToast(Locales.value("toast_signUpWrongLogin"))
             return
         }
                   
         guard credentials.password.isValidPassword else {
             presenter?.showError(for: .password)
-            // TODO: Toast
+            DialogBuilder.shared.showToast(Locales.value("toast_signUpWrongPassword"))
             return
         }
         
         guard credentials.password == confirmPassword else {
             presenter?.showError(for: .confirm)
-            // TODO: toast
+            DialogBuilder.shared.showToast(Locales.value("toast_signUpWrongConfirm"))
             return
         }
         
@@ -52,10 +52,17 @@ final class SignUpInteractorImpl: SignUpInteractor {
             .sink(receiveValue: { [weak self] isSuccess, message in
                 if isSuccess {
                     self?.presenter?.onSignUp()
-                    // TODO: toast message
+                    DialogBuilder.shared.showAlert(AlertData(
+                        title: Locales.value("alert_title_auth"),
+                        text: message ?? Locales.value("alert_text_signUpSuccess"),
+                        buttons: [
+                            AlertButtonData(
+                                title: Locales.value("dialog_button_close"),
+                                completion: nil)]
+                        ))
                 }
-                else {
-                    // TODO: toast message
+                else if let message = message {
+                    DialogBuilder.shared.showToast(message)
                 }
             })
     }

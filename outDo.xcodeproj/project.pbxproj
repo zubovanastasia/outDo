@@ -104,6 +104,29 @@
 		A0466468289D5F6F0011035E /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0466466289D5F6F0011035E /* MainVC.xib */; };
 		A046646A289D5FD50011035E /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466469289D5FD50011035E /* MainInteractor.swift */; };
 		A046646C289D5FF00011035E /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046646B289D5FF00011035E /* MainPresenter.swift */; };
+		A0C607D328A960C0002327C3 /* DialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D228A960C0002327C3 /* DialogBuilder.swift */; };
+		A0C607D628A9611F002327C3 /* DialogRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D528A9611F002327C3 /* DialogRootVC.swift */; };
+		A0C607D828A96162002327C3 /* DimmPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D728A96162002327C3 /* DimmPresentationController.swift */; };
+		A0C607DA28A9617A002327C3 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D928A96179002327C3 /* DismissAnimation.swift */; };
+		A0C607DC28A961D1002327C3 /* PanelTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607DB28A961D1002327C3 /* PanelTransition.swift */; };
+		A0C607DE28A961E7002327C3 /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607DD28A961E7002327C3 /* PresentAnimation.swift */; };
+		A0C607E028A9632E002327C3 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607DF28A9632E002327C3 /* PresentationController.swift */; };
+		A0C607E228A96343002327C3 /* TransitionDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607E128A96343002327C3 /* TransitionDriver.swift */; };
+		A0C607E428A96356002327C3 /* TTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607E328A96356002327C3 /* TTransition.swift */; };
+		A0C607E728A9638C002327C3 /* UIPanGestureRecognizer-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607E628A9638C002327C3 /* UIPanGestureRecognizer-Extension.swift */; };
+		A0C607E928A963B9002327C3 /* CGPoint-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607E828A963B9002327C3 /* CGPoint-Extension.swift */; };
+		A0C607EB28A963EB002327C3 /* CGFloat-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607EA28A963EB002327C3 /* CGFloat-Extension.swift */; };
+		A0C607F028A96507002327C3 /* AlertPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607EE28A96507002327C3 /* AlertPopup.swift */; };
+		A0C607F128A96507002327C3 /* AlertPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C607EF28A96507002327C3 /* AlertPopup.xib */; };
+		A0C607F428A96518002327C3 /* ToastPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607F228A96518002327C3 /* ToastPopup.swift */; };
+		A0C607F528A96518002327C3 /* ToastPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C607F328A96518002327C3 /* ToastPopup.xib */; };
+		A0C607F928A9653A002327C3 /* NavigationDrawerPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607F728A9653A002327C3 /* NavigationDrawerPopup.swift */; };
+		A0C607FA28A9653A002327C3 /* NavigationDrawerPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C607F828A9653A002327C3 /* NavigationDrawerPopup.xib */; };
+		A0C607FD28A96579002327C3 /* TAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607FC28A96579002327C3 /* TAction.swift */; };
+		A0C6080028A965D1002327C3 /* AlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607FF28A965D1002327C3 /* AlertData.swift */; };
+		A0C6080228A9663A002327C3 /* NavigationDrawerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6080128A9663A002327C3 /* NavigationDrawerPresenter.swift */; };
+		A0C6080428A96667002327C3 /* NavigationDrawerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6080328A96667002327C3 /* NavigationDrawerInteractor.swift */; };
+		A0C6080728A969BC002327C3 /* ScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6080628A969BC002327C3 /* ScheduledTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,6 +228,29 @@
 		A0466466289D5F6F0011035E /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
 		A0466469289D5FD50011035E /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		A046646B289D5FF00011035E /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		A0C607D228A960C0002327C3 /* DialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogBuilder.swift; sourceTree = "<group>"; };
+		A0C607D528A9611F002327C3 /* DialogRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRootVC.swift; sourceTree = "<group>"; };
+		A0C607D728A96162002327C3 /* DimmPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmPresentationController.swift; sourceTree = "<group>"; };
+		A0C607D928A96179002327C3 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
+		A0C607DB28A961D1002327C3 /* PanelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTransition.swift; sourceTree = "<group>"; };
+		A0C607DD28A961E7002327C3 /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
+		A0C607DF28A9632E002327C3 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		A0C607E128A96343002327C3 /* TransitionDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDriver.swift; sourceTree = "<group>"; };
+		A0C607E328A96356002327C3 /* TTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTransition.swift; sourceTree = "<group>"; };
+		A0C607E628A9638C002327C3 /* UIPanGestureRecognizer-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPanGestureRecognizer-Extension.swift"; sourceTree = "<group>"; };
+		A0C607E828A963B9002327C3 /* CGPoint-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint-Extension.swift"; sourceTree = "<group>"; };
+		A0C607EA28A963EB002327C3 /* CGFloat-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat-Extension.swift"; sourceTree = "<group>"; };
+		A0C607EE28A96507002327C3 /* AlertPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPopup.swift; sourceTree = "<group>"; };
+		A0C607EF28A96507002327C3 /* AlertPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertPopup.xib; sourceTree = "<group>"; };
+		A0C607F228A96518002327C3 /* ToastPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPopup.swift; sourceTree = "<group>"; };
+		A0C607F328A96518002327C3 /* ToastPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastPopup.xib; sourceTree = "<group>"; };
+		A0C607F728A9653A002327C3 /* NavigationDrawerPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerPopup.swift; sourceTree = "<group>"; };
+		A0C607F828A9653A002327C3 /* NavigationDrawerPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationDrawerPopup.xib; sourceTree = "<group>"; };
+		A0C607FC28A96579002327C3 /* TAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAction.swift; sourceTree = "<group>"; };
+		A0C607FF28A965D1002327C3 /* AlertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertData.swift; sourceTree = "<group>"; };
+		A0C6080128A9663A002327C3 /* NavigationDrawerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerPresenter.swift; sourceTree = "<group>"; };
+		A0C6080328A96667002327C3 /* NavigationDrawerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerInteractor.swift; sourceTree = "<group>"; };
+		A0C6080628A969BC002327C3 /* ScheduledTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,9 +332,10 @@
 		63998CD32896B12E00266599 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				63998CBF289597A000266599 /* AppDelegate.swift */,
+				A0C607D128A960AE002327C3 /* Builder */,
 				A01702B22896C27700E81C73 /* BusinessLogic */,
 				A01703522896D6B100E81C73 /* Coordinator */,
-				63998CBF289597A000266599 /* AppDelegate.swift */,
 				A01702F52896CDBB00E81C73 /* Data */,
 				A01702F22896CD7500E81C73 /* Entity */,
 				63998CD72896B32800266599 /* Flows */,
@@ -320,10 +367,13 @@
 		63998CD72896B32800266599 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				A0C607ED28A964F9002327C3 /* AlertPopup */,
 				A01703592896D7B700E81C73 /* LaunchScreen */,
 				A017035E2896D7DC00E81C73 /* LoginScreen */,
+				A0C607F628A96525002327C3 /* NavigationDrawerPopup */,
 				A0466464289D5F580011035E /* MainScreen */,
 				636F884D289FE14B00179125 /* SignUpScreen */,
+				A0C607EC28A964EE002327C3 /* ToastPopup */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -346,6 +396,8 @@
 				A01703492896D54100E81C73 /* Helper */,
 				A01702B62896C59400E81C73 /* Library */,
 				A01702E92896C9D200E81C73 /* Theme */,
+				A0C6080528A969AE002327C3 /* Util */,
+				A0C607D428A9610F002327C3 /* ViewTransition */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -391,6 +443,8 @@
 			isa = PBXGroup;
 			children = (
 				A01702BD2896C67A00E81C73 /* CALayer-Extension.swift */,
+				A0C607E828A963B9002327C3 /* CGPoint-Extension.swift */,
+				A0C607EA28A963EB002327C3 /* CGFloat-Extension.swift */,
 				A01702BF2896C6C500E81C73 /* DataRequest-Extension.swift */,
 				A01702C12896C6EC00E81C73 /* Date-Extension.swift */,
 				A01702C32896C71800E81C73 /* Double-Extension.swift */,
@@ -404,6 +458,7 @@
 				A01702D32896C82F00E81C73 /* UICollectionViewCell-Extension.swift */,
 				A01702D52896C84700E81C73 /* UIColor-Extension.swift */,
 				A01702D72896C86500E81C73 /* UIImageView-Extension.swift */,
+				A0C607E628A9638C002327C3 /* UIPanGestureRecognizer-Extension.swift */,
 				A01702D92896C87B00E81C73 /* UITableViewCell-Extension.swift */,
 				A01702DB2896C89300E81C73 /* UITextField-Extension.swift */,
 				A01702DD2896C8A400E81C73 /* UIView-Extension.swift */,
@@ -433,7 +488,8 @@
 		A01702F22896CD7500E81C73 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				A01702F32896CD8500E81C73 /* TypeAlias.swift */,
+				A0C607FE28A965BF002327C3 /* Components */,
+				A0C607FB28A9656D002327C3 /* Enum */,
 				A01702FE2896CEBC00E81C73 /* AuthCredentials.swift */,
 				636F8858289FF18800179125 /* SignUpCredentials.swift */,
 				A01703222896D1DA00E81C73 /* Device.swift */,
@@ -619,6 +675,83 @@
 			path = MainScreen;
 			sourceTree = "<group>";
 		};
+		A0C607D128A960AE002327C3 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				A0C607D228A960C0002327C3 /* DialogBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		A0C607D428A9610F002327C3 /* ViewTransition */ = {
+			isa = PBXGroup;
+			children = (
+				A0C607D528A9611F002327C3 /* DialogRootVC.swift */,
+				A0C607D728A96162002327C3 /* DimmPresentationController.swift */,
+				A0C607D928A96179002327C3 /* DismissAnimation.swift */,
+				A0C607DB28A961D1002327C3 /* PanelTransition.swift */,
+				A0C607DD28A961E7002327C3 /* PresentAnimation.swift */,
+				A0C607DF28A9632E002327C3 /* PresentationController.swift */,
+				A0C607E128A96343002327C3 /* TransitionDriver.swift */,
+				A0C607E328A96356002327C3 /* TTransition.swift */,
+			);
+			path = ViewTransition;
+			sourceTree = "<group>";
+		};
+		A0C607EC28A964EE002327C3 /* ToastPopup */ = {
+			isa = PBXGroup;
+			children = (
+				A0C607F228A96518002327C3 /* ToastPopup.swift */,
+				A0C607F328A96518002327C3 /* ToastPopup.xib */,
+			);
+			path = ToastPopup;
+			sourceTree = "<group>";
+		};
+		A0C607ED28A964F9002327C3 /* AlertPopup */ = {
+			isa = PBXGroup;
+			children = (
+				A0C607EE28A96507002327C3 /* AlertPopup.swift */,
+				A0C607EF28A96507002327C3 /* AlertPopup.xib */,
+			);
+			path = AlertPopup;
+			sourceTree = "<group>";
+		};
+		A0C607F628A96525002327C3 /* NavigationDrawerPopup */ = {
+			isa = PBXGroup;
+			children = (
+				A0C607F728A9653A002327C3 /* NavigationDrawerPopup.swift */,
+				A0C607F828A9653A002327C3 /* NavigationDrawerPopup.xib */,
+				A0C6080128A9663A002327C3 /* NavigationDrawerPresenter.swift */,
+				A0C6080328A96667002327C3 /* NavigationDrawerInteractor.swift */,
+			);
+			path = NavigationDrawerPopup;
+			sourceTree = "<group>";
+		};
+		A0C607FB28A9656D002327C3 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				A0C607FC28A96579002327C3 /* TAction.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		A0C607FE28A965BF002327C3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A01702F32896CD8500E81C73 /* TypeAlias.swift */,
+				A0C607FF28A965D1002327C3 /* AlertData.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A0C6080528A969AE002327C3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A0C6080628A969BC002327C3 /* ScheduledTimer.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -685,12 +818,15 @@
 			files = (
 				A0466468289D5F6F0011035E /* MainVC.xib in Resources */,
 				A01703622896D7EF00E81C73 /* LoginVC.xib in Resources */,
+				A0C607F528A96518002327C3 /* ToastPopup.xib in Resources */,
 				A00EE21B28A928FB0018F298 /* SignUpVC.xib in Resources */,
 				A017035D2896D7CE00E81C73 /* LaunchVC.xib in Resources */,
 				A01703682896DA9600E81C73 /* Main.storyboard in Resources */,
 				63998CCC289597A200266599 /* LaunchScreen.storyboard in Resources */,
 				63998CC9289597A200266599 /* Assets.xcassets in Resources */,
+				A0C607F128A96507002327C3 /* AlertPopup.xib in Resources */,
 				A017036D2896DD6300E81C73 /* SourceSansPro-Regular.ttf in Resources */,
+				A0C607FA28A9653A002327C3 /* NavigationDrawerPopup.xib in Resources */,
 				A017036E2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf in Resources */,
 				A017036F2896DD6300E81C73 /* SourceSansPro-Light.ttf in Resources */,
 			);
@@ -705,10 +841,12 @@
 			files = (
 				A01702D82896C86500E81C73 /* UIImageView-Extension.swift in Sources */,
 				A017031F2896D1A000E81C73 /* AuthRepository.swift in Sources */,
+				A0C607DE28A961E7002327C3 /* PresentAnimation.swift in Sources */,
 				636F8851289FE79F00179125 /* SignUpInteractor.swift in Sources */,
 				A01703582896D78D00E81C73 /* LoginCoordinator.swift in Sources */,
 				A017031C2896D16700E81C73 /* DeviceService.swift in Sources */,
 				A01703132896D09A00E81C73 /* Stopwatch.swift in Sources */,
+				A0C607D828A96162002327C3 /* DimmPresentationController.swift in Sources */,
 				A01703442896D47400E81C73 /* ErrorParser.swift in Sources */,
 				636F8857289FEE7300179125 /* AuthSignUpRequest.swift in Sources */,
 				A01702C22896C6EC00E81C73 /* Date-Extension.swift in Sources */,
@@ -717,13 +855,16 @@
 				A01702F82896CDE900E81C73 /* AuthProvider.swift in Sources */,
 				A01703292896D26B00E81C73 /* ProfileProvider.swift in Sources */,
 				A01703642896D94F00E81C73 /* LoginPresenter.swift in Sources */,
+				A0C6080028A965D1002327C3 /* AlertData.swift in Sources */,
 				A017030D2896CFEE00E81C73 /* AuthSignOutResponse.swift in Sources */,
 				A0466463289D5F030011035E /* MainCoordinator.swift in Sources */,
 				636F885B289FF4D200179125 /* AuthSignUpResponse.swift in Sources */,
 				A01703352896D38800E81C73 /* RequestFactory.swift in Sources */,
+				A0C607D628A9611F002327C3 /* DialogRootVC.swift in Sources */,
 				A01702DE2896C8A400E81C73 /* UIView-Extension.swift in Sources */,
 				A01702B52896C29400E81C73 /* Factory.swift in Sources */,
 				A01703562896D77500E81C73 /* LaunchCoordinator.swift in Sources */,
+				A0C607E228A96343002327C3 /* TransitionDriver.swift in Sources */,
 				A01703422896D45400E81C73 /* CustomDecodableSerializer.swift in Sources */,
 				A046646C289D5FF00011035E /* MainPresenter.swift in Sources */,
 				A017033B2896D3E700E81C73 /* ProfileRequestFactory.swift in Sources */,
@@ -732,17 +873,21 @@
 				A01702E82896C98A00E81C73 /* KeychainItemAccessibility.swift in Sources */,
 				A01703512896D65E00E81C73 /* ApiError.swift in Sources */,
 				A01702CC2896C7D800E81C73 /* UrlComponents-Extension.swift in Sources */,
+				A0C607DC28A961D1002327C3 /* PanelTransition.swift in Sources */,
 				A017030B2896CFC400E81C73 /* AuthSignOutRequest.swift in Sources */,
 				A01702E02896C8C100E81C73 /* UIViewController-Extension.swift in Sources */,
 				A01702EF2896CBF300E81C73 /* Assets.swift in Sources */,
+				A0C607F028A96507002327C3 /* AlertPopup.swift in Sources */,
 				A017032F2896D2FA00E81C73 /* ProfileGetRequest.swift in Sources */,
 				A01703162896D0F800E81C73 /* Observable.swift in Sources */,
+				A0C607FD28A96579002327C3 /* TAction.swift in Sources */,
 				A01702FD2896CE9600E81C73 /* AuthStatusProvider.swift in Sources */,
 				A01703232896D1DA00E81C73 /* Device.swift in Sources */,
 				A017033E2896D43300E81C73 /* AbstractRequestFactory.swift in Sources */,
 				A01703402896D44700E81C73 /* AbstractErrorParser.swift in Sources */,
 				A017032B2896D29000E81C73 /* ProfileRepository.swift in Sources */,
 				A01703332896D34B00E81C73 /* Profile.swift in Sources */,
+				A0C607F428A96518002327C3 /* ToastPopup.swift in Sources */,
 				A017035C2896D7CE00E81C73 /* LaunchVC.swift in Sources */,
 				A01702D02896C80300E81C73 /* UIApplication-Extension.swift in Sources */,
 				A01702D22896C81A00E81C73 /* UIBarButtonItem-Extension.swift in Sources */,
@@ -767,14 +912,20 @@
 				A01702C62896C75B00E81C73 /* Int-Extension.swift in Sources */,
 				63998CC0289597A000266599 /* AppDelegate.swift in Sources */,
 				A01702BE2896C67A00E81C73 /* CALayer-Extension.swift in Sources */,
+				A0C607E928A963B9002327C3 /* CGPoint-Extension.swift in Sources */,
+				A0C607E028A9632E002327C3 /* PresentationController.swift in Sources */,
 				A017032D2896D2B900E81C73 /* ProfileService.swift in Sources */,
 				A01703032896CEF300E81C73 /* AuthSignInResponse.swift in Sources */,
+				A0C607D328A960C0002327C3 /* DialogBuilder.swift in Sources */,
 				A046646A289D5FD50011035E /* MainInteractor.swift in Sources */,
 				A01702C42896C71800E81C73 /* Double-Extension.swift in Sources */,
+				A0C607DA28A9617A002327C3 /* DismissAnimation.swift in Sources */,
 				A017034F2896D5E500E81C73 /* ApiResponseError.swift in Sources */,
 				A01702C02896C6C500E81C73 /* DataRequest-Extension.swift in Sources */,
+				A0C607E428A96356002327C3 /* TTransition.swift in Sources */,
 				A01702D62896C84700E81C73 /* UIColor-Extension.swift in Sources */,
 				A01702D42896C82F00E81C73 /* UICollectionViewCell-Extension.swift in Sources */,
+				A0C6080428A96667002327C3 /* NavigationDrawerInteractor.swift in Sources */,
 				A01702FB2896CE6E00E81C73 /* AuthService.swift in Sources */,
 				A01703662896D95A00E81C73 /* LoginInteractor.swift in Sources */,
 				A01702CA2896C7BE00E81C73 /* URL-Extension.swift in Sources */,
@@ -785,10 +936,15 @@
 				A01703482896D4A500E81C73 /* Config.swift in Sources */,
 				A017034B2896D54C00E81C73 /* ActivityHelper.swift in Sources */,
 				A01702E62896C96100E81C73 /* KeychainWrapper.swift in Sources */,
+				A0C6080728A969BC002327C3 /* ScheduledTimer.swift in Sources */,
 				A01703252896D1FC00E81C73 /* DeviceSaveRequest.swift in Sources */,
+				A0C607F928A9653A002327C3 /* NavigationDrawerPopup.swift in Sources */,
 				636F8853289FE80000179125 /* SignUpPresenter.swift in Sources */,
+				A0C607EB28A963EB002327C3 /* CGFloat-Extension.swift in Sources */,
 				636F885D28A154E400179125 /* SignUpProvider.swift in Sources */,
 				A017034D2896D57400E81C73 /* UserDefaultsProvider.swift in Sources */,
+				A0C607E728A9638C002327C3 /* UIPanGestureRecognizer-Extension.swift in Sources */,
+				A0C6080228A9663A002327C3 /* NavigationDrawerPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
