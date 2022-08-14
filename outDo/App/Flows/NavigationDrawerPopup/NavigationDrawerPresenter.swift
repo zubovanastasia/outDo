@@ -9,20 +9,20 @@ import UIKit
 
 protocol NavigationDrawerPresenter: AnyObject {
     
-    var completion: TActionClosure? { get set }
+    var completion: TActionAnyClosure? { get set }
     var isOpened: Bool { get set }
     
     func show()
     func hide()
     
-    func onTapAction(_ action: TAction)
+    func onTapAction(_ action: TAction, _ data: NavigationDrawerCellModel?)
     func setCells(_ cells: [NavigationDrawerCellModel])
     func updateData()
 }
 
 final class NavigationDrawerPresenterImpl: NavigationDrawerPresenter {
     
-    var completion: TActionClosure?
+    var completion: TActionAnyClosure?
     var isOpened: Bool = true {
         didSet {
             view?.animateDrawer(isOpened)
@@ -47,8 +47,8 @@ final class NavigationDrawerPresenterImpl: NavigationDrawerPresenter {
         self.isOpened = false
     }
 
-    func onTapAction(_ action: TAction) {
-        interactor.onTapAction(action)
+    func onTapAction(_ action: TAction, _ data: NavigationDrawerCellModel?) {
+        interactor.onTapAction(action, data)
     }
     
     func setCells(_ cells: [NavigationDrawerCellModel]) {

@@ -33,7 +33,7 @@ class MainCoordinator: BaseCoordinator {
             case .profile:
                 self?.runProfileFlow()
             case .policy:
-                self?.runPolicyFlow()
+                self?.runPolicyFlow(data as? NavigationDrawerCellModel)
             default: return
             }
         }
@@ -62,9 +62,13 @@ class MainCoordinator: BaseCoordinator {
         coordinator.start()
     }
     
-    private func runPolicyFlow() {
-        let data = WebData(action: .policy, url: Config.shared.urlPolicy)
-        let coordinator = coordinatorFactory.makeWebCoordinator(router: router, data: data)
+    private func runPolicyFlow(_ data: NavigationDrawerCellModel?) {
+        guard let data = data else { return }
+        let webData = WebData(
+            action: data.action,
+            title: data.title,
+            url: Config.shared.urlPolicy)
+        let coordinator = coordinatorFactory.makeWebCoordinator(router: router, data: webData)
         coordinator.finishFlow = { [weak self] in
             self?.removeDependency(coordinator)
         }

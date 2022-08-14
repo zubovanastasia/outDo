@@ -128,7 +128,7 @@ extension DialogBuilder {
 // MARK: - Show Dialog
 extension DialogBuilder {
   
-    func showNavigationDrawer(completion: TActionClosure?) {
+    func showNavigationDrawer(completion: TActionAnyClosure?) {
         navigationDrawer?.presenter.completion = completion
         show(navigationDrawer,
              transition: .crossdisolve,

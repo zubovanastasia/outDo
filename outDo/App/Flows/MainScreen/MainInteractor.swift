@@ -15,8 +15,8 @@ final class MainInteractorImpl: MainInteractor {
     weak var presenter: MainPresenter?
     
     func onTapNavbarMenu() {
-        DialogBuilder.shared.showNavigationDrawer { [weak self] action in
-            self?.presenter?.onHandleAction?(action, nil)
+        DialogBuilder.shared.showNavigationDrawer { [weak self] action, data in
+            self?.presenter?.onHandleAction?(action, data)
         }
     }
 }

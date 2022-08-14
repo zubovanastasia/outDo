@@ -13,3 +13,4 @@ typealias DoubleClosure = (Double) -> Void
 typealias StringClosure = (String) -> Void
 
 typealias TActionClosure = (TAction) -> Void
+typealias TActionAnyClosure = (TAction, Any?) -> Void

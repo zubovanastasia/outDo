@@ -28,9 +28,8 @@ class WebCoordinator: BaseCoordinator {
     // MARK: - Current Flow
     private func startWebFlow() {
         // TODO: -
-        let screen = screenFactory.makeWebScreen()
-        //screen.data = data
-        //screen.onBack = {}
+        let screen = screenFactory.makeWebScreen(data: data)
+        screen.presenter.onBack = {}
         router.push(screen)
     }
 }

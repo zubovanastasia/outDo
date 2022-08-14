@@ -234,7 +234,7 @@ protocol ScreenFactory: AnyObject {
     func makeMainScreen() -> MainVC
     func makeProfileScreen() -> ProfileVC
     func makeSignUpScreen() -> SignUpVC
-    func makeWebScreen() -> WebVC
+    func makeWebScreen(data: WebData) -> WebVC
 }
 
 class ScreenFactoryImpl: ScreenFactory {
@@ -338,8 +338,15 @@ class ScreenFactoryImpl: ScreenFactory {
         return viewController
     }
     
-    func makeWebScreen() -> WebVC {
-        return WebVC()
+    func makeWebScreen(data: WebData) -> WebVC {
+        let interactor = WebInteractorImpl(data: data)
+        let presenter = WebPresenterImpl(interactor: interactor)
+        let viewController = WebVC(presenter: presenter)
+        
+        interactor.presenter = presenter
+        presenter.view = viewController
+        
+        return viewController
     }
 }
 

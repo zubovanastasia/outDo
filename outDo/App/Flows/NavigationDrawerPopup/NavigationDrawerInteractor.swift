@@ -11,7 +11,7 @@ protocol NavigationDrawerInteractor {
     
     func getEmail() -> String
     func getName() -> String
-    func onTapAction(_ action: TAction)
+    func onTapAction(_ action: TAction, _ data: NavigationDrawerCellModel?)
     func updateCells()
 }
 
@@ -32,8 +32,8 @@ final class NavigationDrawerInteractorImpl: NavigationDrawerInteractor {
         return profileProvider.profile.name
     }
     
-    func onTapAction(_ action: TAction) {
-        presenter?.completion?(action)
+    func onTapAction(_ action: TAction, _ data: NavigationDrawerCellModel?) {
+        presenter?.completion?(action, data)
         presenter?.isOpened = false
     }
     

@@ -115,7 +115,7 @@ final class NavigationDrawerPopup: UIViewController, NavigationDrawerView {
     
     // MARK: - Taps
     @objc func onTapHeader() {
-        presenter.onTapAction(.profile)
+        presenter.onTapAction(.profile, nil)
     }
     
     @objc private func onTapView() {
@@ -159,6 +159,7 @@ extension NavigationDrawerPopup: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presenter.onTapAction(cells[indexPath.row].action)
+        let data = cells[indexPath.row]
+        presenter.onTapAction(data.action, data)
     }
 }
