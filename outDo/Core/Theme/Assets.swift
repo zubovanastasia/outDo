@@ -20,6 +20,10 @@ class Assets {
     
     let buttonFlowPlus = "button_flow_plus"
     
+    let drawerHeaderImg = "drawer_header_img"
+    let drawerApp = "drawerApp"
+    let drawerPolicy = "drawerPolicy"
+    
     private func getImageWithInsets(_ name: String, _ insets: UIEdgeInsets) -> UIImage {
         var image = UIImage(named: name)
         image = image?.resizableImage(withCapInsets: insets, resizingMode: .stretch)

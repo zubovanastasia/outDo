@@ -57,7 +57,10 @@ final class Styles {
         
         tf[label.r16ffffffC] = MFont(fs.fs16, fontR, color.cffffff, NSTextAlignment.center)
         tf[label.r18main] = MFont(fs.fs18, fontR, color.c000000, NSTextAlignment.left)
+        tf[label.r20main] = MFont(fs.fs20, fontR, color.c000000, NSTextAlignment.left)
         tf[label.b20mainC] = MFont(fs.fs20, fontB, color.c000000, NSTextAlignment.center)
+        tf[label.b229796a9] = MFont(fs.fs22, fontB, color.c9796a9, NSTextAlignment.center)
+        tf[label.b22main] = MFont(fs.fs22, fontB, color.c000000, NSTextAlignment.left)
         
         tf[tfs.odPh] = MFont(fs.fs24, fontR, color.cffffff, NSTextAlignment.left, false, 0.4)
         tf[tfs.odPr] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left)
@@ -178,6 +181,7 @@ final class Colors {
     let c514f65 = UIColor(rgb: 0x514f65)
     let c646464 = UIColor(rgb: 0x646464)
     let c969696 = UIColor(rgb: 0x969696)
+    let c9796a9 = UIColor(rgb: 0x9796a9)
     let cffffff = UIColor(rgb: 0xffffff)
 
     let buttonPrUp = UIColor(rgb: 0x3d3c49)
@@ -390,7 +394,10 @@ final class LabelStyles {
     
     let r16ffffffC = "r16ffffffC"
     let r18main = "r18main"
+    let r20main = "r20main"
     let b20mainC = "b20mainC"
+    let b229796a9 = "b229796a9"
+    let b22main = "b22main"
     
     func applyStyle(_ style: String, _ label: UILabel) {
         let fontStyle = Styles.shared.getFontStyle(style)

@@ -1,13 +1,12 @@
 //
-//  TAction.swift
+//  WebData.swift
 //  outDo
 //
 //  Created by Антон Бондаренко on 14.08.2022.
 //
 
-enum TAction {
+struct WebData {
     
-    case none
-    
-    case app, policy, profile
+    var action: TAction
+    var url: String
 }

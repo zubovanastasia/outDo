@@ -127,6 +127,23 @@
 		A0C6080228A9663A002327C3 /* NavigationDrawerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6080128A9663A002327C3 /* NavigationDrawerPresenter.swift */; };
 		A0C6080428A96667002327C3 /* NavigationDrawerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6080328A96667002327C3 /* NavigationDrawerInteractor.swift */; };
 		A0C6080728A969BC002327C3 /* ScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6080628A969BC002327C3 /* ScheduledTimer.swift */; };
+		A0C6080C28A97386002327C3 /* NavigationDrawerCellModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6080B28A97386002327C3 /* NavigationDrawerCellModelBuilder.swift */; };
+		A0C6080E28A97392002327C3 /* NavigationDrawerCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6080D28A97392002327C3 /* NavigationDrawerCellModel.swift */; };
+		A0C6081128A973B1002327C3 /* NavigationDrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6080F28A973B1002327C3 /* NavigationDrawerCell.swift */; };
+		A0C6081228A973B1002327C3 /* NavigationDrawerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C6081028A973B1002327C3 /* NavigationDrawerCell.xib */; };
+		A0C6081428A973BB002327C3 /* NavigationDrawerCellUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6081328A973BB002327C3 /* NavigationDrawerCellUpdate.swift */; };
+		A0C6081628A97B43002327C3 /* WebData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6081528A97B43002327C3 /* WebData.swift */; };
+		A0C6081828A97CE0002327C3 /* AboutAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6081728A97CE0002327C3 /* AboutAppCoordinator.swift */; };
+		A0C6081C28A97D09002327C3 /* AboutAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6081A28A97D09002327C3 /* AboutAppVC.swift */; };
+		A0C6081D28A97D09002327C3 /* AboutAppVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C6081B28A97D09002327C3 /* AboutAppVC.xib */; };
+		A0C6082128A97D24002327C3 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6081F28A97D24002327C3 /* ProfileVC.swift */; };
+		A0C6082228A97D24002327C3 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C6082028A97D24002327C3 /* ProfileVC.xib */; };
+		A0C6082628A97D38002327C3 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6082428A97D38002327C3 /* WebVC.swift */; };
+		A0C6082728A97D38002327C3 /* WebVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C6082528A97D38002327C3 /* WebVC.xib */; };
+		A0C6082928A97D65002327C3 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6082828A97D65002327C3 /* ProfileCoordinator.swift */; };
+		A0C6082B28A97DD4002327C3 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6082A28A97DD4002327C3 /* ProfilePresenter.swift */; };
+		A0C6082D28A97DDA002327C3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6082C28A97DDA002327C3 /* ProfileInteractor.swift */; };
+		A0C6082F28A97E36002327C3 /* WebCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6082E28A97E36002327C3 /* WebCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -251,6 +268,23 @@
 		A0C6080128A9663A002327C3 /* NavigationDrawerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerPresenter.swift; sourceTree = "<group>"; };
 		A0C6080328A96667002327C3 /* NavigationDrawerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerInteractor.swift; sourceTree = "<group>"; };
 		A0C6080628A969BC002327C3 /* ScheduledTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledTimer.swift; sourceTree = "<group>"; };
+		A0C6080B28A97386002327C3 /* NavigationDrawerCellModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerCellModelBuilder.swift; sourceTree = "<group>"; };
+		A0C6080D28A97392002327C3 /* NavigationDrawerCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerCellModel.swift; sourceTree = "<group>"; };
+		A0C6080F28A973B1002327C3 /* NavigationDrawerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerCell.swift; sourceTree = "<group>"; };
+		A0C6081028A973B1002327C3 /* NavigationDrawerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationDrawerCell.xib; sourceTree = "<group>"; };
+		A0C6081328A973BB002327C3 /* NavigationDrawerCellUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerCellUpdate.swift; sourceTree = "<group>"; };
+		A0C6081528A97B43002327C3 /* WebData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebData.swift; sourceTree = "<group>"; };
+		A0C6081728A97CE0002327C3 /* AboutAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppCoordinator.swift; sourceTree = "<group>"; };
+		A0C6081A28A97D09002327C3 /* AboutAppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppVC.swift; sourceTree = "<group>"; };
+		A0C6081B28A97D09002327C3 /* AboutAppVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutAppVC.xib; sourceTree = "<group>"; };
+		A0C6081F28A97D24002327C3 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		A0C6082028A97D24002327C3 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		A0C6082428A97D38002327C3 /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
+		A0C6082528A97D38002327C3 /* WebVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebVC.xib; sourceTree = "<group>"; };
+		A0C6082828A97D65002327C3 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		A0C6082A28A97DD4002327C3 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		A0C6082C28A97DDA002327C3 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		A0C6082E28A97E36002327C3 /* WebCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,13 +401,16 @@
 		63998CD72896B32800266599 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				A0C6081928A97CF7002327C3 /* AboutAppScreen */,
 				A0C607ED28A964F9002327C3 /* AlertPopup */,
 				A01703592896D7B700E81C73 /* LaunchScreen */,
 				A017035E2896D7DC00E81C73 /* LoginScreen */,
 				A0C607F628A96525002327C3 /* NavigationDrawerPopup */,
 				A0466464289D5F580011035E /* MainScreen */,
+				A0C6081E28A97D11002327C3 /* ProfileScreen */,
 				636F884D289FE14B00179125 /* SignUpScreen */,
 				A0C607EC28A964EE002327C3 /* ToastPopup */,
+				A0C6082328A97D28002327C3 /* WebScreen */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -626,10 +663,13 @@
 			isa = PBXGroup;
 			children = (
 				A01703532896D6D200E81C73 /* AppCoordinator.swift */,
+				A0C6081728A97CE0002327C3 /* AboutAppCoordinator.swift */,
 				A01703552896D77500E81C73 /* LaunchCoordinator.swift */,
 				A01703572896D78D00E81C73 /* LoginCoordinator.swift */,
 				A0466462289D5F030011035E /* MainCoordinator.swift */,
+				A0C6082828A97D65002327C3 /* ProfileCoordinator.swift */,
 				A00EE21628A922870018F298 /* SignUpCoordinator.swift */,
+				A0C6082E28A97E36002327C3 /* WebCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -719,6 +759,9 @@
 		A0C607F628A96525002327C3 /* NavigationDrawerPopup */ = {
 			isa = PBXGroup;
 			children = (
+				A0C6080828A971BF002327C3 /* Cell */,
+				A0C6080928A971C3002327C3 /* Model */,
+				A0C6080A28A971C8002327C3 /* Protocol */,
 				A0C607F728A9653A002327C3 /* NavigationDrawerPopup.swift */,
 				A0C607F828A9653A002327C3 /* NavigationDrawerPopup.xib */,
 				A0C6080128A9663A002327C3 /* NavigationDrawerPresenter.swift */,
@@ -740,6 +783,7 @@
 			children = (
 				A01702F32896CD8500E81C73 /* TypeAlias.swift */,
 				A0C607FF28A965D1002327C3 /* AlertData.swift */,
+				A0C6081528A97B43002327C3 /* WebData.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -750,6 +794,61 @@
 				A0C6080628A969BC002327C3 /* ScheduledTimer.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		A0C6080828A971BF002327C3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0C6080F28A973B1002327C3 /* NavigationDrawerCell.swift */,
+				A0C6081028A973B1002327C3 /* NavigationDrawerCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A0C6080928A971C3002327C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0C6080B28A97386002327C3 /* NavigationDrawerCellModelBuilder.swift */,
+				A0C6080D28A97392002327C3 /* NavigationDrawerCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A0C6080A28A971C8002327C3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A0C6081328A973BB002327C3 /* NavigationDrawerCellUpdate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A0C6081928A97CF7002327C3 /* AboutAppScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A0C6081A28A97D09002327C3 /* AboutAppVC.swift */,
+				A0C6081B28A97D09002327C3 /* AboutAppVC.xib */,
+			);
+			path = AboutAppScreen;
+			sourceTree = "<group>";
+		};
+		A0C6081E28A97D11002327C3 /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A0C6081F28A97D24002327C3 /* ProfileVC.swift */,
+				A0C6082028A97D24002327C3 /* ProfileVC.xib */,
+				A0C6082C28A97DDA002327C3 /* ProfileInteractor.swift */,
+				A0C6082A28A97DD4002327C3 /* ProfilePresenter.swift */,
+			);
+			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
+		A0C6082328A97D28002327C3 /* WebScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A0C6082428A97D38002327C3 /* WebVC.swift */,
+				A0C6082528A97D38002327C3 /* WebVC.xib */,
+			);
+			path = WebScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -817,6 +916,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0466468289D5F6F0011035E /* MainVC.xib in Resources */,
+				A0C6082728A97D38002327C3 /* WebVC.xib in Resources */,
 				A01703622896D7EF00E81C73 /* LoginVC.xib in Resources */,
 				A0C607F528A96518002327C3 /* ToastPopup.xib in Resources */,
 				A00EE21B28A928FB0018F298 /* SignUpVC.xib in Resources */,
@@ -824,6 +924,9 @@
 				A01703682896DA9600E81C73 /* Main.storyboard in Resources */,
 				63998CCC289597A200266599 /* LaunchScreen.storyboard in Resources */,
 				63998CC9289597A200266599 /* Assets.xcassets in Resources */,
+				A0C6082228A97D24002327C3 /* ProfileVC.xib in Resources */,
+				A0C6081228A973B1002327C3 /* NavigationDrawerCell.xib in Resources */,
+				A0C6081D28A97D09002327C3 /* AboutAppVC.xib in Resources */,
 				A0C607F128A96507002327C3 /* AlertPopup.xib in Resources */,
 				A017036D2896DD6300E81C73 /* SourceSansPro-Regular.ttf in Resources */,
 				A0C607FA28A9653A002327C3 /* NavigationDrawerPopup.xib in Resources */,
@@ -847,6 +950,7 @@
 				A017031C2896D16700E81C73 /* DeviceService.swift in Sources */,
 				A01703132896D09A00E81C73 /* Stopwatch.swift in Sources */,
 				A0C607D828A96162002327C3 /* DimmPresentationController.swift in Sources */,
+				A0C6082928A97D65002327C3 /* ProfileCoordinator.swift in Sources */,
 				A01703442896D47400E81C73 /* ErrorParser.swift in Sources */,
 				636F8857289FEE7300179125 /* AuthSignUpRequest.swift in Sources */,
 				A01702C22896C6EC00E81C73 /* Date-Extension.swift in Sources */,
@@ -872,6 +976,7 @@
 				A01703092896CF6C00E81C73 /* AuthSignInRequest.swift in Sources */,
 				A01702E82896C98A00E81C73 /* KeychainItemAccessibility.swift in Sources */,
 				A01703512896D65E00E81C73 /* ApiError.swift in Sources */,
+				A0C6081C28A97D09002327C3 /* AboutAppVC.swift in Sources */,
 				A01702CC2896C7D800E81C73 /* UrlComponents-Extension.swift in Sources */,
 				A0C607DC28A961D1002327C3 /* PanelTransition.swift in Sources */,
 				A017030B2896CFC400E81C73 /* AuthSignOutRequest.swift in Sources */,
@@ -891,25 +996,32 @@
 				A017035C2896D7CE00E81C73 /* LaunchVC.swift in Sources */,
 				A01702D02896C80300E81C73 /* UIApplication-Extension.swift in Sources */,
 				A01702D22896C81A00E81C73 /* UIBarButtonItem-Extension.swift in Sources */,
+				A0C6081828A97CE0002327C3 /* AboutAppCoordinator.swift in Sources */,
 				A01703212896D1B300E81C73 /* DeviceRepository.swift in Sources */,
 				A01702DC2896C89300E81C73 /* UITextField-Extension.swift in Sources */,
 				A01703542896D6D200E81C73 /* AppCoordinator.swift in Sources */,
 				A01703392896D3CE00E81C73 /* DeviceRequestFactory.swift in Sources */,
 				A01702DA2896C87B00E81C73 /* UITableViewCell-Extension.swift in Sources */,
 				A01702FF2896CEBC00E81C73 /* AuthCredentials.swift in Sources */,
+				A0C6082128A97D24002327C3 /* ProfileVC.swift in Sources */,
 				A01702EB2896C9E000E81C73 /* Styles.swift in Sources */,
 				A01702B92896C5B400E81C73 /* BaseCoordinator.swift in Sources */,
+				A0C6081428A973BB002327C3 /* NavigationDrawerCellUpdate.swift in Sources */,
 				A01703182896D10400E81C73 /* ObservableOptions.swift in Sources */,
 				A017030F2896D00F00E81C73 /* ApiMethod.swift in Sources */,
 				A01702C82896C77800E81C73 /* String-Extension.swift in Sources */,
+				A0C6082D28A97DDA002327C3 /* ProfileInteractor.swift in Sources */,
+				A0C6082F28A97E36002327C3 /* WebCoordinator.swift in Sources */,
 				A01703462896D48400E81C73 /* RequestRouter.swift in Sources */,
 				A01703372896D3AF00E81C73 /* AuthRequestFactory.swift in Sources */,
+				A0C6080C28A97386002327C3 /* NavigationDrawerCellModelBuilder.swift in Sources */,
 				A01703612896D7EF00E81C73 /* LoginVC.swift in Sources */,
 				A01703272896D24800E81C73 /* DeviceSaveResponse.swift in Sources */,
 				A01702F12896CCB700E81C73 /* Locales.swift in Sources */,
 				A01702CE2896C7EC00E81C73 /* UIButton-Extension.swift in Sources */,
 				A00EE21728A922870018F298 /* SignUpCoordinator.swift in Sources */,
 				A01702C62896C75B00E81C73 /* Int-Extension.swift in Sources */,
+				A0C6082B28A97DD4002327C3 /* ProfilePresenter.swift in Sources */,
 				63998CC0289597A000266599 /* AppDelegate.swift in Sources */,
 				A01702BE2896C67A00E81C73 /* CALayer-Extension.swift in Sources */,
 				A0C607E928A963B9002327C3 /* CGPoint-Extension.swift in Sources */,
@@ -933,11 +1045,15 @@
 				A0466467289D5F6F0011035E /* MainVC.swift in Sources */,
 				A01703312896D30F00E81C73 /* ProfileGetResponse.swift in Sources */,
 				A00EE21A28A928FB0018F298 /* SignUpVC.swift in Sources */,
+				A0C6081628A97B43002327C3 /* WebData.swift in Sources */,
 				A01703482896D4A500E81C73 /* Config.swift in Sources */,
 				A017034B2896D54C00E81C73 /* ActivityHelper.swift in Sources */,
+				A0C6082628A97D38002327C3 /* WebVC.swift in Sources */,
+				A0C6081128A973B1002327C3 /* NavigationDrawerCell.swift in Sources */,
 				A01702E62896C96100E81C73 /* KeychainWrapper.swift in Sources */,
 				A0C6080728A969BC002327C3 /* ScheduledTimer.swift in Sources */,
 				A01703252896D1FC00E81C73 /* DeviceSaveRequest.swift in Sources */,
+				A0C6080E28A97392002327C3 /* NavigationDrawerCellModel.swift in Sources */,
 				A0C607F928A9653A002327C3 /* NavigationDrawerPopup.swift in Sources */,
 				636F8853289FE80000179125 /* SignUpPresenter.swift in Sources */,
 				A0C607EB28A963EB002327C3 /* CGFloat-Extension.swift in Sources */,

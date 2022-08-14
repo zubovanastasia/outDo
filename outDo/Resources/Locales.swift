@@ -25,6 +25,9 @@ class Locales {
         
         "dialog_button_close": "Закрыть",
         
+        "navigationDrawer_app": "О приложении",
+        "navigationDrawer_policy": "Политика конфиденциальности",
+        
         "toast_signUpWrongConfirm": "Пароли не совпадают",
         "toast_signUpWrongLogin": "Введите корректную почту (логин)",
         "toast_signUpWrongName": "Введите имя",

@@ -76,11 +76,14 @@ final class Factory: FactoryIssue {
 // MARK: - Coordinator
 protocol CoordinatorFactory: AnyObject {
     
+    func makeAboutAppCoordinator(router: Router) -> AboutAppCoordinator
     func makeAppCoordinator(router: Router) -> AppCoordinator
     func makeLaunchCoordinator(router: Router) -> LaunchCoordinator
     func makeLoginCoordinator(router: Router) -> LoginCoordinator
     func makeMainCoordinator(router: Router) -> MainCoordinator
+    func makeProfileCoordinator(router: Router) -> ProfileCoordinator
     func makeSignUpCoordinator(router: Router) -> SignUpCoordinator
+    func makeWebCoordinator(router: Router, data: WebData) -> WebCoordinator
 }
 
 class CoordinatorFactoryImpl: CoordinatorFactory {
@@ -101,6 +104,12 @@ class CoordinatorFactoryImpl: CoordinatorFactory {
     }
     
     // MARK: - Screen
+    func makeAboutAppCoordinator(router: Router) -> AboutAppCoordinator {
+        return AboutAppCoordinator(
+            router: router,
+            screenFactory: screenFactory)
+    }
+    
     func makeLaunchCoordinator(router: Router) -> LaunchCoordinator {
         return LaunchCoordinator(
             router: router,
@@ -121,10 +130,23 @@ class CoordinatorFactoryImpl: CoordinatorFactory {
             coordinatorFactory: self)
     }
     
+    func makeProfileCoordinator(router: Router) -> ProfileCoordinator {
+        return ProfileCoordinator(
+            router: router,
+            screenFactory: screenFactory)
+    }
+    
     func makeSignUpCoordinator(router: Router) -> SignUpCoordinator {
         return SignUpCoordinator(
             router: router,
             screenFactory: screenFactory)
+    }
+    
+    func makeWebCoordinator(router: Router, data: WebData) -> WebCoordinator {
+        return WebCoordinator(
+            router: router,
+            screenFactory: screenFactory,
+            data: data)
     }
 }
 
@@ -206,10 +228,13 @@ protocol ScreenFactory: AnyObject {
     func makeToastPopup(message: String) -> ToastPopup
     
     // MARK: - Screens
+    func makeAboutAppScreen() -> AboutAppVC
     func makeLaunchScreen() -> LaunchVC
     func makeLoginScreen() -> LoginVC
     func makeMainScreen() -> MainVC
+    func makeProfileScreen() -> ProfileVC
     func makeSignUpScreen() -> SignUpVC
+    func makeWebScreen() -> WebVC
 }
 
 class ScreenFactoryImpl: ScreenFactory {
@@ -250,6 +275,18 @@ class ScreenFactoryImpl: ScreenFactory {
     }
     
     // MARK: - Screens
+    func makeAboutAppScreen() -> AboutAppVC {
+//        let interactor = AboutAppInteractorImpl(deviceProvider: providerFactory.deviceProvider)
+//        let presenter = AboutAppPresenterImpl(interactor: interactor)
+//        let viewController = AboutAppVC(presenter: presenter)
+//
+//        interactor.presenter = presenter
+//        presenter.view = viewController
+//
+//        return viewController
+        return AboutAppVC()
+    }
+    
     func makeLaunchScreen() -> LaunchVC {
         return LaunchVC(authStatusProvider: providerFactory.authStatusProvider)
     }
@@ -276,6 +313,20 @@ class ScreenFactoryImpl: ScreenFactory {
         return viewController
     }
     
+    func makeProfileScreen() -> ProfileVC {
+//        let interactor = ProfileInteractorImpl(
+//            authProvider: providerFactory.authProvider,
+//            profileProvider: providerFactory.profileProvider)
+//        let presenter = ProfilePresenterImpl(interactor: interactor)
+//        let viewController = ProfileVC(presenter: presenter)
+//
+//        interactor.presenter = presenter
+//        presenter.view = viewController
+//
+//        return viewController
+        return ProfileVC()
+    }
+    
     func makeSignUpScreen() -> SignUpVC {
         let interactor = SignUpInteractorImpl(signUpProvider: providerFactory.signUpProvider)
         let presenter = SignUpPresenterImpl(interactor: interactor)
@@ -285,6 +336,10 @@ class ScreenFactoryImpl: ScreenFactory {
         presenter.view = viewController
         
         return viewController
+    }
+    
+    func makeWebScreen() -> WebVC {
+        return WebVC()
     }
 }
 

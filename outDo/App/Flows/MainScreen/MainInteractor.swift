@@ -7,13 +7,16 @@
 
 protocol MainInteractor: AnyObject {
     
+    func onTapNavbarMenu()
 }
 
 final class MainInteractorImpl: MainInteractor {
     
     weak var presenter: MainPresenter?
     
-    init() {
-        
+    func onTapNavbarMenu() {
+        DialogBuilder.shared.showNavigationDrawer { [weak self] action in
+            self?.presenter?.onHandleAction?(action, nil)
+        }
     }
 }

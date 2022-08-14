@@ -9,17 +9,25 @@ import UIKit
 
 protocol NavigationDrawerPresenter: AnyObject {
     
-    // MARK: Coordinator
     var completion: TActionClosure? { get set }
+    var isOpened: Bool { get set }
     
-    func hide()
     func show()
+    func hide()
+    
+    func onTapAction(_ action: TAction)
+    func setCells(_ cells: [NavigationDrawerCellModel])
+    func updateData()
 }
 
 final class NavigationDrawerPresenterImpl: NavigationDrawerPresenter {
     
-    // MARK: Coordinator
     var completion: TActionClosure?
+    var isOpened: Bool = true {
+        didSet {
+            view?.animateDrawer(isOpened)
+        }
+    }
     
     private var interactor: NavigationDrawerInteractor
     weak var view: (UIViewController & NavigationDrawerView)?
@@ -28,11 +36,29 @@ final class NavigationDrawerPresenterImpl: NavigationDrawerPresenter {
         self.interactor = interactor
     }
     
-    func hide() {
-        
+    func show() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
+            self?.isOpened = true
+        }
+        updateData()
     }
     
-    func show() {
-        
+    func hide() {
+        self.isOpened = false
+    }
+
+    func onTapAction(_ action: TAction) {
+        interactor.onTapAction(action)
+    }
+    
+    func setCells(_ cells: [NavigationDrawerCellModel]) {
+        view?.setCells(cells)
+    }
+    
+    func updateData() {
+        view?.setTitleAccount(interactor.getName())
+        view?.setTitleName(interactor.getEmail())
+        interactor.updateCells()
     }
 }
+
