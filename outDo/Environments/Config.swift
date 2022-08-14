@@ -22,4 +22,5 @@ class Config {
     let persistentContainerName = "outDo"
     
     let urlApi = "http://srv176287.hoster-test.ru/outdo/api/"
+    let urlPolicy = "http://srv176287.hoster-test.ru/outdo/policy/app_confidence_ru.html"
 }

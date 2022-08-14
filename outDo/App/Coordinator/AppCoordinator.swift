@@ -41,13 +41,13 @@ class AppCoordinator: BaseCoordinator {
         
         if isAuthed {
             profileProvider.profileGet(completion: { [weak self] response in
-                if response == nil {
-                    self?.isAuthed = false
-                    self?.runLoginFlow()
-                }
-                else {
+                if let _ = response?.result?.profile {
                     self?.runMainFlow()
                     self?.deviceProvider.save()
+                }
+                else {
+                    self?.isAuthed = false
+                    self?.runLoginFlow()
                 }
             })
         }

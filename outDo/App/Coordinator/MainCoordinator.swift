@@ -26,9 +26,49 @@ class MainCoordinator: BaseCoordinator {
     // MARK: - Current Flow
     private func startMainFlow() {
         let screen = screenFactory.makeMainScreen()
+        screen.presenter.onHandleAction = { [weak self] action, data in
+            switch action {
+            case .app:
+                self?.runAboutAppFlow()
+            case .profile:
+                self?.runProfileFlow()
+            case .policy:
+                self?.runPolicyFlow()
+            default: return
+            }
+        }
 //        screen.presenter.onSignIn = { [weak self] in
 //            self?.finishFlow?()
 //        }
-        router.setRootModule(screen, hideBar: true)
+        router.setRootModule(screen)
+    }
+    
+    // MARK: - Next Flow
+    private func runAboutAppFlow() {
+        let coordinator = coordinatorFactory.makeAboutAppCoordinator(router: router)
+        coordinator.finishFlow = { [weak self, weak coordinator] in
+            self?.removeDependency(coordinator)
+        }
+        self.addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    private func runProfileFlow() {
+        let coordinator = coordinatorFactory.makeProfileCoordinator(router: router)
+        coordinator.finishFlow = { [weak self, weak coordinator] in
+            self?.removeDependency(coordinator)
+        }
+        self.addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    private func runPolicyFlow() {
+        let data = WebData(action: .policy, url: Config.shared.urlPolicy)
+        let coordinator = coordinatorFactory.makeWebCoordinator(router: router, data: data)
+        coordinator.finishFlow = { [weak self] in
+            self?.removeDependency(coordinator)
+        }
+        self.addDependency(coordinator)
+        coordinator.start()
     }
 }
