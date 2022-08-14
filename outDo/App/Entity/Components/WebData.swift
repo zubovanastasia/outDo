@@ -8,5 +8,6 @@
 struct WebData {
     
     var action: TAction
+    var title: String
     var url: String
 }

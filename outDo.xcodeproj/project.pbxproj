@@ -144,6 +144,8 @@
 		A0C6082B28A97DD4002327C3 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6082A28A97DD4002327C3 /* ProfilePresenter.swift */; };
 		A0C6082D28A97DDA002327C3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6082C28A97DDA002327C3 /* ProfileInteractor.swift */; };
 		A0C6082F28A97E36002327C3 /* WebCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6082E28A97E36002327C3 /* WebCoordinator.swift */; };
+		A0C6083128A986B0002327C3 /* WebPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6083028A986B0002327C3 /* WebPresenter.swift */; };
+		A0C6083328A986BB002327C3 /* WebInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6083228A986BB002327C3 /* WebInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -285,6 +287,8 @@
 		A0C6082A28A97DD4002327C3 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		A0C6082C28A97DDA002327C3 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		A0C6082E28A97E36002327C3 /* WebCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCoordinator.swift; sourceTree = "<group>"; };
+		A0C6083028A986B0002327C3 /* WebPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPresenter.swift; sourceTree = "<group>"; };
+		A0C6083228A986BB002327C3 /* WebInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -847,6 +851,8 @@
 			children = (
 				A0C6082428A97D38002327C3 /* WebVC.swift */,
 				A0C6082528A97D38002327C3 /* WebVC.xib */,
+				A0C6083028A986B0002327C3 /* WebPresenter.swift */,
+				A0C6083228A986BB002327C3 /* WebInteractor.swift */,
 			);
 			path = WebScreen;
 			sourceTree = "<group>";
@@ -945,6 +951,7 @@
 				A01702D82896C86500E81C73 /* UIImageView-Extension.swift in Sources */,
 				A017031F2896D1A000E81C73 /* AuthRepository.swift in Sources */,
 				A0C607DE28A961E7002327C3 /* PresentAnimation.swift in Sources */,
+				A0C6083128A986B0002327C3 /* WebPresenter.swift in Sources */,
 				636F8851289FE79F00179125 /* SignUpInteractor.swift in Sources */,
 				A01703582896D78D00E81C73 /* LoginCoordinator.swift in Sources */,
 				A017031C2896D16700E81C73 /* DeviceService.swift in Sources */,
@@ -1005,6 +1012,7 @@
 				A01702FF2896CEBC00E81C73 /* AuthCredentials.swift in Sources */,
 				A0C6082128A97D24002327C3 /* ProfileVC.swift in Sources */,
 				A01702EB2896C9E000E81C73 /* Styles.swift in Sources */,
+				A0C6083328A986BB002327C3 /* WebInteractor.swift in Sources */,
 				A01702B92896C5B400E81C73 /* BaseCoordinator.swift in Sources */,
 				A0C6081428A973BB002327C3 /* NavigationDrawerCellUpdate.swift in Sources */,
 				A01703182896D10400E81C73 /* ObservableOptions.swift in Sources */,
