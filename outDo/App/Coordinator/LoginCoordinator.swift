@@ -29,7 +29,20 @@ class LoginCoordinator: BaseCoordinator {
         screen.presenter.onSignIn = { [weak self] in
             self?.finishFlow?()
         }
+        screen.presenter.onSignUp = { [weak self] in
+            self?.runSignUpFlow()
+        }
         router.setRootModule(screen, hideBar: true)
+    }
+    
+    // MARK: - Next Flow
+    private func runSignUpFlow() {
+        let coordinator = coordinatorFactory.makeSignUpCoordinator(router: router)
+        coordinator.finishFlow = { [weak self, weak coordinator] in
+            self?.removeDependency(coordinator)
+        }
+        self.addDependency(coordinator)
+        coordinator.start()
     }
 }
 

@@ -9,14 +9,10 @@ import Combine
 
 protocol SignUpProvider {
     
-    var isAuthed: Bool { get }
-    
     func signUp(with credentials: SignUpCredentials) -> AnyPublisher<(Bool, String?), Never>
 }
 
 class SignUpProviderImpl: SignUpProvider {
-    
-    var isAuthed: Bool { return authService.isAuthed }
     
     private let authService: AuthService
     

@@ -12,8 +12,10 @@ protocol LoginPresenter: AnyObject {
     
     // MARK: - Coordinator
     var onSignIn: VoidClosure? { get set }
+    var onSignUp: VoidClosure? { get set }
     
     func onTapSignIn(login: String, password: String)
+    func onTapSignUp()
     func showErrorLogin()
     func showErrorPassword()
     func updateData()
@@ -23,6 +25,7 @@ final class LoginPresenterImpl: LoginPresenter {
     
     // MARK: - Coordinator
     var onSignIn: VoidClosure?
+    var onSignUp: VoidClosure?
     
     private var interactor: LoginInteractor
     weak var view: (UIViewController & LoginView)?
@@ -35,6 +38,10 @@ final class LoginPresenterImpl: LoginPresenter {
         interactor.onTapSignIn(
             login: login,
             password: password)
+    }
+    
+    func onTapSignUp() {
+        interactor.onTapSignUp()
     }
     
     func showErrorLogin() {

@@ -47,10 +47,11 @@ final class LoginVC: UIViewController, LoginView {
     
     // MARK: - Private
     private func configure() {
-        self.view.backgroundColor = Styles.shared.c.vc
-        loginTextfield.style = Styles.shared.tfs.olPrT
-        passwordTextfield.style = Styles.shared.tfs.olPrB
-        signInButton.style = Styles.shared.button.bevelDfPr
+        self.view.backgroundColor = Styles.shared.color.vc
+        loginTextfield.style = Styles.shared.tfs.odPrT
+        passwordTextfield.style = Styles.shared.tfs.odPrB
+        signInButton.style = Styles.shared.button.bevelDfSc
+        signUpButton.style = Styles.shared.button.quietDfSc
     }
     
     private func addGestures() {
@@ -75,17 +76,17 @@ final class LoginVC: UIViewController, LoginView {
     }
     
     @IBAction func onTapSignUp(_ sender: UIButton) {
-        // TODO: . add
+        presenter.onTapSignUp()
     }
     
     // MARK: - Textfield
     @IBAction private func onEditingDidBegin(_ sender: UITextField) {
-        sender.showTfOlFocused()
+        sender.showTfOdFocused()
         sender.superview?.addSubview(sender)
     }
     
     @IBAction private func onEditingDidEnd(_ sender: UITextField) {
-        sender.showTfOlUp()
+        sender.showTfOdUp()
     }
 }
 
@@ -93,11 +94,11 @@ final class LoginVC: UIViewController, LoginView {
 extension LoginVC {
     
     func setPlaceholderLogin(_ value: String) {
-        loginTextfield.setPlaceholer(value, with: Styles.shared.tfs.olPh)
+        loginTextfield.setPlaceholer(value, with: Styles.shared.tfs.odPh)
     }
     
     func setPlaceholderPassword(_ value: String) {
-        passwordTextfield.setPlaceholer(value, with: Styles.shared.tfs.olPh)
+        passwordTextfield.setPlaceholer(value, with: Styles.shared.tfs.odPh)
     }
     
     func setTitleSignIn(_ value: String) {
@@ -105,11 +106,11 @@ extension LoginVC {
     }
     
     func showErrorLogin() {
-        loginTextfield.showTfOlError()
+        loginTextfield.showTfOdError()
     }
     
     func showErrorPassword() {
-        passwordTextfield.showTfOlError()
+        passwordTextfield.showTfOdError()
     }
 }
 

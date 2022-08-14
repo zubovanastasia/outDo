@@ -77,7 +77,7 @@ class ActivityHelper {
                 window = UIWindow(frame: UIScreen.main.bounds)
             }
             window?.rootViewController = UIViewController()
-            window?.backgroundColor = Styles.shared.c.dialogDark
+            window?.backgroundColor = Styles.shared.color.dialogDark
             window?.windowLevel = level
             window?.makeKeyAndVisible()
             window?.isHidden = true

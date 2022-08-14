@@ -41,14 +41,7 @@ class RequestFactory {
             stopwatch: stopwatch,
             repositoryFactory: repositoryFactory)
     }
-    func makeSignUpRequestFactory() -> SignUpRequestFactory {
-        return SignUpRequestFactoryImpl(
-            errorParser: makeErrorParser(),
-            sessionManager: commonSession,
-            queue: sessionQueue,
-            stopwatch: stopwatch,
-            repositoryFactory: repositoryFactory)
-    }
+    
     func makeDeviceRequestFactory() -> DeviceRequestFactory {
         return DeviceRequestFactoryImpl(
             errorParser: makeErrorParser(),
