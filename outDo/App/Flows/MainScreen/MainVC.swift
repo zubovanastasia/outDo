@@ -28,7 +28,7 @@ class MainVC: UIViewController, MainView {
     
     // MARK: - Properties
     var presenter: MainPresenter
-    
+    private var cells = [MainCellModel]()
     
     // MARK: - View
     init(presenter: MainPresenter) {
@@ -38,43 +38,35 @@ class MainVC: UIViewController, MainView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableview.register(UINib(nibName: "TaskVC", bundle: nil),
-                                forCellReuseIdentifier: MainVC.taskVCID)
-        self.tableview.dataSource = self
-        self.tableview.delegate = self
-        self.tableview.estimatedRowHeight = 100
-        self.tableview.rowHeight = UITableView.automaticDimension
-        tableView.backgroundColor = .clear
-        cell.backgroundColor = .clear
-        tableView.tableFooterView = UIView()
-        self.presenter.viewDidLoad()
+        tableview.register(MainCell.self, forCellReuseIdentifier: MainCell.identifier)
+//        self.tableview.register(UINib(nibName: "TaskVC", bundle: nil),
+//                                forCellReuseIdentifier: MainVC.taskVCID)
+        tableview.dataSource = self
+        tableview.delegate = self
+        self.tableview.rowHeight = 100
+//        tableView.backgroundColor = .clear
+//        cell.backgroundColor = .clear
+//        tableView.tableFooterView = UIView()
+//        self.presenter.viewDidLoad()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-}
-     @IBAction func menuTask(_ sender: UIButton) {
-    
-     }
 
-     @IBAction func resetTask(_ sender: UIButton) {
-    
-     }
+//    @IBAction func menuTask(_ sender: UIButton) {
+//
+//    }
 
-     @IBAction func addTask(_ sender: UIButton) {
-    // TODO: . add
-         
-     }
+    @IBAction func resetTask(_ sender: UIButton) {
 
-override func viewDidLoad() {
-    super.viewDidLoad()
-    
-}
-}
+    }
 
-    
+    @IBAction func addTask(_ sender: UIButton) {
+        // TODO: . add
+     
+    }
+
     // MARK: - Private
     private func configure() {
         menuButton = UIButton(type: .custom)
@@ -86,9 +78,32 @@ override func viewDidLoad() {
             UIBarButtonItem(customView: menuButton)
         ]
     }
-    
+
     // MARK: - Taps
     @objc private func onTapNavbarMenu() {
         self.presenter.onTapNavbarMenu()
+    }
+}
+
+extension MainVC: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cells.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = cells[indexPath.row]
+        let cell = tableview.dequeueReusableCell(withIdentifier: MainCell.identifier)
+        (cell as MainCellUpdate)?.updateData(data)
+        return cell
+    }
+}
+
+extension MainVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        super.deselectRow(at: indexPath, animated: false)
+        let data = cells[indexPath.row]
+        // handle data
     }
 }

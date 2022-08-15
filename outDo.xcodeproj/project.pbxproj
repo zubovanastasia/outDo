@@ -19,6 +19,10 @@
 		A00EE21728A922870018F298 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EE21628A922870018F298 /* SignUpCoordinator.swift */; };
 		A00EE21A28A928FB0018F298 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00EE21828A928FB0018F298 /* SignUpVC.swift */; };
 		A00EE21B28A928FB0018F298 /* SignUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00EE21928A928FB0018F298 /* SignUpVC.xib */; };
+		A01592FF28AAA46E0065A288 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01592FD28AAA46E0065A288 /* MainCell.swift */; };
+		A015930028AAA46E0065A288 /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01592FE28AAA46E0065A288 /* MainCell.xib */; };
+		A015930328AAA5730065A288 /* MainCellUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015930228AAA5730065A288 /* MainCellUpdate.swift */; };
+		A015930628AAA5960065A288 /* MainCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015930528AAA5960065A288 /* MainCellModel.swift */; };
 		A01702B52896C29400E81C73 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01702B42896C29400E81C73 /* Factory.swift */; };
 		A01702B92896C5B400E81C73 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01702B82896C5B400E81C73 /* BaseCoordinator.swift */; };
 		A01702BB2896C5C800E81C73 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01702BA2896C5C800E81C73 /* Router.swift */; };
@@ -168,6 +172,10 @@
 		A00EE21628A922870018F298 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		A00EE21828A928FB0018F298 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		A00EE21928A928FB0018F298 /* SignUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpVC.xib; sourceTree = "<group>"; };
+		A01592FD28AAA46E0065A288 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		A01592FE28AAA46E0065A288 /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
+		A015930228AAA5730065A288 /* MainCellUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellUpdate.swift; sourceTree = "<group>"; };
+		A015930528AAA5960065A288 /* MainCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellModel.swift; sourceTree = "<group>"; };
 		A01702B42896C29400E81C73 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		A01702B82896C5B400E81C73 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		A01702BA2896C5C800E81C73 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -437,6 +445,22 @@
 				636F885A289FF4D200179125 /* AuthSignUpResponse.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		A015930128AAA5640065A288 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A015930228AAA5730065A288 /* MainCellUpdate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A015930428AAA5890065A288 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A015930528AAA5960065A288 /* MainCellModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A01702B12896BFB700E81C73 /* Core */ = {
@@ -724,6 +748,8 @@
 		A0466464289D5F580011035E /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				A015930428AAA5890065A288 /* Model */,
+				A015930128AAA5640065A288 /* Protocol */,
 				A0466465289D5F6F0011035E /* MainVC.swift */,
 				DB942A3728AA188100B94D04 /* MainVC.storyboard */,
 				A0466469289D5FD50011035E /* MainInteractor.swift */,
@@ -876,6 +902,8 @@
 			children = (
 				DB942A3A28AA1DB300B94D04 /* TaskVC.xib */,
 				DB942A3B28AA1DB300B94D04 /* TaskVC.swift */,
+				A01592FD28AAA46E0065A288 /* MainCell.swift */,
+				A01592FE28AAA46E0065A288 /* MainCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -959,6 +987,7 @@
 				A0C6081D28A97D09002327C3 /* AboutAppVC.xib in Resources */,
 				A0C607F128A96507002327C3 /* AlertPopup.xib in Resources */,
 				A017036D2896DD6300E81C73 /* SourceSansPro-Regular.ttf in Resources */,
+				A015930028AAA46E0065A288 /* MainCell.xib in Resources */,
 				A0C607FA28A9653A002327C3 /* NavigationDrawerPopup.xib in Resources */,
 				A017036E2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf in Resources */,
 				A017036F2896DD6300E81C73 /* SourceSansPro-Light.ttf in Resources */,
@@ -980,6 +1009,7 @@
 				A01703582896D78D00E81C73 /* LoginCoordinator.swift in Sources */,
 				A017031C2896D16700E81C73 /* DeviceService.swift in Sources */,
 				A01703132896D09A00E81C73 /* Stopwatch.swift in Sources */,
+				A01592FF28AAA46E0065A288 /* MainCell.swift in Sources */,
 				A0C607D828A96162002327C3 /* DimmPresentationController.swift in Sources */,
 				A0C6082928A97D65002327C3 /* ProfileCoordinator.swift in Sources */,
 				A01703442896D47400E81C73 /* ErrorParser.swift in Sources */,
@@ -1064,12 +1094,14 @@
 				A01703032896CEF300E81C73 /* AuthSignInResponse.swift in Sources */,
 				A0C607D328A960C0002327C3 /* DialogBuilder.swift in Sources */,
 				A046646A289D5FD50011035E /* MainInteractor.swift in Sources */,
+				A015930328AAA5730065A288 /* MainCellUpdate.swift in Sources */,
 				A01702C42896C71800E81C73 /* Double-Extension.swift in Sources */,
 				A0C607DA28A9617A002327C3 /* DismissAnimation.swift in Sources */,
 				A017034F2896D5E500E81C73 /* ApiResponseError.swift in Sources */,
 				A01702C02896C6C500E81C73 /* DataRequest-Extension.swift in Sources */,
 				A0C607E428A96356002327C3 /* TTransition.swift in Sources */,
 				A01702D62896C84700E81C73 /* UIColor-Extension.swift in Sources */,
+				A015930628AAA5960065A288 /* MainCellModel.swift in Sources */,
 				A01702D42896C82F00E81C73 /* UICollectionViewCell-Extension.swift in Sources */,
 				A0C6080428A96667002327C3 /* NavigationDrawerInteractor.swift in Sources */,
 				A01702FB2896CE6E00E81C73 /* AuthService.swift in Sources */,
