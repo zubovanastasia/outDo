@@ -13,7 +13,7 @@ protocol MainView: AnyObject {
 
 class MainVC: UIViewController, MainView {
     
-    
+    // MARK: - Outlets
     @IBOutlet weak var addTask: UIButton!
     @IBOutlet weak var menuTask: UIButton!
     @IBOutlet weak var resetTask: UIButton!
@@ -22,7 +22,7 @@ class MainVC: UIViewController, MainView {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var taskView: TaskVC!
 
-    // MARK: - Outlets
+
     private var menuTask: UIButton!
     
     
