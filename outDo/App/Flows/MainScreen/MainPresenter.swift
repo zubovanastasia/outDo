@@ -30,4 +30,39 @@ final class MainPresenterImpl: MainPresenter {
     func onTapNavbarMenu() {
         interactor.onTapNavbarMenu()
     }
+    var categoryId : Int
+    var router : Router
+    var useCase: UseCase
+    weak var view: MainView?
+    
+    typealias UseCase = (
+        fetchTasks : (_ categoryId : Int, _ completion : @escaping ) -> Void
+         
+   )
+   
+   init(categoryId : Int, router : Router, useCase : UseCase) {
+       self.categoryId = categoryId
+       self.router = router
+       self.useCase = useCase
+   }
+    
+    
+    extension MainPresenterImpl : MainPresenter {
+        
+        
+        func viewDidLoad() {
+            
+            DispatchQueue.global(qos: .background).async {
+                        
+                    }
+                    
+                    DispatchQueue.main.async {
+
+                        
+                    }
+            
+        }
+        
+    }
+    
 }

@@ -12,9 +12,18 @@ protocol MainView: AnyObject {
 }
 
 class MainVC: UIViewController, MainView {
+    
+    
+    @IBOutlet weak var addTask: UIButton!
+    @IBOutlet weak var menuTask: UIButton!
+    @IBOutlet weak var resetTask: UIButton!
+    @IBOutlet weak var dateTask: UIDatePicker!
+    private static let taskVCID = "taskVCID"
+    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var taskView: TaskVC!
 
     // MARK: - Outlets
-    private var menuButton: UIButton!
+    private var menuTask: UIButton!
     
     
     // MARK: - Properties
@@ -27,14 +36,44 @@ class MainVC: UIViewController, MainView {
         super.init(nibName: Self.identifier, bundle: nil)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableview.register(UINib(nibName: "TaskVC", bundle: nil),
+                                forCellReuseIdentifier: MainVC.taskVCID)
+        self.tableview.dataSource = self
+        self.tableview.delegate = self
+        self.tableview.estimatedRowHeight = 100
+        self.tableview.rowHeight = UITableView.automaticDimension
+        tableView.backgroundColor = .clear
+        cell.backgroundColor = .clear
+        tableView.tableFooterView = UIView()
+        self.presenter.viewDidLoad()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configure()
-    }
+}
+     @IBAction func menuTask(_ sender: UIButton) {
+    
+     }
+
+     @IBAction func resetTask(_ sender: UIButton) {
+    
+     }
+
+     @IBAction func addTask(_ sender: UIButton) {
+    // TODO: . add
+         
+     }
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+}
+}
+
     
     // MARK: - Private
     private func configure() {
