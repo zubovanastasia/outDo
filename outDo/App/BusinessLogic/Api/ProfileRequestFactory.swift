@@ -13,15 +13,16 @@ typealias ApiProfileGetResponseClosure = (AFDataResponse<ProfileGetResponse>) ->
 protocol ProfileRequestFactory: AbstractRequestFactory {
     
     func profileGet(completion: @escaping ApiProfileGetResponseClosure)
+    func profileSave(completion: @escaping ApiProfileGetResponseClosure)
+    func profileImageSave(completion: @escaping ApiProfileGetResponseClosure)
 }
 
 class ProfileRequestFactoryImpl: ProfileRequestFactory {
-    
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Config.shared.urlApi)!
-
+    
     private let authRepository: AuthRepository
     private let deviceRepository: DeviceRepository
     private let profileRepository: ProfileRepository
@@ -39,6 +40,27 @@ class ProfileRequestFactoryImpl: ProfileRequestFactory {
     
     func profileGet(completion: @escaping ApiProfileGetResponseClosure) {
         let request = ProfileGetRequest(
+            baseUrl: baseUrl,
+            stopwatch: stopwatch,
+            authRepository: authRepository,
+            deviceRepository: deviceRepository,
+            profileRepository: profileRepository)
+        self.request(request: request, completion: completion)
+        ActivityHelper.shared.add(request.id)
+    }
+    func profileSave(completion: @escaping ApiProfileGetResponseClosure) {
+        let request = ProfileSave(
+            baseUrl: baseUrl,
+            stopwatch: stopwatch,
+            authRepository: authRepository,
+            deviceRepository: deviceRepository,
+            profileRepository: profileRepository)
+        self.request(request: request, completion: completion)
+        ActivityHelper.shared.add(request.id)
+    }
+    
+    func profileImageSave(completion: @escaping ApiProfileGetResponseClosure) {
+        let request = ProfileImageSave(
             baseUrl: baseUrl,
             stopwatch: stopwatch,
             authRepository: authRepository,

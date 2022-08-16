@@ -16,6 +16,8 @@ struct ApiMethod {
     
     // Profile
     static let profileGet = "ProfileGet"
+    static let profileSave = "ProfileSave"
+    static let profileImageSave = "ProfileImageSave"
 }
 
 

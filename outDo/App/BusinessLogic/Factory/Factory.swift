@@ -314,17 +314,16 @@ class ScreenFactoryImpl: ScreenFactory {
     }
     
     func makeProfileScreen() -> ProfileVC {
-//        let interactor = ProfileInteractorImpl(
-//            authProvider: providerFactory.authProvider,
-//            profileProvider: providerFactory.profileProvider)
-//        let presenter = ProfilePresenterImpl(interactor: interactor)
-//        let viewController = ProfileVC(presenter: presenter)
-//
-//        interactor.presenter = presenter
-//        presenter.view = viewController
-//
-//        return viewController
-        return ProfileVC()
+        let interactor = ProfileInteractorImpl(
+            authProvider: providerFactory.authProvider,
+            profileProvider: providerFactory.profileProvider)
+        let presenter = ProfilePresenterImpl(interactor: interactor)
+        let viewController = ProfileVC(presenter: presenter)
+
+        interactor.presenter = presenter
+        presenter.view = viewController
+
+        return viewController
     }
     
     func makeSignUpScreen() -> SignUpVC {

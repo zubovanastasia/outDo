@@ -13,6 +13,8 @@
 		636F8859289FF18800179125 /* SignUpCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F8858289FF18800179125 /* SignUpCredentials.swift */; };
 		636F885B289FF4D200179125 /* AuthSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F885A289FF4D200179125 /* AuthSignUpResponse.swift */; };
 		636F885D28A154E400179125 /* SignUpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F885C28A154E400179125 /* SignUpProvider.swift */; };
+		636F886B28AB963300179125 /* ProfileSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F886A28AB963300179125 /* ProfileSave.swift */; };
+		636F886D28AB963F00179125 /* ProfileImageSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F886C28AB963F00179125 /* ProfileImageSave.swift */; };
 		63998CC0289597A000266599 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63998CBF289597A000266599 /* AppDelegate.swift */; };
 		63998CC9289597A200266599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63998CC8289597A200266599 /* Assets.xcassets */; };
 		63998CCC289597A200266599 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63998CCA289597A200266599 /* LaunchScreen.storyboard */; };
@@ -155,6 +157,8 @@
 		636F8858289FF18800179125 /* SignUpCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCredentials.swift; sourceTree = "<group>"; };
 		636F885A289FF4D200179125 /* AuthSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpResponse.swift; sourceTree = "<group>"; };
 		636F885C28A154E400179125 /* SignUpProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProvider.swift; sourceTree = "<group>"; };
+		636F886A28AB963300179125 /* ProfileSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSave.swift; sourceTree = "<group>"; };
+		636F886C28AB963F00179125 /* ProfileImageSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageSave.swift; sourceTree = "<group>"; };
 		63998CBC289597A000266599 /* outDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = outDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63998CBF289597A000266599 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63998CC8289597A200266599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -325,6 +329,8 @@
 			isa = PBXGroup;
 			children = (
 				A017032E2896D2FA00E81C73 /* ProfileGetRequest.swift */,
+				636F886A28AB963300179125 /* ProfileSave.swift */,
+				636F886C28AB963F00179125 /* ProfileImageSave.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -962,6 +968,7 @@
 				636F8857289FEE7300179125 /* AuthSignUpRequest.swift in Sources */,
 				A01702C22896C6EC00E81C73 /* Date-Extension.swift in Sources */,
 				A01702F42896CD8500E81C73 /* TypeAlias.swift in Sources */,
+				636F886B28AB963300179125 /* ProfileSave.swift in Sources */,
 				A01702BB2896C5C800E81C73 /* Router.swift in Sources */,
 				A01702F82896CDE900E81C73 /* AuthProvider.swift in Sources */,
 				A01703292896D26B00E81C73 /* ProfileProvider.swift in Sources */,
@@ -993,6 +1000,7 @@
 				A017032F2896D2FA00E81C73 /* ProfileGetRequest.swift in Sources */,
 				A01703162896D0F800E81C73 /* Observable.swift in Sources */,
 				A0C607FD28A96579002327C3 /* TAction.swift in Sources */,
+				636F886D28AB963F00179125 /* ProfileImageSave.swift in Sources */,
 				A01702FD2896CE9600E81C73 /* AuthStatusProvider.swift in Sources */,
 				A01703232896D1DA00E81C73 /* Device.swift in Sources */,
 				A017033E2896D43300E81C73 /* AbstractRequestFactory.swift in Sources */,
