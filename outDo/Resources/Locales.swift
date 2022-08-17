@@ -43,6 +43,7 @@ class Locales {
         "vc_signUp_password": "Пароль",
         "vc_signUp_confirmPassword": "Подтвердите пароль",
         "vc_signUp_button": "Зарегистрироваться",
+        "vc_edit_button": "Изменить",
         
 //        "vc_critical_title": "Sorry, critical data error",
 //        "vc_critical_title_internet": "No Internet connection available",

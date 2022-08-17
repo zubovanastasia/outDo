@@ -38,6 +38,10 @@ final class ProfilePresenterImpl: ProfilePresenter {
         interactor.onTapEditProfile(name: name)
     }
     func updateData() {
+        view?.setTitleEditImage(Locales.value("vc_edit_button"))
+        view?.setTitleName(interactor.getName())
+        view?.setTitleEmail(interactor.getEmail())
+        view?.setTitleEditProfile(Locales.value("vc_edit_button"))
     }
 }
 

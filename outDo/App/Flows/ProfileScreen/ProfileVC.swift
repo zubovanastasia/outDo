@@ -8,12 +8,14 @@
 import UIKit
 
 protocol ProfileView {
-    func setPlaceholderName(_ value: String)
+    func setTitleName(_ value: String)
     func setTitleEditImage(_ value: String)
     func setTitleEditProfile(_ value: String)
+    func setTitleEmail(_ value: String)
 }
 final class ProfileVC: UIViewController, ProfileView {
     var presenter: ProfilePresenter
+    var model = Profile()
     
     // MARK: - Outlets
     @IBOutlet private weak var avaImage: UIImageView!
@@ -35,7 +37,7 @@ final class ProfileVC: UIViewController, ProfileView {
         self.title = "Профиль"
         configure()
         addGestures()
-        updateData()
+        updateData(model)
     }
     
     // MARK: - Private
@@ -46,7 +48,10 @@ final class ProfileVC: UIViewController, ProfileView {
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
     }
-    func updateData() {
+    func updateData(_ data: Profile) {
+        avaImage.image = !data.icon.isEmpty ? UIImage(named: data.icon) : nil
+        emailLabel.text = data.email
+        nameTextField.placeholder = data.name
         presenter.updateData()
     }
     // MARK: - Taps
@@ -67,15 +72,16 @@ extension ProfileVC {
     }
 }
 extension ProfileVC {
-    func setPlaceholderName(_ value: String) {
-        nameTextField.setPlaceholer(value, with: Styles.shared.tfs.odPh)
-    }
-    
     func setTitleEditImage(_ value: String) {
         editImage.setTitle(value, for: .normal)
     }
-    
+    func setTitleName(_ value: String) {
+        nameTextField.setPlaceholer(value, with: Styles.shared.tfs.odPh)
+    }
     func setTitleEditProfile(_ value: String) {
         editProfile.setTitle(value, for: .normal)
+    }
+    func setTitleEmail(_ value: String) {
+        emailLabel.text = value
     }
 }
