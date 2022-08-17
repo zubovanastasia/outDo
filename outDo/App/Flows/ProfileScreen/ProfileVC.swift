@@ -42,6 +42,10 @@ final class ProfileVC: UIViewController, ProfileView {
     
     // MARK: - Private
     private func configure() {
+        editImage.style = Styles.shared.button.bevelSmSc
+        nameTextField.style = Styles.shared.label.r20main
+        emailLabel.style = Styles.shared.label.r20main
+        editProfile.style = Styles.shared.button.quietDfSc
     }
     private func addGestures() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(keyboardDismiss))
@@ -76,7 +80,7 @@ extension ProfileVC {
         editImage.setTitle(value, for: .normal)
     }
     func setTitleName(_ value: String) {
-        nameTextField.setPlaceholer(value, with: Styles.shared.tfs.odPh)
+        nameTextField.text = value
     }
     func setTitleEditProfile(_ value: String) {
         editProfile.setTitle(value, for: .normal)
