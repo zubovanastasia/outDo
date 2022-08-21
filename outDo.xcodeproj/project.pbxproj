@@ -100,10 +100,6 @@
 		A017036E2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A017036B2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf */; };
 		A017036F2896DD6300E81C73 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A017036C2896DD6300E81C73 /* SourceSansPro-Light.ttf */; };
 		A0466463289D5F030011035E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466462289D5F030011035E /* MainCoordinator.swift */; };
-		A0466467289D5F6F0011035E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466465289D5F6F0011035E /* MainVC.swift */; };
-		A0466468289D5F6F0011035E /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0466466289D5F6F0011035E /* MainVC.xib */; };
-		A046646A289D5FD50011035E /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466469289D5FD50011035E /* MainInteractor.swift */; };
-		A046646C289D5FF00011035E /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046646B289D5FF00011035E /* MainPresenter.swift */; };
 		A0C607D328A960C0002327C3 /* DialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D228A960C0002327C3 /* DialogBuilder.swift */; };
 		A0C607D628A9611F002327C3 /* DialogRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D528A9611F002327C3 /* DialogRootVC.swift */; };
 		A0C607D828A96162002327C3 /* DimmPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D728A96162002327C3 /* DimmPresentationController.swift */; };
@@ -146,6 +142,19 @@
 		A0C6082F28A97E36002327C3 /* WebCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6082E28A97E36002327C3 /* WebCoordinator.swift */; };
 		A0C6083128A986B0002327C3 /* WebPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6083028A986B0002327C3 /* WebPresenter.swift */; };
 		A0C6083328A986BB002327C3 /* WebInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6083228A986BB002327C3 /* WebInteractor.swift */; };
+		DBAB958D28B2A4C90064291D /* MainVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBAB958028B2A4C90064291D /* MainVC.storyboard */; };
+		DBAB958E28B2A4C90064291D /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB958128B2A4C90064291D /* MainInteractor.swift */; };
+		DBAB958F28B2A4C90064291D /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB958228B2A4C90064291D /* MainPresenter.swift */; };
+		DBAB959028B2A4C90064291D /* MainCellUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB958428B2A4C90064291D /* MainCellUpdate.swift */; };
+		DBAB959128B2A4C90064291D /* MainCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBAB958628B2A4C90064291D /* MainCell1.xib */; };
+		DBAB959228B2A4C90064291D /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBAB958728B2A4C90064291D /* MainCell.xib */; };
+		DBAB959328B2A4C90064291D /* MainCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB958828B2A4C90064291D /* MainCell1.swift */; };
+		DBAB959428B2A4C90064291D /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB958928B2A4C90064291D /* MainCell.swift */; };
+		DBAB959528B2A4C90064291D /* MainCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB958B28B2A4C90064291D /* MainCellModel.swift */; };
+		DBAB959628B2A4C90064291D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB958C28B2A4C90064291D /* MainVC.swift */; };
+		DBAB959A28B2A4F00064291D /* TaskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB959728B2A4F00064291D /* TaskGroup.swift */; };
+		DBAB959B28B2A4F00064291D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB959828B2A4F00064291D /* Task.swift */; };
+		DBAB959C28B2A4F00064291D /* Assignee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB959928B2A4F00064291D /* Assignee.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -243,10 +252,6 @@
 		A017036B2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		A017036C2896DD6300E81C73 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
 		A0466462289D5F030011035E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		A0466465289D5F6F0011035E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		A0466466289D5F6F0011035E /* MainVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
-		A0466469289D5FD50011035E /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
-		A046646B289D5FF00011035E /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		A0C607D228A960C0002327C3 /* DialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogBuilder.swift; sourceTree = "<group>"; };
 		A0C607D528A9611F002327C3 /* DialogRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRootVC.swift; sourceTree = "<group>"; };
 		A0C607D728A96162002327C3 /* DimmPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmPresentationController.swift; sourceTree = "<group>"; };
@@ -289,6 +294,19 @@
 		A0C6082E28A97E36002327C3 /* WebCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCoordinator.swift; sourceTree = "<group>"; };
 		A0C6083028A986B0002327C3 /* WebPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPresenter.swift; sourceTree = "<group>"; };
 		A0C6083228A986BB002327C3 /* WebInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebInteractor.swift; sourceTree = "<group>"; };
+		DBAB958028B2A4C90064291D /* MainVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainVC.storyboard; sourceTree = "<group>"; };
+		DBAB958128B2A4C90064291D /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		DBAB958228B2A4C90064291D /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		DBAB958428B2A4C90064291D /* MainCellUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCellUpdate.swift; sourceTree = "<group>"; };
+		DBAB958628B2A4C90064291D /* MainCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCell1.xib; sourceTree = "<group>"; };
+		DBAB958728B2A4C90064291D /* MainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
+		DBAB958828B2A4C90064291D /* MainCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell1.swift; sourceTree = "<group>"; };
+		DBAB958928B2A4C90064291D /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		DBAB958B28B2A4C90064291D /* MainCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCellModel.swift; sourceTree = "<group>"; };
+		DBAB958C28B2A4C90064291D /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		DBAB959728B2A4F00064291D /* TaskGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskGroup.swift; path = ../../../../Documents/outDo/outDo/App/Entity/TaskGroup.swift; sourceTree = "<group>"; };
+		DBAB959828B2A4F00064291D /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = ../../../../Documents/outDo/outDo/App/Entity/Task.swift; sourceTree = "<group>"; };
+		DBAB959928B2A4F00064291D /* Assignee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assignee.swift; path = ../../../../Documents/outDo/outDo/App/Entity/Assignee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,12 +423,12 @@
 		63998CD72896B32800266599 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				DBAB957F28B2A4C90064291D /* MainScreen */,
 				A0C6081928A97CF7002327C3 /* AboutAppScreen */,
 				A0C607ED28A964F9002327C3 /* AlertPopup */,
 				A01703592896D7B700E81C73 /* LaunchScreen */,
 				A017035E2896D7DC00E81C73 /* LoginScreen */,
 				A0C607F628A96525002327C3 /* NavigationDrawerPopup */,
-				A0466464289D5F580011035E /* MainScreen */,
 				A0C6081E28A97D11002327C3 /* ProfileScreen */,
 				636F884D289FE14B00179125 /* SignUpScreen */,
 				A0C607EC28A964EE002327C3 /* ToastPopup */,
@@ -529,6 +547,9 @@
 		A01702F22896CD7500E81C73 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				DBAB959928B2A4F00064291D /* Assignee.swift */,
+				DBAB959828B2A4F00064291D /* Task.swift */,
+				DBAB959728B2A4F00064291D /* TaskGroup.swift */,
 				A0C607FE28A965BF002327C3 /* Components */,
 				A0C607FB28A9656D002327C3 /* Enum */,
 				A01702FE2896CEBC00E81C73 /* AuthCredentials.swift */,
@@ -708,17 +729,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		A0466464289D5F580011035E /* MainScreen */ = {
-			isa = PBXGroup;
-			children = (
-				A0466465289D5F6F0011035E /* MainVC.swift */,
-				A0466466289D5F6F0011035E /* MainVC.xib */,
-				A0466469289D5FD50011035E /* MainInteractor.swift */,
-				A046646B289D5FF00011035E /* MainPresenter.swift */,
-			);
-			path = MainScreen;
-			sourceTree = "<group>";
-		};
 		A0C607D128A960AE002327C3 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
@@ -857,6 +867,48 @@
 			path = WebScreen;
 			sourceTree = "<group>";
 		};
+		DBAB957F28B2A4C90064291D /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DBAB958028B2A4C90064291D /* MainVC.storyboard */,
+				DBAB958128B2A4C90064291D /* MainInteractor.swift */,
+				DBAB958228B2A4C90064291D /* MainPresenter.swift */,
+				DBAB958328B2A4C90064291D /* Protocol */,
+				DBAB958528B2A4C90064291D /* Cell */,
+				DBAB958A28B2A4C90064291D /* Model */,
+				DBAB958C28B2A4C90064291D /* MainVC.swift */,
+			);
+			name = MainScreen;
+			path = ../../../../Documents/outDo/outDo/App/Flows/MainScreen;
+			sourceTree = "<group>";
+		};
+		DBAB958328B2A4C90064291D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DBAB958428B2A4C90064291D /* MainCellUpdate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DBAB958528B2A4C90064291D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DBAB958628B2A4C90064291D /* MainCell1.xib */,
+				DBAB958728B2A4C90064291D /* MainCell.xib */,
+				DBAB958828B2A4C90064291D /* MainCell1.swift */,
+				DBAB958928B2A4C90064291D /* MainCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DBAB958A28B2A4C90064291D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DBAB958B28B2A4C90064291D /* MainCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -921,7 +973,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0466468289D5F6F0011035E /* MainVC.xib in Resources */,
+				DBAB958D28B2A4C90064291D /* MainVC.storyboard in Resources */,
 				A0C6082728A97D38002327C3 /* WebVC.xib in Resources */,
 				A01703622896D7EF00E81C73 /* LoginVC.xib in Resources */,
 				A0C607F528A96518002327C3 /* ToastPopup.xib in Resources */,
@@ -934,6 +986,8 @@
 				A0C6081228A973B1002327C3 /* NavigationDrawerCell.xib in Resources */,
 				A0C6081D28A97D09002327C3 /* AboutAppVC.xib in Resources */,
 				A0C607F128A96507002327C3 /* AlertPopup.xib in Resources */,
+				DBAB959228B2A4C90064291D /* MainCell.xib in Resources */,
+				DBAB959128B2A4C90064291D /* MainCell1.xib in Resources */,
 				A017036D2896DD6300E81C73 /* SourceSansPro-Regular.ttf in Resources */,
 				A0C607FA28A9653A002327C3 /* NavigationDrawerPopup.xib in Resources */,
 				A017036E2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf in Resources */,
@@ -952,9 +1006,13 @@
 				A017031F2896D1A000E81C73 /* AuthRepository.swift in Sources */,
 				A0C607DE28A961E7002327C3 /* PresentAnimation.swift in Sources */,
 				A0C6083128A986B0002327C3 /* WebPresenter.swift in Sources */,
+				DBAB959B28B2A4F00064291D /* Task.swift in Sources */,
+				DBAB958F28B2A4C90064291D /* MainPresenter.swift in Sources */,
+				DBAB959628B2A4C90064291D /* MainVC.swift in Sources */,
 				636F8851289FE79F00179125 /* SignUpInteractor.swift in Sources */,
 				A01703582896D78D00E81C73 /* LoginCoordinator.swift in Sources */,
 				A017031C2896D16700E81C73 /* DeviceService.swift in Sources */,
+				DBAB959428B2A4C90064291D /* MainCell.swift in Sources */,
 				A01703132896D09A00E81C73 /* Stopwatch.swift in Sources */,
 				A0C607D828A96162002327C3 /* DimmPresentationController.swift in Sources */,
 				A0C6082928A97D65002327C3 /* ProfileCoordinator.swift in Sources */,
@@ -968,6 +1026,7 @@
 				A01703642896D94F00E81C73 /* LoginPresenter.swift in Sources */,
 				A0C6080028A965D1002327C3 /* AlertData.swift in Sources */,
 				A017030D2896CFEE00E81C73 /* AuthSignOutResponse.swift in Sources */,
+				DBAB959C28B2A4F00064291D /* Assignee.swift in Sources */,
 				A0466463289D5F030011035E /* MainCoordinator.swift in Sources */,
 				636F885B289FF4D200179125 /* AuthSignUpResponse.swift in Sources */,
 				A01703352896D38800E81C73 /* RequestFactory.swift in Sources */,
@@ -975,9 +1034,10 @@
 				A01702DE2896C8A400E81C73 /* UIView-Extension.swift in Sources */,
 				A01702B52896C29400E81C73 /* Factory.swift in Sources */,
 				A01703562896D77500E81C73 /* LaunchCoordinator.swift in Sources */,
+				DBAB959328B2A4C90064291D /* MainCell1.swift in Sources */,
 				A0C607E228A96343002327C3 /* TransitionDriver.swift in Sources */,
+				DBAB959A28B2A4F00064291D /* TaskGroup.swift in Sources */,
 				A01703422896D45400E81C73 /* CustomDecodableSerializer.swift in Sources */,
-				A046646C289D5FF00011035E /* MainPresenter.swift in Sources */,
 				A017033B2896D3E700E81C73 /* ProfileRequestFactory.swift in Sources */,
 				A017031A2896D13400E81C73 /* DeviceProvider.swift in Sources */,
 				A01703092896CF6C00E81C73 /* AuthSignInRequest.swift in Sources */,
@@ -1037,20 +1097,20 @@
 				A017032D2896D2B900E81C73 /* ProfileService.swift in Sources */,
 				A01703032896CEF300E81C73 /* AuthSignInResponse.swift in Sources */,
 				A0C607D328A960C0002327C3 /* DialogBuilder.swift in Sources */,
-				A046646A289D5FD50011035E /* MainInteractor.swift in Sources */,
 				A01702C42896C71800E81C73 /* Double-Extension.swift in Sources */,
 				A0C607DA28A9617A002327C3 /* DismissAnimation.swift in Sources */,
+				DBAB959528B2A4C90064291D /* MainCellModel.swift in Sources */,
 				A017034F2896D5E500E81C73 /* ApiResponseError.swift in Sources */,
 				A01702C02896C6C500E81C73 /* DataRequest-Extension.swift in Sources */,
 				A0C607E428A96356002327C3 /* TTransition.swift in Sources */,
 				A01702D62896C84700E81C73 /* UIColor-Extension.swift in Sources */,
 				A01702D42896C82F00E81C73 /* UICollectionViewCell-Extension.swift in Sources */,
+				DBAB958E28B2A4C90064291D /* MainInteractor.swift in Sources */,
 				A0C6080428A96667002327C3 /* NavigationDrawerInteractor.swift in Sources */,
 				A01702FB2896CE6E00E81C73 /* AuthService.swift in Sources */,
 				A01703662896D95A00E81C73 /* LoginInteractor.swift in Sources */,
 				A01702CA2896C7BE00E81C73 /* URL-Extension.swift in Sources */,
 				636F8859289FF18800179125 /* SignUpCredentials.swift in Sources */,
-				A0466467289D5F6F0011035E /* MainVC.swift in Sources */,
 				A01703312896D30F00E81C73 /* ProfileGetResponse.swift in Sources */,
 				A00EE21A28A928FB0018F298 /* SignUpVC.swift in Sources */,
 				A0C6081628A97B43002327C3 /* WebData.swift in Sources */,
@@ -1061,6 +1121,7 @@
 				A01702E62896C96100E81C73 /* KeychainWrapper.swift in Sources */,
 				A0C6080728A969BC002327C3 /* ScheduledTimer.swift in Sources */,
 				A01703252896D1FC00E81C73 /* DeviceSaveRequest.swift in Sources */,
+				DBAB959028B2A4C90064291D /* MainCellUpdate.swift in Sources */,
 				A0C6080E28A97392002327C3 /* NavigationDrawerCellModel.swift in Sources */,
 				A0C607F928A9653A002327C3 /* NavigationDrawerPopup.swift in Sources */,
 				636F8853289FE80000179125 /* SignUpPresenter.swift in Sources */,
