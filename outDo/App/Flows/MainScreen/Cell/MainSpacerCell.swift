@@ -1,21 +1,17 @@
 //
-//  MainCell.swift
+//  MainSpacerCell.swift
 //  outDo
 //
-//  Created by Антон Бондаренко on 15.08.2022.
+//  Created by Антон Бондаренко on 22.08.2022.
 //
 
 import UIKit
 
-class MainCell1: UITableViewCell, MainCellUpdate {
+class MainSpacerCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    
-    func updateData(_ data: MainCellModel) {
-        //idLabel.text = data.title
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
