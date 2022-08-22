@@ -9,86 +9,104 @@ import UIKit
 
 protocol MainView: AnyObject {
 
+    func setCells(_ cells: [MainCellModel])
 }
 
 class MainVC: UIViewController, MainView {
     
     // MARK: - Outlets
-    @IBOutlet weak var addTask: UIButton!
-    @IBOutlet weak var menuTask: UIButton!
-    @IBOutlet weak var resetTask: UIButton!
-    @IBOutlet weak var dateTask: UIDatePicker!
-    private static let taskVCID = "taskVCID"
-    @IBOutlet weak var tableview: UITableView!
-    @IBOutlet weak var taskView: TaskVC!
-
-
-    private var menuTask: UIButton!
-    
+    @IBOutlet private weak var addButton: UIButton!
+//    @IBOutlet private weak var updateButton: UIButton!
+//    @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var tableView: UITableView!
+    private var menuButton: UIButton!
     
     // MARK: - Properties
-    var presenter: MainPresenter
-    
+    var presenter: MainPresenter?
+    private var cells = [MainCellModel]()
     
     // MARK: - View
-    init(presenter: MainPresenter) {
-        self.presenter = presenter
-        super.init(nibName: Self.identifier, bundle: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableview.register(UINib(nibName: "TaskVC", bundle: nil),
-                                forCellReuseIdentifier: MainVC.taskVCID)
-        self.tableview.dataSource = self
-        self.tableview.delegate = self
-        self.tableview.estimatedRowHeight = 100
-        self.tableview.rowHeight = UITableView.automaticDimension
-        tableView.backgroundColor = .clear
-        cell.backgroundColor = .clear
-        tableView.tableFooterView = UIView()
-        self.presenter.viewDidLoad()
+        configure()
+        presenter?.viewDidLoad()
+        updateData()
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-     @IBAction func menuTask(_ sender: UIButton) {
-    
-     }
-
-     @IBAction func resetTask(_ sender: UIButton) {
-    
-     }
-
-     @IBAction func addTask(_ sender: UIButton) {
-    // TODO: . add
-         
-     }
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-    
-}
-}
-
     
     // MARK: - Private
     private func configure() {
         menuButton = UIButton(type: .custom)
         menuButton.frame = CGRect(x: 0, y: 0, width: 28, height: 44)
         menuButton.setImage(UIImage(named: Assets.shared.appbarMenu), for: .normal)
-        menuButton.addTarget(self, action: #selector(onTapNavbarMenu), for: .touchUpInside)
-        
+        menuButton.addTarget(self, action: #selector(onTapMenu), for: .touchUpInside)
+
         self.navigationItem.leftBarButtonItems = [
             UIBarButtonItem(customView: menuButton)
         ]
+        
+        tableView.register(MainCell.nib, forCellReuseIdentifier: MainCell.identifier)
+        tableView.register(MainSpacerCell.nib, forCellReuseIdentifier: MainSpacerCell.identifier)
+        tableView.backgroundColor = .clear
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 100))
+        tableView.bounces = false
+        
+        addButton.style = Styles.shared.button.bevelDfSc
+        addButton.setTitle("", for: .normal)
+        
+        self.view.frame = UIScreen.main.bounds
+    }
+    
+    // MARK: - Data
+    func updateData() {
+        presenter?.updateData()
     }
     
     // MARK: - Taps
-    @objc private func onTapNavbarMenu() {
-        self.presenter.onTapNavbarMenu()
+     @objc private func onTapMenu(_ sender: UIButton) {
+         self.presenter?.onTapMenu()
+     }
+
+//     @IBAction func onTapUpdate(_ sender: UIButton) {
+//         self.presenter?.onTapUpdate()
+//     }
+
+     @IBAction func onTapAdd(_ sender: UIButton) {
+         self.presenter?.onTapAdd()
+     }
+}
+
+// MARK: - MainView
+extension MainVC {
+    
+    func setCells(_ cells: [MainCellModel]) {
+        self.cells = cells
+        tableView.reloadData()
+    }
+}
+
+// MARK: - DataSource
+extension MainVC: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cells.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = cells[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: data.cell, for: indexPath)
+        (cell as? MainCell)?.updateData(data)
+        return cell
+    }
+}
+
+// MARK: - Delegate
+extension MainVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cells[indexPath.row].cell == MainCell.identifier ? 140 : 20
     }
 }

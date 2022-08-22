@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 
 protocol FactoryIssue {
     
@@ -158,6 +158,7 @@ protocol ProviderFactory: AnyObject {
     var deviceProvider: DeviceProvider { get }
     var profileProvider: ProfileProvider { get }
     var signUpProvider: SignUpProvider { get }
+    var tasksProvider: TasksProvider { get }
 }
 
 class ProviderFactoryImpl: ProviderFactory {
@@ -187,6 +188,10 @@ class ProviderFactoryImpl: ProviderFactory {
     var signUpProvider: SignUpProvider {
         get { return SignUpProviderImpl(authService: serviceFactory.authService) }
     }
+    
+    var tasksProvider: TasksProvider {
+        get { return TasksProviderImpl(tasksService: serviceFactory.tasksService) }
+    }
 }
 
 // MARK: - Repository
@@ -195,6 +200,7 @@ protocol RepositoryFactory: AnyObject {
     var authRepository: AuthRepository { get }
     var deviceRepository: DeviceRepository { get }
     var profileRepository: ProfileRepository { get }
+    var tasksRepository: TasksRepository { get }
     
     func clear()
 }
@@ -204,16 +210,19 @@ class RepositoryFactoryImpl: RepositoryFactory {
     var authRepository: AuthRepository
     var deviceRepository: DeviceRepository
     var profileRepository: ProfileRepository
+    var tasksRepository: TasksRepository
     
     init(keychainWrapper: KeychainWrapper, userDefaultsProvider: UserDefaultsProvider, stopwatch: Stopwatch) {
         authRepository = AuthRepositoryImpl(keychainWrapper: keychainWrapper)
         deviceRepository = DeviceRepositoryImpl(userDefaultsProvider: userDefaultsProvider, timezone: stopwatch.timezone)
         profileRepository = ProfileRepositoryImpl(userDefaultsProvider: userDefaultsProvider)
+        tasksRepository = TasksRepositoryImpl()
     }
     
     func clear() {
         authRepository.clear()
         profileRepository.clear()
+        tasksRepository.clear()
     }
 }
 
@@ -303,9 +312,13 @@ class ScreenFactoryImpl: ScreenFactory {
     }
     
     func makeMainScreen() -> MainVC {
-        let interactor = MainInteractorImpl()
+        let interactor = MainInteractorImpl(tasksProvider: providerFactory.tasksProvider)
         let presenter = MainPresenterImpl(interactor: interactor)
-        let viewController = MainVC(presenter: presenter)
+        //let viewController = MainVC(presenter: presenter)
+        
+        let storyboard = UIStoryboard(name: "MainVC", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+        viewController.presenter = presenter
         
         interactor.presenter = presenter
         presenter.view = viewController
@@ -356,6 +369,7 @@ protocol ServiceFactory: AnyObject {
     var authService: AuthService { get }
     var deviceService: DeviceService { get }
     var profileService: ProfileService { get }
+    var tasksService: TasksService { get }
 }
 
 class ServiceFactoryImpl: ServiceFactory {
@@ -386,6 +400,12 @@ class ServiceFactoryImpl: ServiceFactory {
     
     lazy var profileService: ProfileService = {
         return ProfileServiceImpl(
+            repositoryFactory: repositoryFactory,
+            requestFactory: requestFactory)
+    }()
+    
+    lazy var tasksService: TasksService = {
+        return TasksServiceImpl(
             repositoryFactory: repositoryFactory,
             requestFactory: requestFactory)
     }()

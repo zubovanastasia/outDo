@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backIndicatorImage = UIImage(named: Assets.shared.appbarBack)
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: Assets.shared.appbarBack)
         UINavigationBar.appearance().tintColor = Styles.shared.getFontColor(Styles.shared.view.navbarPr)
-
+        UINavigationBar.appearance().backgroundColor = .white
+        
         let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 0.1), NSAttributedString.Key.foregroundColor: UIColor.clear]
         UIBarButtonItem.appearance().setTitleTextAttributes(attributes, for: .normal)
         UIBarButtonItem.appearance().setTitleTextAttributes(attributes, for: .highlighted)

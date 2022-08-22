@@ -13,8 +13,6 @@ struct Assignee: Codable {
     var name: String
     var iconUrl: String
 
-
-    
     enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -33,7 +31,6 @@ struct Assignee: Codable {
         name = json?["name"] as? String ?? ""
         iconUrl = json?["iconUrl"] as? String ?? ""
     }
-    
     
     func getJson() -> [String:Any] {
         return [

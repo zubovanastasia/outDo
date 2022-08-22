@@ -5,4 +5,19 @@
 //  Created by Антон Бондаренко on 22.08.2022.
 //
 
-import Foundation
+
+protocol TasksRepository: AnyObject {
+    
+    var tasks: [Task] { get set }
+    
+    func clear()
+}
+
+class TasksRepositoryImpl: TasksRepository {
+    
+    var tasks = [Task]()
+    
+    func clear() {
+        tasks = []
+    }
+}

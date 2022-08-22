@@ -12,7 +12,8 @@ class Config {
     static let shared = Config()
 
     // MARK: - Debug for clear auth
-    static let alwaysAuth = true
+    //static let alwaysAuth = true
+    static let alwaysAuth = false
     
     let minCountPassword = 6
     let minCountPhoneCode = 4

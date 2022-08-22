@@ -26,7 +26,7 @@ class MainCoordinator: BaseCoordinator {
     // MARK: - Current Flow
     private func startMainFlow() {
         let screen = screenFactory.makeMainScreen()
-        screen.presenter.onHandleAction = { [weak self] action, data in
+        screen.presenter?.onHandleAction = { [weak self] action, data in
             switch action {
             case .app:
                 self?.runAboutAppFlow()
