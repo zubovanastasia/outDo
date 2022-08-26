@@ -5,7 +5,7 @@
 //  Created by Антон Бондаренко on 05.08.2022.
 //
 
-class MainCoordinator: BaseCoordinator {
+final class MainCoordinator: BaseCoordinator {
     
     var finishFlow: VoidClosure?
     
@@ -26,8 +26,10 @@ class MainCoordinator: BaseCoordinator {
     // MARK: - Current Flow
     private func startMainFlow() {
         let screen = screenFactory.makeMainScreen()
-        screen.presenter?.onHandleAction = { [weak self] action, data in
+        screen.presenter.onHandleAction = { [weak self] action, data in
             switch action {
+            case .add:
+                self?.runTaskCreateFlow()
             case .app:
                 self?.runAboutAppFlow()
             case .profile:
@@ -70,6 +72,15 @@ class MainCoordinator: BaseCoordinator {
             url: Config.shared.urlPolicy)
         let coordinator = coordinatorFactory.makeWebCoordinator(router: router, data: webData)
         coordinator.finishFlow = { [weak self] in
+            self?.removeDependency(coordinator)
+        }
+        self.addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    private func runTaskCreateFlow() {
+        let coordinator = coordinatorFactory.makeTaskCreateCoordinator(router: router)
+        coordinator.finishFlow = { [weak self, weak coordinator] in
             self?.removeDependency(coordinator)
         }
         self.addDependency(coordinator)

@@ -10,4 +10,6 @@ enum TAction {
     case none
     
     case app, policy, profile
+    
+    case add
 }

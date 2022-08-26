@@ -1,11 +1,13 @@
 //
-//  AboutAppCoordinator.swift
+//  TaskCreateCoordinator.swift
 //  outDo
 //
-//  Created by Антон Бондаренко on 14.08.2022.
+//  Created by Антон Бондаренко on 26.08.2022.
 //
 
-final class AboutAppCoordinator: BaseCoordinator {
+import UIKit
+
+final class TaskCreateCoordinator: BaseCoordinator {
     
     var finishFlow: VoidClosure?
     
@@ -18,16 +20,13 @@ final class AboutAppCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        startAppFlow()
+        startTaskCreateFlow()
     }
     
     // MARK: - Current Flow
-    private func startAppFlow() {
-        let screen = screenFactory.makeAboutAppScreen()
-        // TODO: -
-        //screen.presenter.onBack = {}
+    private func startTaskCreateFlow() {
+        let screen = screenFactory.makeTaskCreateScreen()
+        screen.presenter.onBack = {}
         router.push(screen)
     }
 }
-
-

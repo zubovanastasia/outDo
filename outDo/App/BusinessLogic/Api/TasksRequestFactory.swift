@@ -15,7 +15,7 @@ protocol TasksRequestFactory: AbstractRequestFactory {
     func tasksGet(completion: @escaping ApiTasksGetResponseClosure)
 }
 
-class TasksRequestFactoryImpl: TasksRequestFactory {
+final class TasksRequestFactoryImpl: TasksRequestFactory {
     
     let errorParser: AbstractErrorParser
     let sessionManager: Session

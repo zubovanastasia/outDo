@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DimmPresentationController: PresentationController {
+final class DimmPresentationController: PresentationController {
     
     // darkness
     private lazy var dimmView: UIView = {

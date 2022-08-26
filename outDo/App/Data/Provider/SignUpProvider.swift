@@ -12,7 +12,7 @@ protocol SignUpProvider {
     func signUp(with credentials: SignUpCredentials) -> AnyPublisher<(Bool, String?), Never>
 }
 
-class SignUpProviderImpl: SignUpProvider {
+final class SignUpProviderImpl: SignUpProvider {
     
     private let authService: AuthService
     

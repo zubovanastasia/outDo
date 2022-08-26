@@ -26,7 +26,7 @@ final class MainInteractorImpl: MainInteractor {
     }
     
     func onTapAdd() {
-        
+        presenter?.onHandleAction?(.add, nil)
     }
     
     func onTapMenu() {

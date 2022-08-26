@@ -5,7 +5,7 @@
 //  Created by Антон Бондаренко on 14.08.2022.
 //
 
-class SignUpCoordinator: BaseCoordinator {
+final class SignUpCoordinator: BaseCoordinator {
     
     var finishFlow: VoidClosure?
     

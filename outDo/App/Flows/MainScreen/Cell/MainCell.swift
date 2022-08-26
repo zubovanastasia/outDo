@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainCell: UITableViewCell {
+final class MainCell: UITableViewCell {
 
     // MARK: - Outlets
     @IBOutlet private weak var bgView: UIView!

@@ -50,6 +50,7 @@ final class MainPresenterImpl: MainPresenter {
     
     func updateData() {
         interactor.updateCells()
+        view?.setTitle(Locales.value("vc_main_title"))
     }
     
     func viewDidLoad() {

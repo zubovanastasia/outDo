@@ -13,7 +13,7 @@ protocol TasksRepository: AnyObject {
     func clear()
 }
 
-class TasksRepositoryImpl: TasksRepository {
+final class TasksRepositoryImpl: TasksRepository {
     
     var tasks = [Task]()
     

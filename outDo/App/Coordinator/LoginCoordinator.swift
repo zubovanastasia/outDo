@@ -5,7 +5,7 @@
 //  Created by Антон Бондаренко on 31.07.2022.
 //
 
-class LoginCoordinator: BaseCoordinator {
+final class LoginCoordinator: BaseCoordinator {
     
     var finishFlow: VoidClosure?
     

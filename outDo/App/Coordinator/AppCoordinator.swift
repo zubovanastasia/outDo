@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class AppCoordinator: BaseCoordinator {
+final class AppCoordinator: BaseCoordinator {
     
     private let coordinatorFactory: CoordinatorFactory
     private let profileProvider: ProfileProvider

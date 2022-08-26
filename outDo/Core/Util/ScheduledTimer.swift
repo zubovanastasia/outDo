@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ScheduledTimer {
+final class ScheduledTimer {
     
     private var timer: Timer?
     private var completion: (() -> Void)?

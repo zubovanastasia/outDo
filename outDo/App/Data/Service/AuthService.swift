@@ -17,7 +17,7 @@ protocol AuthService {
     func signOut() -> AnyPublisher<(Bool, String?), Never>
 }
 
-class AuthServiceImpl: AuthService {
+final class AuthServiceImpl: AuthService {
     
     private var authRepository: AuthRepository
     

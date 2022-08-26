@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainSpacerCell: UITableViewCell {
+final class MainSpacerCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

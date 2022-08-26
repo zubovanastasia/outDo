@@ -9,7 +9,7 @@
 import Alamofire
 import Foundation
 
-class RequestFactory {
+final class RequestFactory {
     
     private let repositoryFactory: RepositoryFactory
     private weak var stopwatch: Stopwatch?

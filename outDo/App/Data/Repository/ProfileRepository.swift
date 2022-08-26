@@ -12,7 +12,7 @@ protocol ProfileRepository: AnyObject {
     func clear()
 }
 
-class ProfileRepositoryImpl: ProfileRepository {
+final class ProfileRepositoryImpl: ProfileRepository {
     
     private var userDefaultsProvider: UserDefaultsProvider
     

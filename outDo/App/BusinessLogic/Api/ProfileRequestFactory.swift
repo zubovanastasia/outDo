@@ -15,7 +15,7 @@ protocol ProfileRequestFactory: AbstractRequestFactory {
     func profileGet(completion: @escaping ApiProfileGetResponseClosure)
 }
 
-class ProfileRequestFactoryImpl: ProfileRequestFactory {
+final class ProfileRequestFactoryImpl: ProfileRequestFactory {
     
     let errorParser: AbstractErrorParser
     let sessionManager: Session

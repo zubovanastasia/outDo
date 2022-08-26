@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Config {
+final class Config {
     
     static let shared = Config()
 

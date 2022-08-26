@@ -10,26 +10,34 @@ import UIKit
 protocol MainView: AnyObject {
 
     func setCells(_ cells: [MainCellModel])
+    func setTitle(_ value: String)
 }
 
-class MainVC: UIViewController, MainView {
+final class MainVC: UIViewController, MainView {
     
     // MARK: - Outlets
-    @IBOutlet private weak var addButton: UIButton!
-//    @IBOutlet private weak var updateButton: UIButton!
-//    @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var addButton: MainAddButton!
     @IBOutlet private weak var tableView: UITableView!
     private var menuButton: UIButton!
     
     // MARK: - Properties
-    var presenter: MainPresenter?
+    var presenter: MainPresenter
     private var cells = [MainCellModel]()
     
     // MARK: - View
+    init(presenter: MainPresenter) {
+        self.presenter = presenter
+        super.init(nibName: Self.identifier, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        presenter?.viewDidLoad()
+        presenter.viewDidLoad()
         updateData()
     }
     
@@ -50,29 +58,24 @@ class MainVC: UIViewController, MainView {
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 100))
         tableView.bounces = false
         
-        addButton.style = Styles.shared.button.bevelDfSc
-        addButton.setTitle("", for: .normal)
-        
-        self.view.frame = UIScreen.main.bounds
+        addButton.onTap = { [weak self] in
+            self?.presenter.onTapAdd()
+        }
     }
     
     // MARK: - Data
     func updateData() {
-        presenter?.updateData()
+        presenter.updateData()
     }
     
     // MARK: - Taps
      @objc private func onTapMenu(_ sender: UIButton) {
-         self.presenter?.onTapMenu()
+         self.presenter.onTapMenu()
      }
 
 //     @IBAction func onTapUpdate(_ sender: UIButton) {
 //         self.presenter?.onTapUpdate()
 //     }
-
-     @IBAction func onTapAdd(_ sender: UIButton) {
-         self.presenter?.onTapAdd()
-     }
 }
 
 // MARK: - MainView
@@ -81,6 +84,10 @@ extension MainVC {
     func setCells(_ cells: [MainCellModel]) {
         self.cells = cells
         tableView.reloadData()
+    }
+    
+    func setTitle(_ value: String) {
+        self.title = value
     }
 }
 

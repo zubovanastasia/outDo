@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DismissAnimation: NSObject {
+final class DismissAnimation: NSObject {
     
     var duration: TimeInterval = 0.3
     var transition:TTransition = .crossdisolve

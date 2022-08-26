@@ -71,7 +71,7 @@ final class NavigationDrawerPopup: UIViewController, NavigationDrawerView {
         
         nameLabel.style = Styles.shared.label.b22main
         accountLabel.style = Styles.shared.label.b229796a9
-        sep.backgroundColor = Styles.shared.color.sep
+        sep.backgroundColor = .sep
         
         cHeightHeader.constant = 120 + Styles.shared.view.topInset
         cCenterY.constant = Styles.shared.view.topInset * 0.5

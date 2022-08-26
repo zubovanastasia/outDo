@@ -83,6 +83,7 @@ protocol CoordinatorFactory: AnyObject {
     func makeMainCoordinator(router: Router) -> MainCoordinator
     func makeProfileCoordinator(router: Router) -> ProfileCoordinator
     func makeSignUpCoordinator(router: Router) -> SignUpCoordinator
+    func makeTaskCreateCoordinator(router: Router) -> TaskCreateCoordinator
     func makeWebCoordinator(router: Router, data: WebData) -> WebCoordinator
 }
 
@@ -138,6 +139,12 @@ class CoordinatorFactoryImpl: CoordinatorFactory {
     
     func makeSignUpCoordinator(router: Router) -> SignUpCoordinator {
         return SignUpCoordinator(
+            router: router,
+            screenFactory: screenFactory)
+    }
+    
+    func makeTaskCreateCoordinator(router: Router) -> TaskCreateCoordinator {
+        return TaskCreateCoordinator(
             router: router,
             screenFactory: screenFactory)
     }
@@ -243,6 +250,7 @@ protocol ScreenFactory: AnyObject {
     func makeMainScreen() -> MainVC
     func makeProfileScreen() -> ProfileVC
     func makeSignUpScreen() -> SignUpVC
+    func makeTaskCreateScreen() -> TaskCreateVC
     func makeWebScreen(data: WebData) -> WebVC
 }
 
@@ -314,11 +322,7 @@ class ScreenFactoryImpl: ScreenFactory {
     func makeMainScreen() -> MainVC {
         let interactor = MainInteractorImpl(tasksProvider: providerFactory.tasksProvider)
         let presenter = MainPresenterImpl(interactor: interactor)
-        //let viewController = MainVC(presenter: presenter)
-        
-        let storyboard = UIStoryboard(name: "MainVC", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
-        viewController.presenter = presenter
+        let viewController = MainVC(presenter: presenter)
         
         interactor.presenter = presenter
         presenter.view = viewController
@@ -348,6 +352,17 @@ class ScreenFactoryImpl: ScreenFactory {
         interactor.presenter = presenter
         presenter.view = viewController
         
+        return viewController
+    }
+    
+    func makeTaskCreateScreen() -> TaskCreateVC {
+        let interactor = TaskCreateInteractorImpl()
+        let presenter = TaskCreatePresenterImpl(interactor: interactor)
+        let viewController = TaskCreateVC(presenter: presenter)
+
+        interactor.presenter = presenter
+        presenter.view = viewController
+
         return viewController
     }
     
