@@ -33,14 +33,16 @@ final class MainCell: UITableViewCell {
         self.selectedBackgroundView?.backgroundColor = .gray
         bgView.backgroundColor = .gray
         
-        titleLabel.style = Styles.shared.label.r20main
-        descLabel.style = Styles.shared.label.r18main
+        titleLabel.style = Styles.shared.label.r18main
+        descLabel.style = Styles.shared.label.r16mainA05
+        dateLabel.style = Styles.shared.label.r16mainA05
     }
     
     // MARK: - Data
     func updateData(_ data: MainCellModel) {
         titleLabel.text = data.title
         descLabel.text = data.text
+        dateLabel.text = data.date
         stateView.backgroundColor = data.stateColor
         self.contentView.backgroundColor = data.bgColor
     }

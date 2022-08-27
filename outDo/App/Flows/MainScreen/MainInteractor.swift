@@ -83,6 +83,7 @@ extension MainInteractorImpl {
             .setText(task.text)
             .setStateColor(UIColor.getMainStateColor(task.state))
             .setBgColor(UIColor.getMainBgColor(task.state))
+            .setDate(task.fromDateValue > 0 ? task.fromDateDate.withFormat("d MMM, HH:mm"): "")
             .build()
     }
 }

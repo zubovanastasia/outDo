@@ -54,7 +54,9 @@ final class Styles {
         tf[button.quietDfSc + "Down"] = MFont(fs.fs24, fontB, .white, NSTextAlignment.left, false, 0.7)
         tf[button.sharpLgPr] = MFont(fs.fs28, fontB, .white, NSTextAlignment.left)
         
+        tf[label.r14mainA05] = MFont(fs.fs14, fontR, .fcMain, NSTextAlignment.left, false, 0.5)
         tf[label.r16ffffffC] = MFont(fs.fs16, fontR, .white, NSTextAlignment.center)
+        tf[label.r16mainA05] = MFont(fs.fs16, fontR, .fcMain, NSTextAlignment.left, false, 0.5)
         tf[label.r18main] = MFont(fs.fs18, fontR, .fcMain, NSTextAlignment.left)
         tf[label.r20main] = MFont(fs.fs20, fontR, .fcMain, NSTextAlignment.left)
         tf[label.b20mainC] = MFont(fs.fs20, fontB, .fcMain, NSTextAlignment.center)
@@ -340,7 +342,9 @@ final class ButtonStyles {
 // MARK: - Label
 final class LabelStyles {
     
+    let r14mainA05 = "r14mainA05"
     let r16ffffffC = "r16ffffffC"
+    let r16mainA05 = "r16mainA05"
     let r18main = "r18main"
     let r20main = "r20main"
     let b20mainC = "b20mainC"

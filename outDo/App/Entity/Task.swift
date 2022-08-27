@@ -50,9 +50,9 @@ struct Task: Codable {
         self.updated = (try? container.decode(String.self, forKey: .updated)) ?? ""
         self.updatedValue = (try? container.decode(Double.self, forKey: .updatedValue)) ?? 0
         
-        createdDate = Date(timeIntervalSince1970: createdValue)
-        fromDateDate = Date(timeIntervalSince1970: fromDateValue)
-        updatedDate = Date(timeIntervalSince1970: updatedValue)
+        createdDate = createdValue.date
+        fromDateDate = fromDateValue.date
+        updatedDate = updatedValue.date
     }
     
     init(_ json: [String:Any]? = nil) {
@@ -69,9 +69,9 @@ struct Task: Codable {
         updated = json?["updated"] as? String ?? "0000-00-00 00:00:00"
         updatedValue = Double(json?["updatedValue"])
         
-        createdDate = Date(timeIntervalSince1970: createdValue)
-        fromDateDate = Date(timeIntervalSince1970: fromDateValue)
-        updatedDate = Date(timeIntervalSince1970: updatedValue)
+        createdDate = createdValue.date
+        fromDateDate = fromDateValue.date
+        updatedDate = updatedValue.date
     }
     
     

@@ -114,6 +114,13 @@ extension MainVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cells[indexPath.row].cell == MainCell.identifier ? 140 : 20
+        let data = cells[indexPath.row]
+        switch data.cell {
+        case MainSpacerCell.identifier: return 20
+        default:
+            let size = data.text.getTextSize(width: tableView.bounds.width - 40, font: Styles.shared.getFont(Styles.shared.label.r16mainA05))
+            let textHeight = size.height > 150 ? 150 : ceil(size.height)
+            return data.text.isEmpty ? 75 : 75 + textHeight//120
+        }
     }
 }

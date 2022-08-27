@@ -15,6 +15,7 @@ extension UIColor {
     class var vcGray: UIColor           { UIColor(rgb: 0xafafaf) }
     
     class var fcMain: UIColor           { .black }
+    class var fcSc: UIColor             { UIColor(rgb: 0x646464) }
     
     class var c323232: UIColor          { UIColor(rgb: 0x323232) }
     class var c514f65: UIColor          { UIColor(rgb: 0x514f65) }

@@ -12,6 +12,7 @@ struct MainCellModel {
     var cell: String
     var text: String
     var title: String
+    var date: String
     var bgColor: UIColor
     var stateColor: UIColor
 }

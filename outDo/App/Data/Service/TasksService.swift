@@ -37,7 +37,7 @@ final class TasksServiceImpl: TasksService {
                     completion(nil)
                     return
                 }
-                self?.tasksRepository.tasks = result.tasks
+                self?.tasksRepository.add(result.tasks)
                 completion(response)
             }
         }
