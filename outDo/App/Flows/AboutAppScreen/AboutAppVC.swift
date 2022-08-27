@@ -9,8 +9,10 @@ import UIKit
 
 final class AboutAppVC: UIViewController {
 
+    @IBOutlet weak var textLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "О приложении"
+        self.title = Locales.value("vc_about_title")
+        textLabel.text = Locales.value("vc_about_text")
     }
 }
