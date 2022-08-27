@@ -18,7 +18,7 @@ struct Task: Codable {
     var fromDateValue: Double
     var fromDateDate: Date
     var id: Int
-    var state: Int
+    var state: TTaskState
     var text: String
     var title: String
     var updated: String
@@ -44,7 +44,7 @@ struct Task: Codable {
         self.fromDate = (try? container.decode(String.self, forKey: .fromDate)) ?? ""
         self.fromDateValue = (try? container.decode(Double.self, forKey: .fromDateValue)) ?? 0
         self.id = (try? container.decode(Int.self, forKey: .id)) ?? 0
-        self.state = (try? container.decode(Int.self, forKey: .state)) ?? 0
+        self.state = (try? container.decode(TTaskState.self, forKey: .state)) ?? .created
         self.title = (try? container.decode(String.self, forKey: .title)) ?? ""
         self.text = (try? container.decode(String.self, forKey: .text)) ?? ""
         self.updated = (try? container.decode(String.self, forKey: .updated)) ?? ""
@@ -63,7 +63,7 @@ struct Task: Codable {
         fromDate = json?["fromDate"] as? String ?? "0000-00-00 00:00:00"
         fromDateValue = Double(json?["fromDateValue"])
         id = Int(json?["id"])
-        state = Int(json?["state"])
+        state = TTaskState(rawValue: Int(json?["state"])) ?? .created
         title = json?["title"] as? String ?? ""
         text = json?["text"] as? String ?? ""
         updated = json?["updated"] as? String ?? "0000-00-00 00:00:00"

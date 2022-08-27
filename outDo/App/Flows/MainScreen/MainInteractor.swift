@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit.UIColor
 
 protocol MainInteractor: AnyObject {
     
@@ -80,6 +81,8 @@ extension MainInteractorImpl {
         return MainCellModelBuilder(MainCell.identifier)
             .setTitle(task.title)
             .setText(task.text)
+            .setStateColor(UIColor.getMainStateColor(task.state))
+            .setBgColor(UIColor.getMainBgColor(task.state))
             .build()
     }
 }

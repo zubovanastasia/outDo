@@ -41,7 +41,8 @@ final class MainCell: UITableViewCell {
     func updateData(_ data: MainCellModel) {
         titleLabel.text = data.title
         descLabel.text = data.text
-        stateView.backgroundColor = .red
+        stateView.backgroundColor = data.stateColor
+        self.contentView.backgroundColor = data.bgColor
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {

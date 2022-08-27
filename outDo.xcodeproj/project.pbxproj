@@ -109,6 +109,7 @@
 		A017036E2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A017036B2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf */; };
 		A017036F2896DD6300E81C73 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A017036C2896DD6300E81C73 /* SourceSansPro-Light.ttf */; };
 		A0466463289D5F030011035E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466462289D5F030011035E /* MainCoordinator.swift */; };
+		A06645FB28B9E1B9002C40B5 /* TTaskState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06645FA28B9E1B9002C40B5 /* TTaskState.swift */; };
 		A0C607D328A960C0002327C3 /* DialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D228A960C0002327C3 /* DialogBuilder.swift */; };
 		A0C607D628A9611F002327C3 /* DialogRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D528A9611F002327C3 /* DialogRootVC.swift */; };
 		A0C607D828A96162002327C3 /* DimmPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D728A96162002327C3 /* DimmPresentationController.swift */; };
@@ -274,6 +275,7 @@
 		A017036B2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
 		A017036C2896DD6300E81C73 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
 		A0466462289D5F030011035E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A06645FA28B9E1B9002C40B5 /* TTaskState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTaskState.swift; sourceTree = "<group>"; };
 		A0C607D228A960C0002327C3 /* DialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogBuilder.swift; sourceTree = "<group>"; };
 		A0C607D528A9611F002327C3 /* DialogRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRootVC.swift; sourceTree = "<group>"; };
 		A0C607D728A96162002327C3 /* DimmPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmPresentationController.swift; sourceTree = "<group>"; };
@@ -841,6 +843,7 @@
 			isa = PBXGroup;
 			children = (
 				A0C607FC28A96579002327C3 /* TAction.swift */,
+				A06645FA28B9E1B9002C40B5 /* TTaskState.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -1195,6 +1198,7 @@
 				A0153F3228B89F0900FA581B /* TaskCreateVC.swift in Sources */,
 				A017032D2896D2B900E81C73 /* ProfileService.swift in Sources */,
 				A01703032896CEF300E81C73 /* AuthSignInResponse.swift in Sources */,
+				A06645FB28B9E1B9002C40B5 /* TTaskState.swift in Sources */,
 				A0C607D328A960C0002327C3 /* DialogBuilder.swift in Sources */,
 				A01702C42896C71800E81C73 /* Double-Extension.swift in Sources */,
 				A0C607DA28A9617A002327C3 /* DismissAnimation.swift in Sources */,

@@ -47,4 +47,35 @@ extension UIColor {
     class var tfOlBgUp: UIColor         { .clear }
     class var tfOlBgFocused: UIColor    { UIColor(rgb: 0xb3b34d, a: 0.05) }
     class var tfOlBgError: UIColor      { UIColor(rgb: 0xf9b290) }
+    
+    class var stateCreatedBg: UIColor     { .white }
+    class var stateCreatedSolid: UIColor  { UIColor(rgb: 0x87cefa) }
+    class var stateProcessedBg: UIColor   { UIColor(rgb: 0xffffe0) }
+    class var stateProcessedSolid: UIColor{ UIColor(rgb: 0xf0e68c) }
+    class var stateCompletedBg: UIColor   { UIColor(rgb: 0xf0fff0) }
+    class var stateCompletedSolid: UIColor{ UIColor(rgb: 0x00fa9a) }
+    class var stateCancelledBg: UIColor   { UIColor(rgb: 0xfff0f5) }
+    class var stateCancelledSolid: UIColor{ UIColor(rgb: 0xff6347) }
+    
+    static private var mainStateColors: [TTaskState: UIColor] = [
+        .created: stateCreatedSolid,
+        .processed: stateProcessedSolid,
+        .completed: stateCompletedSolid,
+        .cancelled: stateCancelledSolid
+    ]
+    
+    static private var mainBgColors: [TTaskState: UIColor] = [
+        .created: stateCreatedBg,
+        .processed: stateProcessedBg,
+        .completed: stateCompletedBg,
+        .cancelled: stateCancelledBg
+    ]
+    
+    static func getMainStateColor(_ state: TTaskState) -> UIColor {
+        mainStateColors[state] ?? .clear
+    }
+    
+    static func getMainBgColor(_ state: TTaskState) -> UIColor {
+        mainBgColors[state] ?? .clear
+    }
 }

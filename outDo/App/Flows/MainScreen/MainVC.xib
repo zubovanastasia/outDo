@@ -25,8 +25,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="y4h-on-jIi">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="20" y="0.0" width="374" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-10" maxY="0.0"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="81v-3J-odQ"/>
                         <outlet property="delegate" destination="-1" id="gIb-HY-l1R"/>
@@ -44,14 +45,14 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="y4h-on-jIi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4TB-9c-4m9"/>
                 <constraint firstItem="y4h-on-jIi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7mZ-sn-iab"/>
                 <constraint firstItem="Vhy-mi-xKo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AQ8-F3-fyg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Xzc-ej-sow" secondAttribute="bottom" constant="20" id="Lbw-KX-KuW"/>
                 <constraint firstItem="Xzc-ej-sow" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="PlG-wg-Fb5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y4h-on-jIi" secondAttribute="trailing" constant="20" id="Sbc-SM-qs8"/>
                 <constraint firstItem="Vhy-mi-xKo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="THx-4b-HMZ"/>
                 <constraint firstAttribute="bottom" secondItem="y4h-on-jIi" secondAttribute="bottom" id="Ua4-rB-vjx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y4h-on-jIi" secondAttribute="trailing" id="g4Z-Sk-Nca"/>
+                <constraint firstItem="y4h-on-jIi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dj6-Jd-g4N"/>
                 <constraint firstItem="Vhy-mi-xKo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kIi-GV-JyN"/>
                 <constraint firstAttribute="bottom" secondItem="Vhy-mi-xKo" secondAttribute="bottom" id="nT8-qG-jbL"/>
             </constraints>
