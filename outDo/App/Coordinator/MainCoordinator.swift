@@ -36,12 +36,11 @@ final class MainCoordinator: BaseCoordinator {
                 self?.runProfileFlow()
             case .policy:
                 self?.runPolicyFlow(data as? NavigationDrawerCellModel)
+            case .signIn:
+                self?.finishFlow?()
             default: return
             }
         }
-//        screen.presenter.onSignIn = { [weak self] in
-//            self?.finishFlow?()
-//        }
         router.setRootModule(screen)
     }
     

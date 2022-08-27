@@ -12,6 +12,7 @@ protocol AuthProvider {
     var isAuthed: Bool { get }
     
     func signIn(with credentials: AuthCredentials) -> AnyPublisher<(Bool, String?), Never>
+    @discardableResult
     func signOut() -> AnyPublisher<(Bool, String?), Never>
 }
 
@@ -29,6 +30,7 @@ final class AuthProviderImpl: AuthProvider {
         return authService.signIn(with: credentials)
     }
     
+    @discardableResult
     func signOut() -> AnyPublisher<(Bool, String?), Never> {
         return authService.signOut()
     }

@@ -21,8 +21,10 @@ final class Locales {
         "apiErrorText_signUp": "Ошибка регистрации",
         
         "alert_text_signUpSuccess": "Пользователь успешно создан. Теперь вы можете войти.",
+        "alert_text_signOut": "Вы уверены, что хотите выйти из учетной записи?",
         "alert_title_auth": "Профиль",
-        
+        "dialog_button_yesSignOut": "Да, выйти",
+        "dialog_button_no": "Нет",
         "dialog_button_close": "Закрыть",
         
         "navigationDrawer_app": "О приложении",
@@ -40,23 +42,16 @@ final class Locales {
         
         "vc_main_title": "Мои задачи",
         
+        "vc_profile_title": "Профиль",
+        "vc_profile_name": "Имя",
+        "vc_profile_email": "Почта",
+        "vc_profile_signOut": "Выйти",
+        
         "vc_signUp_login": "Почта",
         "vc_signUp_name": "Имя",
         "vc_signUp_password": "Пароль",
         "vc_signUp_confirmPassword": "Подтвердите пароль",
         "vc_signUp_button": "Зарегистрироваться",
-        "vc_edit_button": "Изменить",
-        
-//        "vc_critical_title": "Sorry, critical data error",
-//        "vc_critical_title_internet": "No Internet connection available",
-//
-//
-//        "vc_profile_title": "PROFILE",
-//        "vc_profile_prompt_email": "Email",
-//        "vc_profile_prompt_firstname": "First name",
-//        "vc_profile_prompt_lastname": "Last name",
-//        "vc_profile_prompt_birthday": "Birthday",
-//        "vc_profile_prompt_phone": "Phone"
     ]
 }
 

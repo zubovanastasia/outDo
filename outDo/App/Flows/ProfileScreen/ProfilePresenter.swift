@@ -11,19 +11,19 @@ import UIKit
 protocol ProfilePresenter: AnyObject {
 
     // MARK: - Coordinator
-    var onEditImage: VoidClosure? { get set }
-    var onEditProfile: VoidClosure? { get set }
-    
-    func onTapEditImage(image: String?)
-    func onTapEditProfile(name: String)
+    var onBack: VoidClosure? { get set }
+    var onSignOut: VoidClosure? { get set }
+
+    func onTapSignOut()
     func updateData()
 }
 
 final class ProfilePresenterImpl: ProfilePresenter {
     
     // MARK: - Coordinator
-    var onEditImage: VoidClosure?
-    var onEditProfile: VoidClosure?
+    var onBack: VoidClosure?
+    var onSignOut: VoidClosure?
+    
     private var interactor: ProfileInteractor
     weak var view: (UIViewController & ProfileView)?
     
@@ -31,17 +31,17 @@ final class ProfilePresenterImpl: ProfilePresenter {
         self.interactor = interactor
     }
     
-    func onTapEditImage(image: String?) {
-        interactor.onTapEditImage(image: image)
+    func onTapSignOut() {
+        interactor.onTapSignOut()
     }
-    func onTapEditProfile(name: String) {
-        interactor.onTapEditProfile(name: name)
-    }
+    
     func updateData() {
-        view?.setTitleEditImage(Locales.value("vc_edit_button"))
-        view?.setTitleName(interactor.getName())
-        view?.setTitleEmail(interactor.getEmail())
-        view?.setTitleEditProfile(Locales.value("vc_edit_button"))
+        view?.setTitle(Locales.value("vc_profile_title"))
+        view?.setTitleButton(Locales.value("vc_profile_signOut"))
+        view?.setPlaceholder(Locales.value("vc_profile_name"), for: .name)
+        view?.setPlaceholder(Locales.value("vc_profile_email"), for: .email)
+        view?.setTextfield(interactor.getName(), for: .name)
+        view?.setTextfield(interactor.getEmail(), for: .email)
     }
 }
 

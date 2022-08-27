@@ -7,85 +7,95 @@
 
 import UIKit
 
-protocol ProfileView {
-    func setTitleName(_ value: String)
-    func setTitleEditImage(_ value: String)
-    func setTitleEditProfile(_ value: String)
-    func setTitleEmail(_ value: String)
+enum TProfileTextfield {
+    
+    case name, email
 }
+
+protocol ProfileView {
+    
+    func setTitle(_ value: String)
+    func setPlaceholder(_ value: String, for textfield: TProfileTextfield)
+    func setTextfield(_ value: String, for textfield: TProfileTextfield)
+    func setTitleButton(_ value: String)
+}
+
 final class ProfileVC: UIViewController, ProfileView {
+
+    // MARK: - Properties
     var presenter: ProfilePresenter
-    var model = Profile()
     
     // MARK: - Outlets
     @IBOutlet private weak var avaImage: UIImageView!
-    @IBOutlet private weak var editImage: UIButton!
     @IBOutlet private weak var nameTextField: UITextField!
-    @IBOutlet private weak var emailLabel: UILabel!
-    @IBOutlet private weak var editProfile: UIButton!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var signOutButton: UIButton!
     
     // MARK: - View
     init(presenter: ProfilePresenter) {
         self.presenter = presenter
         super.init(nibName: Self.identifier, bundle: nil)
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Профиль"
         configure()
-        addGestures()
-        updateData(model)
+        updateData()
     }
     
     // MARK: - Private
     private func configure() {
-        editImage.style = Styles.shared.button.bevelSmSc
-        nameTextField.style = Styles.shared.label.r20main
-        emailLabel.style = Styles.shared.label.r20main
-        editProfile.style = Styles.shared.button.quietDfSc
-    }
-    private func addGestures() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(keyboardDismiss))
-        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)
-    }
-    func updateData(_ data: Profile) {
-        avaImage.image = !data.icon.isEmpty ? UIImage(named: data.icon) : nil
-        emailLabel.text = data.email
-        nameTextField.placeholder = data.name
-        presenter.updateData()
-    }
-    // MARK: - Taps
-    @IBAction private func onTapEditImage(_ sender: Any) {
-    }
-    @IBAction private func onTapEditProfile(_ sender: Any) {
+        nameTextField.style = Styles.shared.tfs.odPrT
+        emailTextField.style = Styles.shared.tfs.odPrB
+        signOutButton.style = Styles.shared.button.quietDfSc
     }
     
-    // MARK: - Navigation
-
-
+    // MARK: - Data
+    func updateData() {
+        presenter.updateData()
+    }
+    
+    // MARK: - Taps
+    @IBAction func onTapSignOut(_ sender: UIButton) {
+        presenter.onTapSignOut()
+    }
+    
 }
 
-// MARK: - Extensions
+// MARK: - ProfileView
 extension ProfileVC {
-    @objc func keyboardDismiss() {
-        self.view.endEditing(true)
+    
+    func setTitle(_ value: String) {
+        self.title = value
     }
-}
-extension ProfileVC {
-    func setTitleEditImage(_ value: String) {
-        editImage.setTitle(value, for: .normal)
+    
+    func setTitleButton(_ value: String) {
+        signOutButton.setTitle(value, for: .normal)
     }
-    func setTitleName(_ value: String) {
-        nameTextField.text = value
+    
+    func setPlaceholder(_ value: String, for textfield: TProfileTextfield) {
+        let input: UITextField
+        switch textfield {
+        case .name:
+            input = nameTextField
+        case .email:
+            input = emailTextField
+        }
+        input.setPlaceholer(value, with: Styles.shared.tfs.odPh)
     }
-    func setTitleEditProfile(_ value: String) {
-        editProfile.setTitle(value, for: .normal)
-    }
-    func setTitleEmail(_ value: String) {
-        emailLabel.text = value
+    
+    func setTextfield(_ value: String, for textfield: TProfileTextfield) {
+        let input: UITextField
+        switch textfield {
+        case .name:
+            input = nameTextField
+        case .email:
+            input = emailTextField
+        }
+        input.text = value
     }
 }

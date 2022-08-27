@@ -16,7 +16,7 @@ struct ApiMethod {
     static let deviceSave = "DeviceSave"
     
     // Profile
-    static let profileGet = "ProfileGe
+    static let profileGet = "ProfileGet"
     static let profileSave = "ProfileSave"
     static let profileImageSave = "ProfileImageSave"
 

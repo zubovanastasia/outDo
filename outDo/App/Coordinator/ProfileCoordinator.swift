@@ -26,18 +26,17 @@ final class ProfileCoordinator: BaseCoordinator {
     // MARK: - Current Flow
     private func startProfileFlow() {
         let screen = screenFactory.makeProfileScreen()
-        // TODO: -
-//        screen.presenter.onBack = {}
-//        screen.presenter.onSignOut = { [weak self] in
-//            self?.runLoginFlow()
-//        }
+        screen.presenter.onBack = {}
+        screen.presenter.onSignOut = { [weak self] in
+            self?.runLoginFlow()
+        }
         router.push(screen)
     }
     
     // MARK: - Next Flow
     // TODO: -
     private func runLoginFlow() {
-//        router.popToRootModule(animated: true)
-//        ((router.toPresent() as? UINavigationController)?.topViewController as? MainVC)?.presenter.onHandleAction?(.signIn, nil)
+        router.popToRootModule(animated: true)
+        ((router.toPresent() as? UINavigationController)?.topViewController as? MainVC)?.presenter.onHandleAction?(.signIn, nil)
     }
 }

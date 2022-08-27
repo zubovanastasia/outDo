@@ -12,4 +12,5 @@ enum TAction {
     case app, policy, profile
     
     case add
+    case signIn
 }
