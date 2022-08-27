@@ -17,10 +17,8 @@ struct ApiMethod {
     
     // Profile
     static let profileGet = "ProfileGet"
-    static let profileSave = "ProfileSave"
-    static let profileImageSave = "ProfileImageSave"
 
     // Tasks
+    static let taskCreate = "TaskCreate"
     static let tasksGet = "TasksGet"
-
 }

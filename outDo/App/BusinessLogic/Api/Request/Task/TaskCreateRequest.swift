@@ -1,14 +1,14 @@
 //
-//  ProfileSave.swift
+//  TaskCreateRequest.swift
 //  outDo
 //
-//  Created by Anastasiia Zubova on 16.08.2022.
+//  Created by Антон Бондаренко on 27.08.2022.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
-struct ProfileSave: RequestRouter {
+struct TaskCreateRequest: RequestRouter {
     
     let id = NSUUID().uuidString
     var baseUrl: URL
@@ -16,7 +16,7 @@ struct ProfileSave: RequestRouter {
     let path: String = ""
     
     var action = ""
-    let method = ApiMethod.profileSave
+    let method = ApiMethod.taskCreate
     var time = ""
     var signature = ""
     
@@ -24,13 +24,15 @@ struct ProfileSave: RequestRouter {
     var authCredentials: AuthCredentials
     var deviceRepository: DeviceRepository
     var profileRepository: ProfileRepository
+    var task: Task
     
-    init(baseUrl: URL, stopwatch: Stopwatch?, authRepository: AuthRepository, deviceRepository: DeviceRepository, profileRepository: ProfileRepository) {
+    init(baseUrl: URL, stopwatch: Stopwatch?, authRepository: AuthRepository, deviceRepository: DeviceRepository, profileRepository: ProfileRepository, task: Task) {
         self.baseUrl = baseUrl
         self.stopwatch = stopwatch
         self.authCredentials = authRepository.data
         self.deviceRepository = deviceRepository
         self.profileRepository = profileRepository
+        self.task = task
         self.time = getTime()
         self.signature = getSignature()
     }
@@ -46,10 +48,10 @@ struct ProfileSave: RequestRouter {
                     "token": authCredentials.token,
                     "time": time,
                     "signature": signature,
-                    "clientInfo": deviceRepository.device.getJson()
+                    "clientInfo": deviceRepository.device.getJson(),
+                    "task": task.getJson()
                 ]
             ]
         }
     }
 }
-

@@ -6,9 +6,11 @@
 //
 
 import Alamofire
+import Foundation
 
 typealias VoidClosure = () -> Void
 typealias BoolClosure = (Bool) -> Void
+typealias DateClosure = (Date) -> Void
 typealias DoubleClosure = (Double) -> Void
 typealias StringClosure = (String) -> Void
 

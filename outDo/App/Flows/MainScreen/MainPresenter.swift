@@ -14,9 +14,9 @@ protocol MainPresenter: AnyObject {
     
     func onTapAdd()
     func onTapMenu()
-    func onTapUpdate()
     func setCells(_ cells: [MainCellModel])
     func updateData()
+    func viewDidAppear()
     func viewDidLoad()
 }
 
@@ -40,10 +40,6 @@ final class MainPresenterImpl: MainPresenter {
         interactor.onTapMenu()
     }
     
-    func onTapUpdate() {
-        interactor.onTapUpdate()
-    }
-    
     func setCells(_ cells: [MainCellModel]) {
         view?.setCells(cells)
     }
@@ -51,6 +47,10 @@ final class MainPresenterImpl: MainPresenter {
     func updateData() {
         interactor.updateCells()
         view?.setTitle(Locales.value("vc_main_title"))
+    }
+    
+    func viewDidAppear() {
+        interactor.viewDidAppear()
     }
     
     func viewDidLoad() {

@@ -52,6 +52,8 @@ final class Styles {
         tf[button.bevelSmSc] = MFont(fs.fs20, fontB, .c646464, NSTextAlignment.left)
         tf[button.quietDfSc] = MFont(fs.fs24, fontB, .white, NSTextAlignment.left)
         tf[button.quietDfSc + "Down"] = MFont(fs.fs24, fontB, .white, NSTextAlignment.left, false, 0.7)
+        tf[button.quietSmNavbar] = MFont(fs.fs18, fontB, .white, NSTextAlignment.left, false, 0.6)
+        tf[button.quietSmNavbar + "Down"] = MFont(fs.fs18, fontB, .white, NSTextAlignment.left, false, 0.4)
         tf[button.sharpLgPr] = MFont(fs.fs28, fontB, .white, NSTextAlignment.left)
         
         tf[label.r14mainA05] = MFont(fs.fs14, fontR, .fcMain, NSTextAlignment.left, false, 0.5)
@@ -130,6 +132,9 @@ final class Styles {
         else if view.isKind(of: UITextView.self) {
             self.applyStyle(style, view as! UITextView)
         }
+        else if view.isKind(of: UITextView.self) {
+            self.applyStyle(style, view as! UITextView)
+        }
         else {
             self.view.applyStyle(style, view)
         }
@@ -194,6 +199,7 @@ final class ButtonStyles {
     let dialogDfSc = "bevelDfSc"
     let circleDfPlus = "circleDfPlus"
     let quietDfSc = "quietDfSc"
+    let quietSmNavbar = "quietSmNavbar"
     let sharpLgPr = "sharpLgPr"
     let swtch = "swtch"
     
@@ -215,6 +221,7 @@ final class ButtonStyles {
         case dialogDfSc: setStyleBevelDfSc(style, button)
         case circleDfPlus: setStyleCircleDfPlus(style, button)
         case quietDfSc: setStyleQuietDfSc(style, button)
+        case quietSmNavbar: setStyleQuietSmNavbar(style, button)
         case sharpLgPr: setStyleSharpLgPr(style, button)
         case Styles.shared.view.navbarPr: setStyleNavbarPr(style, button)
         default:
@@ -303,6 +310,11 @@ final class ButtonStyles {
         button.widthAnchor.constraint(equalToConstant: sizeDf).isActive = true
         button.layer.masksToBounds = true
         button.setImage(UIImage(named: Assets.shared.buttonFlowPlus), for: .normal)
+    }
+    
+    private func setStyleQuietSmNavbar(_ style: String, _ button: UIButton) {
+        setTextFont(style, button)
+        setTextFont("\(quietSmNavbar)Down", button, .highlighted)
     }
     
     private func setStyleQuietDfSc(_ style: String, _ button: UIButton) {
@@ -395,7 +407,7 @@ final class TextfieldStyles {
     
     func applyStyle(_ style: String, _ textview: UITextView) {
         switch style {
-        case olPr: setStyleOlPr(style, textview)
+        case odPr: setStyleOdPr(style, textview)
         default:
             print("no tv style \(style)")
         }
@@ -452,11 +464,10 @@ final class TextfieldStyles {
         textfield.setBottomCornerRadius(value: cornerDf)
     }
     
-    private func setStyleOlPr(_ style: String, _ textview: UITextView) {
-        //textview.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    private func setStyleOdPr(_ style: String, _ textview: UITextView) {
         textview.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -2)
-        textview.tintColor = Styles.shared.getFontColor(olPr)
-        setTextFont(olPr, textview: textview)
+        textview.tintColor = Styles.shared.getFontColor(odPr)
+        setTextFont(odPr, textview: textview)
     }
     
     private func setStyleOdCommon(_ style: String, _ textfield: UITextField, _ cornerRadius: CGFloat = 0) {
@@ -490,6 +501,7 @@ final class ViewStyles {
     let navbarPrC = "navbarPrC"
 
     let popup = "popup"
+    let popupT = "popupT"
     
     let cornerDf: CGFloat = 10
     let cornerPopup: CGFloat = 15
@@ -529,14 +541,30 @@ final class ViewStyles {
     func applyStyle(_ style: String, _ view: UIView) {
         switch style {
         case popup: setStylePopup(style, view)
+        case popupT: setStylePopupT(style, view)
+        case Styles.shared.tfs.odPrB: setStyleInputOdPrB(style, view)
         default:
             print("no view style \(style)")
         }
     }
     
+    private func setStyleInputOdPrB(_ style: String, _ view: UIView) {
+        view.clipsToBounds = true
+        view.layer.masksToBounds = true
+        view.layer.borderWidth = 1
+        view.setBottomCornerRadius(value: cornerDf)
+        view.showTfOdUp()
+    }
+    
     private func setStylePopup(_ style: String, _ view: UIView) {
         view.backgroundColor = .vc
         view.layer.cornerRadius = cornerPopup
+        Styles.shared.addShadow(view, x: 0, y: 6, a: 0.2, blur: 10, cornerRadius: cornerPopup)
+    }
+    
+    private func setStylePopupT(_ style: String, _ view: UIView) {
+        view.backgroundColor = .vc
+        view.setTopCornerRadius(value: cornerPopup)
         Styles.shared.addShadow(view, x: 0, y: 6, a: 0.2, blur: 10, cornerRadius: cornerPopup)
     }
 }

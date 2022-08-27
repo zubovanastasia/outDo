@@ -23,13 +23,22 @@ final class Locales {
         "alert_text_signUpSuccess": "Пользователь успешно создан. Теперь вы можете войти.",
         "alert_text_signOut": "Вы уверены, что хотите выйти из учетной записи?",
         "alert_title_auth": "Профиль",
+        
         "dialog_button_yesSignOut": "Да, выйти",
         "dialog_button_no": "Нет",
         "dialog_button_close": "Закрыть",
+        "dialog_button_save": "Сохранить",
+        "dialog_button_cancel": "Отменить",
+        
+        "navbar_create": "Создать",
         
         "navigationDrawer_app": "О приложении",
         "navigationDrawer_policy": "Политика конфиденциальности",
         
+        "popup_dialogPicker_title": "Дата",
+        
+        "toast_taskCreate_noTitle": "Введите название задачи",
+        "toast_taskCreate_noDate": "Добавьте время",
         "toast_signUpWrongConfirm": "Пароли не совпадают",
         "toast_signUpWrongLogin": "Введите корректную почту (логин)",
         "toast_signUpWrongName": "Введите имя",
@@ -49,6 +58,11 @@ final class Locales {
         "vc_profile_name": "Имя",
         "vc_profile_email": "Почта",
         "vc_profile_signOut": "Выйти",
+        
+        "vc_taskCreate_title": "Новая задача",
+        "vc_taskCreate_name": "Название",
+        "vc_taskCreate_date": "Время начала",
+        "vc_taskCreate_desc": "Описание",
         
         "vc_signUp_login": "Почта",
         "vc_signUp_name": "Имя",

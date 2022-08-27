@@ -5,10 +5,13 @@
 //  Created by Антон Бондаренко on 22.08.2022.
 //
 
+import Alamofire
+import Combine
+
 protocol TasksProvider {
  
     var tasks: [Task] { get }
-    func tasksGet(completion: @escaping (TasksGetResponse?) -> Void)
+    func tasksGet() -> AnyPublisher<Bool, Never>
 }
 
 final class TasksProviderImpl: TasksProvider {
@@ -24,7 +27,7 @@ final class TasksProviderImpl: TasksProvider {
     }
     
     // MARK: - Api
-    func tasksGet(completion: @escaping (TasksGetResponse?) -> Void) {
-        tasksService.tasksGet(completion: completion)
+    func tasksGet() -> AnyPublisher<Bool, Never> {
+        return tasksService.tasksGet()
     }
 }

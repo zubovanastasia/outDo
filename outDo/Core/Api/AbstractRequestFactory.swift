@@ -16,22 +16,10 @@ protocol AbstractRequestFactory {
     var queue: DispatchQueue { get }
     
     @discardableResult
-    func request<T: Decodable>(request: URLRequestConvertible, completion: @escaping (AFDataResponse<T>) -> Void) -> DataRequest
-    
-    @discardableResult
     func request<T: Decodable>(request: URLRequestConvertible) -> AnyPublisher<AFDataResponse<T>, Never>
 }
 
 extension AbstractRequestFactory {
-    
-    @discardableResult
-    func request<T: Decodable>(request: URLRequestConvertible, completion: @escaping (AFDataResponse<T>) -> Void) -> DataRequest {
-        return sessionManager.request(request)
-            .responseCodable(
-                errorParser: errorParser,
-                completion: completion)
-        
-    }
     
     @discardableResult
     func request<T: Decodable>(request: URLRequestConvertible) -> AnyPublisher<AFDataResponse<T>, Never> {

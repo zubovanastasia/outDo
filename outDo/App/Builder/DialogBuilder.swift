@@ -142,6 +142,14 @@ extension DialogBuilder {
             transition: .crossdisolve)
     }
     
+    func showDatePicker(date: Date?, onApply completion: DateClosure?) {
+        show(
+            screenFactory?.makeDatePickerPopup(
+                date: date,
+                onApply: completion),
+            transition: .bottomsheet)
+    }
+    
     func showToast(_ message: String) {
         show(
             screenFactory?.makeToastPopup(message: message),

@@ -5,6 +5,7 @@
 //  Created by Антон Бондаренко on 22.08.2022.
 //
 
+import Combine
 import Foundation
 import UIKit.UIColor
 
@@ -12,8 +13,8 @@ protocol MainInteractor: AnyObject {
     
     func onTapAdd()
     func onTapMenu()
-    func onTapUpdate()
     func updateCells()
+    func viewDidAppear()
     func viewDidLoad()
 }
 
@@ -21,6 +22,7 @@ final class MainInteractorImpl: MainInteractor {
     
     private let tasksProvider: TasksProvider
     weak var presenter: MainPresenter?
+    private var tasksCancellable: AnyCancellable?
     
     init(tasksProvider: TasksProvider) {
         self.tasksProvider = tasksProvider
@@ -36,10 +38,6 @@ final class MainInteractorImpl: MainInteractor {
         }
     }
     
-    func onTapUpdate() {
-        
-    }
-    
     func updateCells() {
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             let cells = self?.construct() ?? [MainCellModel]()
@@ -49,15 +47,22 @@ final class MainInteractorImpl: MainInteractor {
         }
     }
     
+    func viewDidAppear() {
+        presenter?.updateData()
+    }
+    
     func viewDidLoad() {
         makeApiTasksGet()
     }
     
     // MARK: - Api
     private func makeApiTasksGet() {
-        tasksProvider.tasksGet { [weak self] response in
-            self?.updateCells()
-        }
+        tasksCancellable = tasksProvider.tasksGet()
+            .sink { [weak self] isSuccess in
+                if isSuccess {
+                    self?.updateCells()
+                }
+            }
     }
 }
 

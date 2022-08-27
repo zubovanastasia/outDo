@@ -6,13 +6,12 @@
 //
 
 import Alamofire
+import Combine
 import Foundation
-
-typealias ApiTasksGetResponseClosure = (AFDataResponse<TasksGetResponse>) -> Void
 
 protocol TasksRequestFactory: AbstractRequestFactory {
     
-    func tasksGet(completion: @escaping ApiTasksGetResponseClosure)
+    func tasksGet() -> AnyPublisher<AFDataResponse<TasksGetResponse>, Never>
 }
 
 final class TasksRequestFactoryImpl: TasksRequestFactory {
@@ -43,13 +42,13 @@ final class TasksRequestFactoryImpl: TasksRequestFactory {
         self.profileRepository = repositoryFactory.profileRepository
     }
     
-    func tasksGet(completion: @escaping ApiTasksGetResponseClosure) {
+    func tasksGet() -> AnyPublisher<AFDataResponse<TasksGetResponse>, Never> {
         let request = TasksGetRequest(
             baseUrl: baseUrl,
             stopwatch: stopwatch,
             authRepository: authRepository,
             deviceRepository: deviceRepository,
             profileRepository: profileRepository)
-        self.request(request: request, completion: completion)
+        return self.request(request: request)
     }
 }

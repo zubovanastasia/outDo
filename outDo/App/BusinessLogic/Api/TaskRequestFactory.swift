@@ -1,26 +1,26 @@
 //
-//  ProfileRequestFactory.swift
+//  TaskRequestFactory.swift
 //  outDo
 //
-//  Created by Антон Бондаренко on 31.07.2022.
+//  Created by Антон Бондаренко on 27.08.2022.
 //
 
 import Alamofire
 import Combine
 import Foundation
 
-protocol ProfileRequestFactory: AbstractRequestFactory {
+protocol TaskRequestFactory: AbstractRequestFactory {
     
-    func profileGet() -> AnyPublisher<AFDataResponse<ProfileGetResponse>, Never>
+    func taskCreate(_ task: Task) -> AnyPublisher<AFDataResponse<TaskCreateResponse>, Never>
 }
 
-class ProfileRequestFactoryImpl: ProfileRequestFactory {
-   
+final class TaskRequestFactoryImpl: TaskRequestFactory {
+    
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
     let baseUrl = URL(string: Config.shared.urlApi)!
-    
+
     private let authRepository: AuthRepository
     private let deviceRepository: DeviceRepository
     private let profileRepository: ProfileRepository
@@ -42,13 +42,14 @@ class ProfileRequestFactoryImpl: ProfileRequestFactory {
         self.profileRepository = repositoryFactory.profileRepository
     }
     
-    func profileGet() -> AnyPublisher<AFDataResponse<ProfileGetResponse>, Never> {
-        let request = ProfileGetRequest(
+    func taskCreate(_ task: Task) -> AnyPublisher<AFDataResponse<TaskCreateResponse>, Never> {
+        let request = TaskCreateRequest(
             baseUrl: baseUrl,
             stopwatch: stopwatch,
             authRepository: authRepository,
             deviceRepository: deviceRepository,
-            profileRepository: profileRepository)
+            profileRepository: profileRepository,
+            task: task)
         ActivityHelper.shared.add(request.id)
         return self.request(request: request)
     }

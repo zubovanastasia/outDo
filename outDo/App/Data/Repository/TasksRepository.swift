@@ -11,6 +11,7 @@ protocol TasksRepository: AnyObject {
     var tasks: [Task] { get }
     
     func add(_ tasks: [Task])
+    func add(_ task: Task)
     func clear()
 }
 
@@ -20,6 +21,11 @@ final class TasksRepositoryImpl: TasksRepository {
     
     func add(_ tasks: [Task]) {
         self.tasks = tasks.sorted(by: { $0.fromDateValue < $1.fromDateValue })
+    }
+    
+    func add(_ task: Task) {
+        tasks.append(task)
+        add(tasks)
     }
     
     func clear() {

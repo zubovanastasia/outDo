@@ -13,8 +13,6 @@
 		636F8859289FF18800179125 /* SignUpCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F8858289FF18800179125 /* SignUpCredentials.swift */; };
 		636F885B289FF4D200179125 /* AuthSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F885A289FF4D200179125 /* AuthSignUpResponse.swift */; };
 		636F885D28A154E400179125 /* SignUpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F885C28A154E400179125 /* SignUpProvider.swift */; };
-		636F886B28AB963300179125 /* ProfileSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F886A28AB963300179125 /* ProfileSave.swift */; };
-		636F886D28AB963F00179125 /* ProfileImageSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636F886C28AB963F00179125 /* ProfileImageSave.swift */; };
 		63998CC0289597A000266599 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63998CBF289597A000266599 /* AppDelegate.swift */; };
 		63998CC9289597A200266599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63998CC8289597A200266599 /* Assets.xcassets */; };
 		63998CCC289597A200266599 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63998CCA289597A200266599 /* LaunchScreen.storyboard */; };
@@ -112,6 +110,15 @@
 		A017036F2896DD6300E81C73 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A017036C2896DD6300E81C73 /* SourceSansPro-Light.ttf */; };
 		A0466463289D5F030011035E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0466462289D5F030011035E /* MainCoordinator.swift */; };
 		A06645FB28B9E1B9002C40B5 /* TTaskState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06645FA28B9E1B9002C40B5 /* TTaskState.swift */; };
+		A06645FF28BA3D39002C40B5 /* DatePickerPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06645FD28BA3D39002C40B5 /* DatePickerPopup.swift */; };
+		A066460028BA3D39002C40B5 /* DatePickerPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A06645FE28BA3D39002C40B5 /* DatePickerPopup.xib */; };
+		A066460228BA3D8F002C40B5 /* DatePickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460128BA3D8F002C40B5 /* DatePickerPresenter.swift */; };
+		A066460428BA3D97002C40B5 /* DatePickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460328BA3D97002C40B5 /* DatePickerInteractor.swift */; };
+		A066460628BA4795002C40B5 /* TaskCreateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460528BA4795002C40B5 /* TaskCreateProvider.swift */; };
+		A066460828BA47B8002C40B5 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460728BA47B8002C40B5 /* TaskService.swift */; };
+		A066460A28BA4E3E002C40B5 /* TaskRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460928BA4E3E002C40B5 /* TaskRequestFactory.swift */; };
+		A066460D28BA4EE8002C40B5 /* TaskCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460C28BA4EE8002C40B5 /* TaskCreateRequest.swift */; };
+		A066461028BA4FA9002C40B5 /* TaskCreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460F28BA4FA9002C40B5 /* TaskCreateResponse.swift */; };
 		A0C607D328A960C0002327C3 /* DialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D228A960C0002327C3 /* DialogBuilder.swift */; };
 		A0C607D628A9611F002327C3 /* DialogRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D528A9611F002327C3 /* DialogRootVC.swift */; };
 		A0C607D828A96162002327C3 /* DimmPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D728A96162002327C3 /* DimmPresentationController.swift */; };
@@ -180,8 +187,6 @@
 		636F8858289FF18800179125 /* SignUpCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCredentials.swift; sourceTree = "<group>"; };
 		636F885A289FF4D200179125 /* AuthSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpResponse.swift; sourceTree = "<group>"; };
 		636F885C28A154E400179125 /* SignUpProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProvider.swift; sourceTree = "<group>"; };
-		636F886A28AB963300179125 /* ProfileSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSave.swift; sourceTree = "<group>"; };
-		636F886C28AB963F00179125 /* ProfileImageSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageSave.swift; sourceTree = "<group>"; };
 		63998CBC289597A000266599 /* outDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = outDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63998CBF289597A000266599 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63998CC8289597A200266599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -280,6 +285,15 @@
 		A017036C2896DD6300E81C73 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
 		A0466462289D5F030011035E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A06645FA28B9E1B9002C40B5 /* TTaskState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTaskState.swift; sourceTree = "<group>"; };
+		A06645FD28BA3D39002C40B5 /* DatePickerPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopup.swift; sourceTree = "<group>"; };
+		A06645FE28BA3D39002C40B5 /* DatePickerPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerPopup.xib; sourceTree = "<group>"; };
+		A066460128BA3D8F002C40B5 /* DatePickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPresenter.swift; sourceTree = "<group>"; };
+		A066460328BA3D97002C40B5 /* DatePickerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerInteractor.swift; sourceTree = "<group>"; };
+		A066460528BA4795002C40B5 /* TaskCreateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreateProvider.swift; sourceTree = "<group>"; };
+		A066460728BA47B8002C40B5 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		A066460928BA4E3E002C40B5 /* TaskRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRequestFactory.swift; sourceTree = "<group>"; };
+		A066460C28BA4EE8002C40B5 /* TaskCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreateRequest.swift; sourceTree = "<group>"; };
+		A066460F28BA4FA9002C40B5 /* TaskCreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreateResponse.swift; sourceTree = "<group>"; };
 		A0C607D228A960C0002327C3 /* DialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogBuilder.swift; sourceTree = "<group>"; };
 		A0C607D528A9611F002327C3 /* DialogRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRootVC.swift; sourceTree = "<group>"; };
 		A0C607D728A96162002327C3 /* DimmPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmPresentationController.swift; sourceTree = "<group>"; };
@@ -375,8 +389,6 @@
 			isa = PBXGroup;
 			children = (
 				A017032E2896D2FA00E81C73 /* ProfileGetRequest.swift */,
-				636F886A28AB963300179125 /* ProfileSave.swift */,
-				636F886C28AB963F00179125 /* ProfileImageSave.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -459,13 +471,14 @@
 			children = (
 				A0C6081928A97CF7002327C3 /* AboutAppScreen */,
 				A0C607ED28A964F9002327C3 /* AlertPopup */,
+				A06645FC28BA3D21002C40B5 /* DatePickerPopup */,
 				A01703592896D7B700E81C73 /* LaunchScreen */,
 				A017035E2896D7DC00E81C73 /* LoginScreen */,
 				A0EE964628B3CBF100F056CB /* MainScreen */,
 				A0C607F628A96525002327C3 /* NavigationDrawerPopup */,
 				A0C6081E28A97D11002327C3 /* ProfileScreen */,
 				636F884D289FE14B00179125 /* SignUpScreen */,
-				A0153F2F28B89EF600FA581B /* TaskCreate */,
+				A0153F2F28B89EF600FA581B /* TaskCreateScreen */,
 				A0C607EC28A964EE002327C3 /* ToastPopup */,
 				A0C6082328A97D28002327C3 /* WebScreen */,
 			);
@@ -490,7 +503,7 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
-		A0153F2F28B89EF600FA581B /* TaskCreate */ = {
+		A0153F2F28B89EF600FA581B /* TaskCreateScreen */ = {
 			isa = PBXGroup;
 			children = (
 				A0153F3028B89F0900FA581B /* TaskCreateVC.swift */,
@@ -498,7 +511,7 @@
 				A0153F3428B89F6900FA581B /* TaskCreatePresenter.swift */,
 				A0153F3628B89FAA00FA581B /* TaskCreateInteractor.swift */,
 			);
-			path = TaskCreate;
+			path = TaskCreateScreen;
 			sourceTree = "<group>";
 		};
 		A01702B12896BFB700E81C73 /* Core */ = {
@@ -633,6 +646,7 @@
 				A01703192896D13400E81C73 /* DeviceProvider.swift */,
 				A01703282896D26B00E81C73 /* ProfileProvider.swift */,
 				A0EE967228B3DB8E00F056CB /* TasksProvider.swift */,
+				A066460528BA4795002C40B5 /* TaskCreateProvider.swift */,
 				A017034C2896D57400E81C73 /* UserDefaultsProvider.swift */,
 			);
 			path = Provider;
@@ -645,6 +659,7 @@
 				A017031B2896D16700E81C73 /* DeviceService.swift */,
 				A017032C2896D2B900E81C73 /* ProfileService.swift */,
 				A0EE967628B3DC7800F056CB /* TasksService.swift */,
+				A066460728BA47B8002C40B5 /* TaskService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -660,6 +675,7 @@
 				A01703362896D3AF00E81C73 /* AuthRequestFactory.swift */,
 				A01703382896D3CE00E81C73 /* DeviceRequestFactory.swift */,
 				A017033A2896D3E700E81C73 /* ProfileRequestFactory.swift */,
+				A066460928BA4E3E002C40B5 /* TaskRequestFactory.swift */,
 				A0EE966228B3D77400F056CB /* TasksRequestFactory.swift */,
 			);
 			path = Api;
@@ -671,6 +687,7 @@
 				A00EE21528A919610018F298 /* Auth */,
 				A0EE966728B3D87D00F056CB /* Device */,
 				A0EE966828B3D88900F056CB /* Profile */,
+				A066460E28BA4FA0002C40B5 /* Task */,
 				A0EE966928B3D89400F056CB /* Tasks */,
 			);
 			path = Response;
@@ -691,6 +708,7 @@
 				636F884A289FDF6E00179125 /* Auth */,
 				636F884B289FDFA800179125 /* Device */,
 				636F884C289FDFC100179125 /* Profile */,
+				A066460B28BA4ED0002C40B5 /* Task */,
 				A0EE966428B3D80D00F056CB /* Tasks */,
 			);
 			path = Request;
@@ -788,6 +806,33 @@
 				A017036B2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A06645FC28BA3D21002C40B5 /* DatePickerPopup */ = {
+			isa = PBXGroup;
+			children = (
+				A06645FD28BA3D39002C40B5 /* DatePickerPopup.swift */,
+				A06645FE28BA3D39002C40B5 /* DatePickerPopup.xib */,
+				A066460128BA3D8F002C40B5 /* DatePickerPresenter.swift */,
+				A066460328BA3D97002C40B5 /* DatePickerInteractor.swift */,
+			);
+			path = DatePickerPopup;
+			sourceTree = "<group>";
+		};
+		A066460B28BA4ED0002C40B5 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				A066460C28BA4EE8002C40B5 /* TaskCreateRequest.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		A066460E28BA4FA0002C40B5 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				A066460F28BA4FA9002C40B5 /* TaskCreateResponse.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 		A0C607D128A960AE002327C3 /* Builder */ = {
@@ -1083,6 +1128,7 @@
 				A0C6081228A973B1002327C3 /* NavigationDrawerCell.xib in Resources */,
 				A0C6081D28A97D09002327C3 /* AboutAppVC.xib in Resources */,
 				A0C607F128A96507002327C3 /* AlertPopup.xib in Resources */,
+				A066460028BA3D39002C40B5 /* DatePickerPopup.xib in Resources */,
 				A0EE968128B3F59200F056CB /* MainSpacerCell.xib in Resources */,
 				A017036D2896DD6300E81C73 /* SourceSansPro-Regular.ttf in Resources */,
 				A0C607FA28A9653A002327C3 /* NavigationDrawerPopup.xib in Resources */,
@@ -1115,7 +1161,6 @@
 				636F8857289FEE7300179125 /* AuthSignUpRequest.swift in Sources */,
 				A01702C22896C6EC00E81C73 /* Date-Extension.swift in Sources */,
 				A01702F42896CD8500E81C73 /* TypeAlias.swift in Sources */,
-				636F886B28AB963300179125 /* ProfileSave.swift in Sources */,
 				A01702BB2896C5C800E81C73 /* Router.swift in Sources */,
 				A01702F82896CDE900E81C73 /* AuthProvider.swift in Sources */,
 				A01703292896D26B00E81C73 /* ProfileProvider.swift in Sources */,
@@ -1153,11 +1198,12 @@
 				A0153F3528B89F6900FA581B /* TaskCreatePresenter.swift in Sources */,
 				A01703162896D0F800E81C73 /* Observable.swift in Sources */,
 				A0C607FD28A96579002327C3 /* TAction.swift in Sources */,
-				636F886D28AB963F00179125 /* ProfileImageSave.swift in Sources */,
+				A066460D28BA4EE8002C40B5 /* TaskCreateRequest.swift in Sources */,
 				A01702FD2896CE9600E81C73 /* AuthStatusProvider.swift in Sources */,
 				A01703232896D1DA00E81C73 /* Device.swift in Sources */,
 				A017033E2896D43300E81C73 /* AbstractRequestFactory.swift in Sources */,
 				A01703402896D44700E81C73 /* AbstractErrorParser.swift in Sources */,
+				A066460828BA47B8002C40B5 /* TaskService.swift in Sources */,
 				A017032B2896D29000E81C73 /* ProfileRepository.swift in Sources */,
 				A0EE968028B3F59200F056CB /* MainSpacerCell.swift in Sources */,
 				A01703332896D34B00E81C73 /* Profile.swift in Sources */,
@@ -1167,6 +1213,7 @@
 				A01702D22896C81A00E81C73 /* UIBarButtonItem-Extension.swift in Sources */,
 				A0C6081828A97CE0002327C3 /* AboutAppCoordinator.swift in Sources */,
 				A01703212896D1B300E81C73 /* DeviceRepository.swift in Sources */,
+				A066460228BA3D8F002C40B5 /* DatePickerPresenter.swift in Sources */,
 				A01702DC2896C89300E81C73 /* UITextField-Extension.swift in Sources */,
 				A01703542896D6D200E81C73 /* AppCoordinator.swift in Sources */,
 				A0EE964F28B3CC3C00F056CB /* MainCellUpdate.swift in Sources */,
@@ -1178,9 +1225,11 @@
 				A0EE967028B3D8F200F056CB /* Assignee.swift in Sources */,
 				A01702EB2896C9E000E81C73 /* Styles.swift in Sources */,
 				A0C6083328A986BB002327C3 /* WebInteractor.swift in Sources */,
+				A06645FF28BA3D39002C40B5 /* DatePickerPopup.swift in Sources */,
 				A01702B92896C5B400E81C73 /* BaseCoordinator.swift in Sources */,
 				A0C6081428A973BB002327C3 /* NavigationDrawerCellUpdate.swift in Sources */,
 				A0EE966328B3D77400F056CB /* TasksRequestFactory.swift in Sources */,
+				A066461028BA4FA9002C40B5 /* TaskCreateResponse.swift in Sources */,
 				A01703182896D10400E81C73 /* ObservableOptions.swift in Sources */,
 				A0EE965128B3CC4300F056CB /* MainCellModel.swift in Sources */,
 				A017030F2896D00F00E81C73 /* ApiMethod.swift in Sources */,
@@ -1198,6 +1247,7 @@
 				A01702CE2896C7EC00E81C73 /* UIButton-Extension.swift in Sources */,
 				A00EE21728A922870018F298 /* SignUpCoordinator.swift in Sources */,
 				A01702C62896C75B00E81C73 /* Int-Extension.swift in Sources */,
+				A066460628BA4795002C40B5 /* TaskCreateProvider.swift in Sources */,
 				A0C6082B28A97DD4002327C3 /* ProfilePresenter.swift in Sources */,
 				63998CC0289597A000266599 /* AppDelegate.swift in Sources */,
 				A01702BE2896C67A00E81C73 /* CALayer-Extension.swift in Sources */,
@@ -1212,9 +1262,11 @@
 				A0C607DA28A9617A002327C3 /* DismissAnimation.swift in Sources */,
 				A017034F2896D5E500E81C73 /* ApiResponseError.swift in Sources */,
 				A01702C02896C6C500E81C73 /* DataRequest-Extension.swift in Sources */,
+				A066460428BA3D97002C40B5 /* DatePickerInteractor.swift in Sources */,
 				A0C607E428A96356002327C3 /* TTransition.swift in Sources */,
 				A01702D62896C84700E81C73 /* UIColor-Extension.swift in Sources */,
 				A01702D42896C82F00E81C73 /* UICollectionViewCell-Extension.swift in Sources */,
+				A066460A28BA4E3E002C40B5 /* TaskRequestFactory.swift in Sources */,
 				A0C6080428A96667002327C3 /* NavigationDrawerInteractor.swift in Sources */,
 				A01702FB2896CE6E00E81C73 /* AuthService.swift in Sources */,
 				A01703662896D95A00E81C73 /* LoginInteractor.swift in Sources */,

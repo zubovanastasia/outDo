@@ -59,6 +59,15 @@ final class RequestFactory {
             repositoryFactory: repositoryFactory)
     }
     
+    func makeTaskRequestFactory() -> TaskRequestFactory {
+        return TaskRequestFactoryImpl(
+            errorParser: makeErrorParser(),
+            sessionManager: commonSession,
+            queue: sessionQueue,
+            stopwatch: stopwatch,
+            repositoryFactory: repositoryFactory)
+    }
+    
     func makeTasksRequestFactory() -> TasksRequestFactory {
         return TasksRequestFactoryImpl(
             errorParser: makeErrorParser(),

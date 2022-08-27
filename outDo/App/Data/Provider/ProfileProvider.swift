@@ -5,11 +5,14 @@
 //  Created by Антон Бондаренко on 31.07.2022.
 //
 
+import Alamofire
+import Combine
+
 protocol ProfileProvider {
     
     var profile: Profile { get }
     
-    func profileGet(completion: @escaping (ProfileGetResponse?) -> Void)
+    func profileGet() -> AnyPublisher<Profile?, Never>
 }
 
 final class ProfileProviderImpl: ProfileProvider {
@@ -25,8 +28,8 @@ final class ProfileProviderImpl: ProfileProvider {
     }
     
     // MARK: - Api
-    func profileGet(completion: @escaping (ProfileGetResponse?) -> Void) {
-        profileService.profileGet(completion: completion)
+    func profileGet() -> AnyPublisher<Profile?, Never> {
+        return profileService.profileGet()
     }
 }
 

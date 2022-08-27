@@ -165,6 +165,7 @@ protocol ProviderFactory: AnyObject {
     var deviceProvider: DeviceProvider { get }
     var profileProvider: ProfileProvider { get }
     var signUpProvider: SignUpProvider { get }
+    var taskCreateProvider: TaskCreateProvider { get }
     var tasksProvider: TasksProvider { get }
 }
 
@@ -194,6 +195,10 @@ class ProviderFactoryImpl: ProviderFactory {
     
     var signUpProvider: SignUpProvider {
         get { return SignUpProviderImpl(authService: serviceFactory.authService) }
+    }
+    
+    var taskCreateProvider: TaskCreateProvider {
+        get { return TaskCreateProviderImpl(taskService: serviceFactory.taskService) }
     }
     
     var tasksProvider: TasksProvider {
@@ -241,6 +246,7 @@ protocol ScreenFactory: AnyObject {
     
     // MARK: - Popups
     func makeAlertPopup(data: AlertData) -> AlertPopup
+    func makeDatePickerPopup(date: Date?, onApply completion: DateClosure?) -> DatePickerPopup
     func makeToastPopup(message: String) -> ToastPopup
     
     // MARK: - Screens
@@ -285,6 +291,18 @@ class ScreenFactoryImpl: ScreenFactory {
         return AlertPopup(
             data: data,
             deviceProvider: providerFactory.deviceProvider)
+    }
+    
+    func makeDatePickerPopup(date: Date?, onApply completion: DateClosure?) -> DatePickerPopup {
+        let interactor =  DatePickerInteractorImpl(date: date)
+        let presenter = DatePickerPresenterImpl(interactor: interactor)
+        presenter.onApply = completion
+        let viewController = DatePickerPopup(presenter: presenter)
+        
+        interactor.presenter = presenter
+        presenter.view = viewController
+        
+        return viewController
     }
     
     func makeToastPopup(message: String) -> ToastPopup {
@@ -355,7 +373,7 @@ class ScreenFactoryImpl: ScreenFactory {
     }
     
     func makeTaskCreateScreen() -> TaskCreateVC {
-        let interactor = TaskCreateInteractorImpl()
+        let interactor = TaskCreateInteractorImpl(taskCreateProvider: providerFactory.taskCreateProvider)
         let presenter = TaskCreatePresenterImpl(interactor: interactor)
         let viewController = TaskCreateVC(presenter: presenter)
 
@@ -383,6 +401,7 @@ protocol ServiceFactory: AnyObject {
     var authService: AuthService { get }
     var deviceService: DeviceService { get }
     var profileService: ProfileService { get }
+    var taskService: TaskService { get }
     var tasksService: TasksService { get }
 }
 
@@ -414,6 +433,12 @@ class ServiceFactoryImpl: ServiceFactory {
     
     lazy var profileService: ProfileService = {
         return ProfileServiceImpl(
+            repositoryFactory: repositoryFactory,
+            requestFactory: requestFactory)
+    }()
+    
+    lazy var taskService: TaskService = {
+        return TaskServiceImpl(
             repositoryFactory: repositoryFactory,
             requestFactory: requestFactory)
     }()

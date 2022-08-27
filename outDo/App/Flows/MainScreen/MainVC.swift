@@ -41,6 +41,11 @@ final class MainVC: UIViewController, MainView {
         updateData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter.viewDidAppear()
+    }
+    
     // MARK: - Private
     private func configure() {
         menuButton = UIButton(type: .custom)

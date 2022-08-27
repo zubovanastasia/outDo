@@ -18,7 +18,7 @@ final class AppCoordinator: BaseCoordinator {
     private var isFirstLaunch = true
     private var isAuthed = false
     private var deviceCancellable: AnyCancellable?
-    
+    private var profileCancellable: AnyCancellable?
     var onSignOut: VoidClosure?
     
     var currentScreen: UIViewController? {
@@ -40,17 +40,17 @@ final class AppCoordinator: BaseCoordinator {
         }
         
         if isAuthed {
-            profileProvider.profileGet(completion: { [weak self] response in
-                if let _ = response?.result?.profile {
-                    self?.runMainFlow()
-                    self?.deviceProvider.save()
-                    
+            profileCancellable = profileProvider.profileGet()
+                .sink { [weak self] profile in
+                    if let _ = profile {
+                        self?.runMainFlow()
+                        self?.deviceProvider.save()
+                    }
+                    else {
+                        self?.isAuthed = false
+                        self?.runLoginFlow()
+                    }
                 }
-                else {
-                    self?.isAuthed = false
-                    self?.runLoginFlow()
-                }
-            })
         }
         else {
             self.onSignOut?()
