@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Locales {
+final class Locales {
     
     static var current = "ru_RU"
     static var currentShort = "ru" // for picker
@@ -37,6 +37,8 @@ class Locales {
         "vc_login_login": "Логин (почта)",
         "vc_login_password": "Пароль",
         "vc_login_signIn": "Войти",
+        
+        "vc_main_title": "Мои задачи",
         
         "vc_signUp_login": "Почта",
         "vc_signUp_name": "Имя",

@@ -2,7 +2,7 @@
 //  MainPresenter.swift
 //  outDo
 //
-//  Created by Антон Бондаренко on 05.08.2022.
+//  Created by Антон Бондаренко on 22.08.2022.
 //
 
 import UIKit
@@ -12,7 +12,12 @@ protocol MainPresenter: AnyObject {
     // MARK: - Coordinator
     var onHandleAction: ((TAction, Any?) -> Void)? { get set }
     
-    func onTapNavbarMenu()
+    func onTapAdd()
+    func onTapMenu()
+    func onTapUpdate()
+    func setCells(_ cells: [MainCellModel])
+    func updateData()
+    func viewDidLoad()
 }
 
 final class MainPresenterImpl: MainPresenter {
@@ -27,7 +32,28 @@ final class MainPresenterImpl: MainPresenter {
         self.interactor = interactor
     }
     
-    func onTapNavbarMenu() {
-        interactor.onTapNavbarMenu()
+    func onTapAdd() {
+        interactor.onTapAdd()
+    }
+    
+    func onTapMenu() {
+        interactor.onTapMenu()
+    }
+    
+    func onTapUpdate() {
+        interactor.onTapUpdate()
+    }
+    
+    func setCells(_ cells: [MainCellModel]) {
+        view?.setCells(cells)
+    }
+    
+    func updateData() {
+        interactor.updateCells()
+        view?.setTitle(Locales.value("vc_main_title"))
+    }
+    
+    func viewDidLoad() {
+        interactor.viewDidLoad()
     }
 }

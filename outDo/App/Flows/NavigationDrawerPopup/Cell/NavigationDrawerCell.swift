@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NavigationDrawerCell: UITableViewCell, NavigationDrawerCellUpdate {
+final class NavigationDrawerCell: UITableViewCell, NavigationDrawerCellUpdate {
 
     // MARK: - Outlets
     @IBOutlet private weak var sep: UIView!
@@ -23,7 +23,7 @@ class NavigationDrawerCell: UITableViewCell, NavigationDrawerCellUpdate {
     // MARK: - Private
     private func configure() {
         self.backgroundColor = .clear
-        sep.backgroundColor = Styles.shared.color.sep
+        sep.backgroundColor = .sep
         titleLabel.style = Styles.shared.label.r20main
     }
     

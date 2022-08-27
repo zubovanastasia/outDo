@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DialogBuilder {
+final class DialogBuilder {
     
     static let shared = DialogBuilder()
     

@@ -7,7 +7,7 @@
 
 typealias ObservableCallback<T> = (T, ObservableOptions) -> Void
 
-class Observable<T> {
+final class Observable<T> {
     
     fileprivate class Callback {
         

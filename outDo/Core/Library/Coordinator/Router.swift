@@ -32,7 +32,7 @@ protocol Router: Presentable {
     func popToRootModule(animated: Bool, hideBar: Bool)
 }
 
-class RouterImpl: Router {
+final class RouterImpl: Router {
     
     private weak var rootController: UINavigationController?
     private var completions: [UIViewController: VoidClosure]

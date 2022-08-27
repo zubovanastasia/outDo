@@ -14,7 +14,7 @@ protocol WebView: AnyObject {
     func setTitle(_ value: String)
 }
 
-class WebVC: UIViewController, WebView {
+final class WebVC: UIViewController, WebView {
 
     // MARK: - Coordinators
     var onBack: VoidClosure?
@@ -46,7 +46,7 @@ class WebVC: UIViewController, WebView {
     
     // MARK: - Private
     private func configure() {
-        self.view.backgroundColor = Styles.shared.color.vc
+        self.view.backgroundColor = .vc
         webView.navigationDelegate = self
         webView.allowsBackForwardNavigationGestures = false
         estimatedProgressObserver = webView.observe(\.estimatedProgress, options: [.new], changeHandler: { (webview, _) in

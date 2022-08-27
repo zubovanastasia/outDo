@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WebCoordinator: BaseCoordinator {
+final class WebCoordinator: BaseCoordinator {
     
     var finishFlow: VoidClosure?
     
@@ -27,10 +27,8 @@ class WebCoordinator: BaseCoordinator {
     
     // MARK: - Current Flow
     private func startWebFlow() {
-        // TODO: -
         let screen = screenFactory.makeWebScreen(data: data)
         screen.presenter.onBack = {}
         router.push(screen)
     }
 }
-

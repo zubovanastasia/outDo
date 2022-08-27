@@ -13,7 +13,7 @@ protocol AuthRepository: AnyObject{
     func clear()
 }
 
-class AuthRepositoryImpl: AuthRepository {
+final class AuthRepositoryImpl: AuthRepository {
  
     private let keyChainKey = "auth"
     

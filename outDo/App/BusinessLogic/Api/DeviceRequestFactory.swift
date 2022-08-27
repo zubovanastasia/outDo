@@ -14,7 +14,7 @@ protocol DeviceRequestFactory: AbstractRequestFactory {
     func save() -> AnyPublisher<AFDataResponse<DeviceSaveResponse>, Never>
 }
 
-class DeviceRequestFactoryImpl: DeviceRequestFactory {
+final class DeviceRequestFactoryImpl: DeviceRequestFactory {
     
     let errorParser: AbstractErrorParser
     let sessionManager: Session

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileCoordinator: BaseCoordinator {
+final class ProfileCoordinator: BaseCoordinator {
     
     var finishFlow: VoidClosure?
     

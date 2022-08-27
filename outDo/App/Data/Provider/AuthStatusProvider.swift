@@ -10,7 +10,7 @@ protocol AuthStatusProvider: AnyObject {
     var isAuthed: Bool { get }
 }
 
-class AuthStatusProviderImpl: AuthStatusProvider {
+final class AuthStatusProviderImpl: AuthStatusProvider {
     
     private let authService: AuthService
     

@@ -11,13 +11,16 @@ struct ApiMethod {
     static let signIn = "AuthSignIn"
     static let signOut = "AuthSignOut"
     static let signUp = "AuthSignUp"
+   
     // Device
     static let deviceSave = "DeviceSave"
     
     // Profile
-    static let profileGet = "ProfileGet"
+    static let profileGet = "ProfileGe
     static let profileSave = "ProfileSave"
     static let profileImageSave = "ProfileImageSave"
+
+    // Tasks
+    static let tasksGet = "TasksGet"
+
 }
-
-

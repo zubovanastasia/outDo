@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransitionDriver: UIPercentDrivenInteractiveTransition {
+final class TransitionDriver: UIPercentDrivenInteractiveTransition {
     
     private weak var presentedController: UIViewController?
     private var panRecognizer: UIPanGestureRecognizer?

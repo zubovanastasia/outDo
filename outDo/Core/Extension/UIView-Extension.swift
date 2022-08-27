@@ -36,27 +36,27 @@ extension UIView {
     }
     
     func showTfOdUp() {
-        self.animateState(Styles.shared.color.tfOdBorderUp, Styles.shared.color.tfOdBgUp)
+        self.animateState(.tfOdBorderUp, .tfOdBgUp)
     }
     
     func showTfOdFocused() {
-        self.animateState(Styles.shared.color.tfOdBorderFocused, Styles.shared.color.tfOdBgFocused)
+        self.animateState(.tfOdBorderFocused, .tfOdBgFocused)
     }
     
     func showTfOdError() {
-        self.animateState(Styles.shared.color.tfOdBorderError, Styles.shared.color.tfOdBgError)
+        self.animateState(.tfOdBorderError, .tfOdBgError)
     }
     
     func showTfOlUp() {
-        self.animateState(Styles.shared.color.tfOlBorderUp, Styles.shared.color.tfOlBgUp)
+        self.animateState(.tfOlBorderUp, .tfOlBgUp)
     }
     
     func showTfOlFocused() {
-        self.animateState(Styles.shared.color.tfOlBorderFocused, Styles.shared.color.tfOlBgFocused)
+        self.animateState(.tfOlBorderFocused, .tfOlBgFocused)
     }
     
     func showTfOlError() {
-        self.animateState(Styles.shared.color.tfOlBorderError, Styles.shared.color.tfOlBgError)
+        self.animateState(.tfOlBorderError, .tfOlBgError)
     }
     
     func setLeftTopCornerRadius(value: CGFloat) {

@@ -5,10 +5,9 @@
 //  Created by Антон Бондаренко on 31.07.2022.
 //
 
-import Foundation
-import UIKit
+import UIKit.UIImage
 
-class Assets {
+final class Assets {
     
     static let shared = Assets()
     

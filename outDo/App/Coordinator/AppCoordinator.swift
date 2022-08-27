@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class AppCoordinator: BaseCoordinator {
+final class AppCoordinator: BaseCoordinator {
     
     private let coordinatorFactory: CoordinatorFactory
     private let profileProvider: ProfileProvider
@@ -44,6 +44,7 @@ class AppCoordinator: BaseCoordinator {
                 if let _ = response?.result?.profile {
                     self?.runMainFlow()
                     self?.deviceProvider.save()
+                    
                 }
                 else {
                     self?.isAuthed = false
