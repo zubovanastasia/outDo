@@ -20,7 +20,7 @@ final class TaskDescriptionCell: UITableViewCell, ITaskCell {
     private func configure() {
         self.backgroundColor = .clear
         titleLabel.style = Styles.shared.label.r20white
-        valueLabel.style = Styles.shared.label.r18white
+        valueLabel.style = Styles.shared.label.r18whiteA07
     }
     
     func update(data: TaskCellModel) {

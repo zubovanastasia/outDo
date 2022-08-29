@@ -19,8 +19,8 @@ class TaskDateCell: UITableViewCell, ITaskCell {
     
     private func configure() {
         self.backgroundColor = .clear
-        titleLabel.style = Styles.shared.label.r18white
-        valueLabel.style = Styles.shared.label.b22white
+        titleLabel.style = Styles.shared.label.r18whiteA07
+        valueLabel.style = Styles.shared.label.r18white
     }
     
     func update(data: TaskCellModel) {

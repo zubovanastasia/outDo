@@ -75,6 +75,7 @@ final class Locales {
         "vc_profile_email": "Почта",
         "vc_profile_signOut": "Выйти",
         
+        "vc_task_fromDate": "Время начала",
         "vc_task_title": "Задача #%value%",
         "vc_task_description": "Описание",
         

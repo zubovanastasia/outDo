@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ar-3S-Fm7">
-                        <rect key="frame" x="10" y="10" width="41.5" height="24"/>
+                        <rect key="frame" x="20" y="10" width="41.5" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,9 +34,9 @@
                     <constraint firstAttribute="bottom" secondItem="1ar-3S-Fm7" secondAttribute="bottom" constant="10" id="Dfe-cq-A1u"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4DS-Lw-FwR" secondAttribute="trailing" constant="20" id="HeG-7r-zfi"/>
                     <constraint firstItem="4DS-Lw-FwR" firstAttribute="centerY" secondItem="1ar-3S-Fm7" secondAttribute="centerY" id="HrY-Kc-pJ0"/>
-                    <constraint firstItem="1ar-3S-Fm7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="N0L-8E-lmI"/>
+                    <constraint firstItem="1ar-3S-Fm7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="N0L-8E-lmI"/>
                     <constraint firstItem="1ar-3S-Fm7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="miD-nB-9mX"/>
-                    <constraint firstItem="4DS-Lw-FwR" firstAttribute="leading" secondItem="1ar-3S-Fm7" secondAttribute="trailing" constant="20" id="qhe-4t-zQf"/>
+                    <constraint firstItem="4DS-Lw-FwR" firstAttribute="leading" secondItem="1ar-3S-Fm7" secondAttribute="trailing" constant="10" id="qhe-4t-zQf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

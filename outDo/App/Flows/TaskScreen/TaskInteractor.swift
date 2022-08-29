@@ -91,7 +91,7 @@ extension TaskInteractorImpl {
             cell: TaskTitleCell.identifier,
             title: task.title,
             text: ""))
-        let fromDate = task.fromDateValue > 0 ? task.fromDateDate.withFormat("d MMM, HH:mm") : ""
+        let fromDate = task.fromDateValue > 0 ? task.fromDateDate.withFormat("EE, d MMM, HH:mm") : ""
         cells.append(TaskCellModel(
             cell: TaskDateCell.identifier,
             title: Locales.value("vc_task_fromDate"),

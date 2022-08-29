@@ -61,6 +61,7 @@ final class Styles {
         tf[label.r16mainA05] = MFont(fs.fs16, fontR, .fcMain, NSTextAlignment.left, false, 0.5)
         tf[label.r18main] = MFont(fs.fs18, fontR, .fcMain, NSTextAlignment.left)
         tf[label.r18white] = MFont(fs.fs18, fontR, .white, NSTextAlignment.left)
+        tf[label.r18whiteA07] = MFont(fs.fs18, fontR, .white, NSTextAlignment.left, false, 0.7)
         tf[label.r20white] = MFont(fs.fs20, fontR, .white, NSTextAlignment.left)
         tf[label.r20main] = MFont(fs.fs20, fontR, .fcMain, NSTextAlignment.left)
         tf[label.b20mainC] = MFont(fs.fs20, fontB, .fcMain, NSTextAlignment.center)
@@ -361,6 +362,7 @@ final class LabelStyles {
     let r16ffffffC = "r16ffffffC"
     let r16mainA05 = "r16mainA05"
     let r18main = "r18main"
+    let r18whiteA07 = "r18whiteA07"
     let r18white = "r18white"
     let r20main = "r20main"
     let b20mainC = "b20mainC"
