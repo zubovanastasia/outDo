@@ -47,7 +47,7 @@ final class LoginVC: UIViewController, LoginView {
     
     // MARK: - Private
     private func configure() {
-        self.view.backgroundColor = Styles.shared.color.vc
+        self.view.backgroundColor = .vc
         loginTextfield.style = Styles.shared.tfs.odPrT
         passwordTextfield.style = Styles.shared.tfs.odPrB
         signInButton.style = Styles.shared.button.bevelDfSc

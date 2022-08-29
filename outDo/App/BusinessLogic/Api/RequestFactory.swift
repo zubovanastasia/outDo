@@ -9,7 +9,7 @@
 import Alamofire
 import Foundation
 
-class RequestFactory {
+final class RequestFactory {
     
     private let repositoryFactory: RepositoryFactory
     private weak var stopwatch: Stopwatch?
@@ -52,6 +52,15 @@ class RequestFactory {
     }
     func makeProfileRequestFactory() -> ProfileRequestFactory {
         return ProfileRequestFactoryImpl(
+            errorParser: makeErrorParser(),
+            sessionManager: commonSession,
+            queue: sessionQueue,
+            stopwatch: stopwatch,
+            repositoryFactory: repositoryFactory)
+    }
+    
+    func makeTasksRequestFactory() -> TasksRequestFactory {
+        return TasksRequestFactoryImpl(
             errorParser: makeErrorParser(),
             sessionManager: commonSession,
             queue: sessionQueue,

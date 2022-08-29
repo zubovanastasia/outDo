@@ -12,7 +12,7 @@ protocol ProfileProvider {
     func profileGet(completion: @escaping (ProfileGetResponse?) -> Void)
 }
 
-class ProfileProviderImpl: ProfileProvider {
+final class ProfileProviderImpl: ProfileProvider {
     
     var profile: Profile {
         get { return profileService.profile }

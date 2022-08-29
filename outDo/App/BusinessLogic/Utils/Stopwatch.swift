@@ -20,7 +20,7 @@ protocol Stopwatch: AnyObject {
     func removeObserverDayChange(_ observer: AnyObject)
 }
 
-class StopWatchImpl: Stopwatch {
+final class StopWatchImpl: Stopwatch {
    
     private var timer: Timer?
     var date: Date

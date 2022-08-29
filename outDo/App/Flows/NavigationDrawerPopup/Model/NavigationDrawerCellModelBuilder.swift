@@ -5,7 +5,7 @@
 //  Created by Антон Бондаренко on 14.08.2022.
 //
 
-class NavigationDrawerCellModelBuilder {
+final class NavigationDrawerCellModelBuilder {
     
     private(set) var action: TAction?
     private(set) var icon: String?

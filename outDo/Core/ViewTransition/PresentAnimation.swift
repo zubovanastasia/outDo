@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PresentAnimation: NSObject {
+final class PresentAnimation: NSObject {
     
     var duration:TimeInterval = 0.3
     var vSpace: CGFloat = 0

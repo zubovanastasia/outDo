@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DialogRootVC: UIViewController {
+final class DialogRootVC: UIViewController {
 
     weak var delegate: UIWindow?
     var transition = PanelTransition()

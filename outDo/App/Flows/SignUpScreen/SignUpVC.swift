@@ -65,7 +65,7 @@ final class SignUpVC: UIViewController, SignUpView {
     
     // MARK: - Private methods
     private func configure() {
-        self.view.backgroundColor = Styles.shared.color.vc
+        self.view.backgroundColor = .vc
         nameTextField.style = Styles.shared.tfs.odPrT
         loginTextField.style = Styles.shared.tfs.odPrM
         passwordTextField.style = Styles.shared.tfs.odPrM

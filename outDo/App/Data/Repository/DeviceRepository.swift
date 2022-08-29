@@ -13,7 +13,7 @@ protocol DeviceRepository: AnyObject {
     var isBackground: Bool { get set }
 }
 
-class DeviceRepositoryImpl: DeviceRepository {
+final class DeviceRepositoryImpl: DeviceRepository {
     
     private var userDefaultsProvider: UserDefaultsProvider
     

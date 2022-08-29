@@ -12,7 +12,7 @@ protocol ProfileService {
     func profileGet(completion: @escaping (ProfileGetResponse?) -> Void)
 }
 
-class ProfileServiceImpl: ProfileService {
+final class ProfileServiceImpl: ProfileService {
     
     private let authRepository: AuthRepository
     private var profileRepository: ProfileRepository
@@ -43,4 +43,3 @@ class ProfileServiceImpl: ProfileService {
         }
     }
 }
-

@@ -16,7 +16,7 @@ protocol AuthRequestFactory: AbstractRequestFactory {
     func signUp(with credentials: SignUpCredentials) -> AnyPublisher<AFDataResponse<AuthSignUpResponse>, Never>
 }
 
-class AuthRequestFactoryImpl: AuthRequestFactory {
+final class AuthRequestFactoryImpl: AuthRequestFactory {
     
     let errorParser: AbstractErrorParser
     let sessionManager: Session

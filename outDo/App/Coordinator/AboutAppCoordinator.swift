@@ -5,7 +5,7 @@
 //  Created by Антон Бондаренко on 14.08.2022.
 //
 
-class AboutAppCoordinator: BaseCoordinator {
+final class AboutAppCoordinator: BaseCoordinator {
     
     var finishFlow: VoidClosure?
     

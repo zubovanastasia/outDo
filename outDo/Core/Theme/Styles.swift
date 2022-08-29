@@ -37,7 +37,6 @@ final class Styles {
     let tfs = TextfieldStyles()
     let view = ViewStyles()
     
-    let color = Colors()
     let fs = FontSizes()
     
     private let fontR = "SourceSansPro-Regular"
@@ -47,28 +46,30 @@ final class Styles {
     private var tfFonts = [String:UIFont]()
     
     init() {
-        tf[button.bevelDfPr] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left)
-        tf[button.bevelDfSc] = MFont(fs.fs24, fontB, color.c646464, NSTextAlignment.left)
-        tf[button.bevelSmPr] = MFont(fs.fs20, fontB, color.cffffff, NSTextAlignment.left)
-        tf[button.bevelSmSc] = MFont(fs.fs20, fontB, color.c646464, NSTextAlignment.left)
-        tf[button.quietDfSc] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left)
-        tf[button.quietDfSc + "Down"] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left, false, 0.7)
-        tf[button.sharpLgPr] = MFont(fs.fs28, fontB, color.cffffff, NSTextAlignment.left)
+        tf[button.bevelDfPr] = MFont(fs.fs24, fontB, .white, NSTextAlignment.left)
+        tf[button.bevelDfSc] = MFont(fs.fs24, fontB, .c646464, NSTextAlignment.left)
+        tf[button.bevelSmPr] = MFont(fs.fs20, fontB, .white, NSTextAlignment.left)
+        tf[button.bevelSmSc] = MFont(fs.fs20, fontB, .c646464, NSTextAlignment.left)
+        tf[button.quietDfSc] = MFont(fs.fs24, fontB, .white, NSTextAlignment.left)
+        tf[button.quietDfSc + "Down"] = MFont(fs.fs24, fontB, .white, NSTextAlignment.left, false, 0.7)
+        tf[button.sharpLgPr] = MFont(fs.fs28, fontB, .white, NSTextAlignment.left)
         
-        tf[label.r16ffffffC] = MFont(fs.fs16, fontR, color.cffffff, NSTextAlignment.center)
-        tf[label.r18main] = MFont(fs.fs18, fontR, color.c000000, NSTextAlignment.left)
-        tf[label.r20main] = MFont(fs.fs20, fontR, color.c000000, NSTextAlignment.left)
-        tf[label.b20mainC] = MFont(fs.fs20, fontB, color.c000000, NSTextAlignment.center)
-        tf[label.b229796a9] = MFont(fs.fs22, fontB, color.c9796a9, NSTextAlignment.center)
-        tf[label.b22main] = MFont(fs.fs22, fontB, color.c000000, NSTextAlignment.left)
+        tf[label.r14mainA05] = MFont(fs.fs14, fontR, .fcMain, NSTextAlignment.left, false, 0.5)
+        tf[label.r16ffffffC] = MFont(fs.fs16, fontR, .white, NSTextAlignment.center)
+        tf[label.r16mainA05] = MFont(fs.fs16, fontR, .fcMain, NSTextAlignment.left, false, 0.5)
+        tf[label.r18main] = MFont(fs.fs18, fontR, .fcMain, NSTextAlignment.left)
+        tf[label.r20main] = MFont(fs.fs20, fontR, .fcMain, NSTextAlignment.left)
+        tf[label.b20mainC] = MFont(fs.fs20, fontB, .fcMain, NSTextAlignment.center)
+        tf[label.b229796a9] = MFont(fs.fs22, fontB, .c9796a9, NSTextAlignment.center)
+        tf[label.b22main] = MFont(fs.fs22, fontB, .fcMain, NSTextAlignment.left)
         
-        tf[tfs.odPh] = MFont(fs.fs24, fontR, color.cffffff, NSTextAlignment.left, false, 0.4)
-        tf[tfs.odPr] = MFont(fs.fs24, fontB, color.cffffff, NSTextAlignment.left)
-        tf[tfs.olPh] = MFont(fs.fs24, fontR, color.c000000, NSTextAlignment.left, false, 0.4)
-        tf[tfs.olPr] = MFont(fs.fs24, fontB, color.c000000, NSTextAlignment.left)
+        tf[tfs.odPh] = MFont(fs.fs24, fontR, .white, NSTextAlignment.left, false, 0.4)
+        tf[tfs.odPr] = MFont(fs.fs24, fontB, .white, NSTextAlignment.left)
+        tf[tfs.olPh] = MFont(fs.fs24, fontR, .fcMain, NSTextAlignment.left, false, 0.4)
+        tf[tfs.olPr] = MFont(fs.fs24, fontB, .fcMain, NSTextAlignment.left)
 
-        tf[view.navbarPr] = MFont(fs.fs20, fontB, color.c000000, NSTextAlignment.left, false, 0.55)
-        tf[view.navbarPrC] = MFont(fs.fs20, fontB, color.c000000, NSTextAlignment.center, false, 0.55)
+        tf[view.navbarPr] = MFont(fs.fs20, fontB, .white, NSTextAlignment.left, false, 0.55)
+        tf[view.navbarPrC] = MFont(fs.fs20, fontB, .white, NSTextAlignment.center, false, 0.55)
     }
     
     func getFontStyle(_ style: String) -> MFont {
@@ -167,59 +168,8 @@ final class Styles {
     }
 }
 
-// MARK: - Colors
-final class Colors {
-    
-    let dialogDark = UIColor(rgb: 0x000000, a: 0.3)
-    let toast = UIColor(rgb: 0x333333)
-    let vc = UIColor(rgb: 0xffffff)
-    
-    let fcMain = UIColor(rgb: 0x000000)
-    
-    let c000000 = UIColor(rgb: 0x000000)
-    let c323232 = UIColor(rgb: 0x323232)
-    let c514f65 = UIColor(rgb: 0x514f65)
-    let c646464 = UIColor(rgb: 0x646464)
-    let c969696 = UIColor(rgb: 0x969696)
-    let c9796a9 = UIColor(rgb: 0x9796a9)
-    let cffffff = UIColor(rgb: 0xffffff)
-
-    let buttonPrUp = UIColor(rgb: 0x3d3c49)
-    let buttonPrDown: UIColor
-    let buttonPrDisabled: UIColor
-    let buttonScUp = UIColor(rgb: 0xfafafa)
-    let buttonScDown: UIColor
-    let buttonFlowUp = UIColor(rgb: 0xffffff)
-    let buttonFlowDown: UIColor
-    let switchBgOn  = UIColor(rgb: 0x007aff)
-    let switchBgOff = UIColor(rgb: 0xdcdcdc)
-    let switchThumb  = UIColor(rgb: 0xffffff)
-    let sep = UIColor(rgb: 0x000000, a: 0.09)
-    
-    let tfOdBorderUp = UIColor(rgb: 0xffffff)
-    let tfOdBorderFocused = UIColor(rgb: 0xaaaaaa)
-    let tfOdBorderError = UIColor(rgb: 0xf9b290)
-    let tfOdBgUp = UIColor(rgb: 0xffffff, a: 0)
-    let tfOdBgFocused = UIColor(rgb: 0xffffff, a: 0.05)
-    let tfOdBgError = UIColor(rgb: 0xf9b290)
-    
-    let tfOlBorderUp = UIColor(rgb: 0xdddddd)
-    let tfOlBorderFocused = UIColor(rgb: 0xdadada)
-    let tfOlBorderError = UIColor(rgb: 0xf9b290)
-    let tfOlBgUp = UIColor(rgb: 0xffffff, a: 0)
-    let tfOlBgFocused = UIColor(rgb: 0xb3b34d, a: 0.05)
-    let tfOlBgError = UIColor(rgb: 0xf9b290)
-    
-    init() {
-        buttonPrDown = buttonPrUp.modified(additionalBrightness: -0.05)
-        buttonPrDisabled = buttonPrUp.modified(additionalBrightness: 0.15)
-        buttonScDown = buttonScUp.modified(additionalBrightness: -0.05)
-        buttonFlowDown = buttonScUp.modified(additionalBrightness: -0.03)
-    }
-}
-
 // MARK: - FontSizes
-class FontSizes {
+final class FontSizes {
     
     let fs14: CGFloat  = 14.0
     let fs16: CGFloat = 16.0
@@ -309,8 +259,8 @@ final class ButtonStyles {
 
     private func setStyleBevelDfPr(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.color.buttonPrUp,
-                       downColor: Styles.shared.color.buttonPrDown,
+                       upColor: .buttonPrUp,
+                       downColor: .buttonPrDown,
                        height: sizeDf,
                        cornerRadius: cornerDf,
                        fontStyle: style)
@@ -318,8 +268,8 @@ final class ButtonStyles {
 
     private func setStyleBevelDfSc(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.color.buttonScUp,
-                       downColor: Styles.shared.color.buttonScDown,
+                       upColor: .buttonScUp,
+                       downColor: .buttonScDown,
                        height: sizeDf,
                        cornerRadius: cornerDf,
                        fontStyle: style)
@@ -327,8 +277,8 @@ final class ButtonStyles {
     
     private func setStyleBevelSmPr(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.color.buttonPrUp,
-                       downColor: Styles.shared.color.buttonPrDown,
+                       upColor: .buttonPrUp,
+                       downColor: .buttonPrDown,
                        height: sizeSm,
                        cornerRadius: cornerSm,
                        fontStyle: style)
@@ -336,8 +286,8 @@ final class ButtonStyles {
 
     private func setStyleBevelSmSc(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.color.buttonScUp,
-                       downColor: Styles.shared.color.buttonScDown,
+                       upColor: .buttonScUp,
+                       downColor: .buttonScDown,
                        height: sizeSm,
                        cornerRadius: cornerSm,
                        fontStyle: style)
@@ -345,8 +295,8 @@ final class ButtonStyles {
 
     private func setStyleCircleDfPlus(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.color.buttonFlowUp,
-                       downColor: Styles.shared.color.buttonFlowDown,
+                       upColor: .buttonFlowUp,
+                       downColor: .buttonFlowDown,
                        height: sizeDf,
                        cornerRadius: sizeDf / 2,
                        fontStyle: "")
@@ -366,12 +316,12 @@ final class ButtonStyles {
 
     private func setStyleSharpLgPr(_ style: String, _ button: UIButton) {
         setStyleCommon(button: button,
-                       upColor: Styles.shared.color.buttonPrUp,
-                       downColor: Styles.shared.color.buttonPrDown,
+                       upColor: .buttonPrUp,
+                       downColor: .buttonPrDown,
                        height: sizeLg,
                        cornerRadius: 0,
                        fontStyle: style)
-        button.setDisabledBackgroundColor(Styles.shared.color.buttonPrDisabled)
+        button.setDisabledBackgroundColor(.buttonPrDisabled)
     }
 
     private func setStyleNavbarPr(_ style: String, _ button: UIBarButtonItem) {
@@ -381,10 +331,10 @@ final class ButtonStyles {
     }
     
     private func setStyleSwtch(_ style: String, _ switchButton: UISwitch) {
-        switchButton.onTintColor = Styles.shared.color.switchBgOn
-        switchButton.tintColor = Styles.shared.color.switchBgOff
-        switchButton.thumbTintColor = Styles.shared.color.switchThumb
-        switchButton.backgroundColor = Styles.shared.color.switchBgOff
+        switchButton.onTintColor = .switchBgOn
+        switchButton.tintColor = .switchBgOff
+        switchButton.thumbTintColor = .switchThumb
+        switchButton.backgroundColor = .switchBgOff
         switchButton.layer.cornerRadius = switchButton.bounds.height / 2
     }
 }
@@ -392,7 +342,9 @@ final class ButtonStyles {
 // MARK: - Label
 final class LabelStyles {
     
+    let r14mainA05 = "r14mainA05"
     let r16ffffffC = "r16ffffffC"
+    let r16mainA05 = "r16mainA05"
     let r18main = "r18main"
     let r20main = "r20main"
     let b20mainC = "b20mainC"
@@ -583,7 +535,7 @@ final class ViewStyles {
     }
     
     private func setStylePopup(_ style: String, _ view: UIView) {
-        view.backgroundColor = Styles.shared.color.vc
+        view.backgroundColor = .vc
         view.layer.cornerRadius = cornerPopup
         Styles.shared.addShadow(view, x: 0, y: 6, a: 0.2, blur: 10, cornerRadius: cornerPopup)
     }

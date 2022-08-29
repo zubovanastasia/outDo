@@ -24,7 +24,7 @@ protocol UserDefaultsProvider {
     var profile: Profile { get set }
 }
 
-class UserDefaultsProviderImpl: UserDefaultsProvider {
+final class UserDefaultsProviderImpl: UserDefaultsProvider {
     
     enum Keys {
         static let profile = "profile"

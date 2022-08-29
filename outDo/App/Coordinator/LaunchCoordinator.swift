@@ -6,7 +6,7 @@
 //
 
 
-class LaunchCoordinator: BaseCoordinator {
+final class LaunchCoordinator: BaseCoordinator {
     
     var finishFlow: BoolClosure?
     

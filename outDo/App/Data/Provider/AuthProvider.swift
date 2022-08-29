@@ -15,7 +15,7 @@ protocol AuthProvider {
     func signOut() -> AnyPublisher<(Bool, String?), Never>
 }
 
-class AuthProviderImpl: AuthProvider {
+final class AuthProviderImpl: AuthProvider {
     
     var isAuthed: Bool { return authService.isAuthed }
     

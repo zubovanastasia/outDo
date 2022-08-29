@@ -18,7 +18,7 @@ protocol DeviceProvider {
     func save() -> AnyPublisher<AFDataResponse<DeviceSaveResponse>, Never>
 }
 
-class DeviceProviderImpl: DeviceProvider {
+final class DeviceProviderImpl: DeviceProvider {
     
     private var deviceService: DeviceService
     

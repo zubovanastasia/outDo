@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ToastPopup: UIViewController {
+final class ToastPopup: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var bgView: UIView!
@@ -58,7 +58,7 @@ class ToastPopup: UIViewController {
     // MARK: - Private
     private func configure() {
         self.view.backgroundColor = .clear
-        bgView.backgroundColor = Styles.shared.color.toast
+        bgView.backgroundColor = .toast
         bgView.layer.cornerRadius = 30
         
         titleLabel.style = Styles.shared.label.r16ffffffC
