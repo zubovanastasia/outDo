@@ -16,16 +16,7 @@ protocol SignUpView {
     
     func setPlaceholder(_ value: String, for textfield: TSignUpTextField)
     func showError(for textfield: TSignUpTextField)
-    
-//    func setPlaceholderLogin(_ value: String)
-//    func setPlaceholderName(_ value: String)
-//    func setPlaceholderPassword(_ value: String)
-//    func setPlaceholderConfirmPassword(_ value: String)
     func setTitleSignUp(_ value: String)
-//    func showErrorLogin()
-//    func showErrorName()
-//    func showErrorPassword()
-//    func showErrorConfirmPassword()
 }
 
 final class SignUpVC: UIViewController, SignUpView {

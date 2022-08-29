@@ -60,7 +60,7 @@
                                 <constraint firstAttribute="height" constant="50" id="das-SV-Gpg"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
                                 <action selector="onEditingDidBegin:" destination="-1" eventType="editingDidBegin" id="gZh-XD-rRV"/>
                                 <action selector="onEditingDidEnd:" destination="-1" eventType="editingDidEnd" id="EcI-GX-b2Z"/>
@@ -72,7 +72,7 @@
                                 <constraint firstAttribute="height" constant="50" id="xWj-jO-EB0"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
                                 <action selector="onEditingDidBegin:" destination="-1" eventType="editingDidBegin" id="DGw-8x-DcL"/>
                                 <action selector="onEditingDidEnd:" destination="-1" eventType="editingDidEnd" id="01i-7L-A6d"/>
