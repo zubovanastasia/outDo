@@ -12,6 +12,7 @@ protocol TasksRepository: AnyObject {
     
     func add(_ tasks: [Task])
     func add(_ task: Task)
+    func getTask(by id: Int) -> Task?
     func clear()
 }
 
@@ -26,6 +27,10 @@ final class TasksRepositoryImpl: TasksRepository {
     func add(_ task: Task) {
         tasks.append(task)
         add(tasks)
+    }
+    
+    func getTask(by id: Int) -> Task? {
+        return tasks.first(where: { $0.id == id })
     }
     
     func clear() {

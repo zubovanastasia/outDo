@@ -10,6 +10,7 @@ import UIKit.UIColor
 final class MainCellModelBuilder {
     
     private let cell: String
+    private(set) var id: Int?
     private(set) var date: String?
     private(set) var text: String?
     private(set) var title: String?
@@ -35,6 +36,11 @@ final class MainCellModelBuilder {
         return self
     }
     
+    func setId(_ value: Int) -> Self {
+        self.id = value
+        return self
+    }
+    
     func setText(_ value: String) -> Self {
         self.text = value
         return self
@@ -48,6 +54,7 @@ final class MainCellModelBuilder {
     func build() -> MainCellModel {
         return MainCellModel(
             cell: cell,
+            id: id ?? 0,
             text: text ?? "",
             title: title ?? "",
             date: date ?? "",

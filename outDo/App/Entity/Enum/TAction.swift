@@ -13,4 +13,5 @@ enum TAction {
     
     case add
     case signIn
+    case task
 }

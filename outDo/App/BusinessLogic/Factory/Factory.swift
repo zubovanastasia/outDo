@@ -83,6 +83,7 @@ protocol CoordinatorFactory: AnyObject {
     func makeMainCoordinator(router: Router) -> MainCoordinator
     func makeProfileCoordinator(router: Router) -> ProfileCoordinator
     func makeSignUpCoordinator(router: Router) -> SignUpCoordinator
+    func makeTaskCoordinator(router: Router, taskId: Int) -> TaskCoordinator
     func makeTaskCreateCoordinator(router: Router) -> TaskCreateCoordinator
     func makeWebCoordinator(router: Router, data: WebData) -> WebCoordinator
 }
@@ -143,6 +144,13 @@ class CoordinatorFactoryImpl: CoordinatorFactory {
             screenFactory: screenFactory)
     }
     
+    func makeTaskCoordinator(router: Router, taskId: Int) -> TaskCoordinator {
+        return TaskCoordinator(
+            router: router,
+            screenFactory: screenFactory,
+            taskId: taskId)
+    }
+    
     func makeTaskCreateCoordinator(router: Router) -> TaskCreateCoordinator {
         return TaskCreateCoordinator(
             router: router,
@@ -165,6 +173,7 @@ protocol ProviderFactory: AnyObject {
     var deviceProvider: DeviceProvider { get }
     var profileProvider: ProfileProvider { get }
     var signUpProvider: SignUpProvider { get }
+    var taskProvider: TaskProvider { get }
     var taskCreateProvider: TaskCreateProvider { get }
     var tasksProvider: TasksProvider { get }
 }
@@ -198,7 +207,11 @@ class ProviderFactoryImpl: ProviderFactory {
     }
     
     var taskCreateProvider: TaskCreateProvider {
-        get { return TaskCreateProviderImpl(taskService: serviceFactory.taskService) }
+        get { return TaskCreateProviderImpl(taskService: serviceFactory.taskCreateService) }
+    }
+    
+    var taskProvider: TaskProvider {
+        get { return TaskProviderImpl(taskService: serviceFactory.taskService) }
     }
     
     var tasksProvider: TasksProvider {
@@ -256,6 +269,7 @@ protocol ScreenFactory: AnyObject {
     func makeMainScreen() -> MainVC
     func makeProfileScreen() -> ProfileVC
     func makeSignUpScreen() -> SignUpVC
+    func makeTaskScreen(taskId: Int) -> TaskVC
     func makeTaskCreateScreen() -> TaskCreateVC
     func makeWebScreen(data: WebData) -> WebVC
 }
@@ -311,14 +325,6 @@ class ScreenFactoryImpl: ScreenFactory {
     
     // MARK: - Screens
     func makeAboutAppScreen() -> AboutAppVC {
-//        let interactor = AboutAppInteractorImpl(deviceProvider: providerFactory.deviceProvider)
-//        let presenter = AboutAppPresenterImpl(interactor: interactor)
-//        let viewController = AboutAppVC(presenter: presenter)
-//
-//        interactor.presenter = presenter
-//        presenter.view = viewController
-//
-//        return viewController
         return AboutAppVC()
     }
     
@@ -372,6 +378,19 @@ class ScreenFactoryImpl: ScreenFactory {
         return viewController
     }
     
+    func makeTaskScreen(taskId: Int) -> TaskVC {
+        let interactor = TaskInteractorImpl(
+            taskProvider: providerFactory.taskProvider,
+            taskId: taskId)
+        let presenter = TaskPresenterImpl(interactor: interactor)
+        let viewController = TaskVC(presenter: presenter)
+
+        interactor.presenter = presenter
+        presenter.view = viewController
+
+        return viewController
+    }
+    
     func makeTaskCreateScreen() -> TaskCreateVC {
         let interactor = TaskCreateInteractorImpl(taskCreateProvider: providerFactory.taskCreateProvider)
         let presenter = TaskCreatePresenterImpl(interactor: interactor)
@@ -402,6 +421,7 @@ protocol ServiceFactory: AnyObject {
     var deviceService: DeviceService { get }
     var profileService: ProfileService { get }
     var taskService: TaskService { get }
+    var taskCreateService: TaskCreateService { get }
     var tasksService: TasksService { get }
 }
 
@@ -439,6 +459,12 @@ class ServiceFactoryImpl: ServiceFactory {
     
     lazy var taskService: TaskService = {
         return TaskServiceImpl(
+            repositoryFactory: repositoryFactory,
+            requestFactory: requestFactory)
+    }()
+    
+    lazy var taskCreateService: TaskCreateService = {
+        return TaskCreateServiceImpl(
             repositoryFactory: repositoryFactory,
             requestFactory: requestFactory)
     }()

@@ -14,6 +14,7 @@ protocol MainPresenter: AnyObject {
     
     func onTapAdd()
     func onTapMenu()
+    func onTapTask(_ task: MainCellModel)
     func setCells(_ cells: [MainCellModel])
     func updateData()
     func viewDidAppear()
@@ -38,6 +39,10 @@ final class MainPresenterImpl: MainPresenter {
     
     func onTapMenu() {
         interactor.onTapMenu()
+    }
+    
+    func onTapTask(_ task: MainCellModel) {
+        interactor.onTapTask(task)
     }
     
     func setCells(_ cells: [MainCellModel]) {

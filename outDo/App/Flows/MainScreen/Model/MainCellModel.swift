@@ -10,6 +10,7 @@ import UIKit.UIColor
 struct MainCellModel {
     
     var cell: String
+    var id: Int
     var text: String
     var title: String
     var date: String

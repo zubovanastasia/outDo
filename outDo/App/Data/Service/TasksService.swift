@@ -17,14 +17,12 @@ protocol TasksService {
 
 final class TasksServiceImpl: TasksService {
     
-    private let authRepository: AuthRepository
     private let tasksRepository: TasksRepository
     private let requestFactory: RequestFactory
     private var anyCancellable: AnyCancellable?
     private var subject: PassthroughSubject<Bool, Never>
     
     init(repositoryFactory: RepositoryFactory, requestFactory: RequestFactory) {
-        self.authRepository = repositoryFactory.authRepository
         tasksRepository = repositoryFactory.tasksRepository
         self.requestFactory = requestFactory
         subject = PassthroughSubject<Bool, Never>()

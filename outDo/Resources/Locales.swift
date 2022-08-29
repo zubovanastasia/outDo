@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct LocalesPattern {
+    
+    static let value = "%value%"
+}
+
 final class Locales {
     
     static var current = "ru_RU"
@@ -15,6 +20,17 @@ final class Locales {
     static func value(_ key: String) -> String {
         return data[key] ?? ""
     }
+    
+    static func valueFor(_ state: TTaskState) -> String {
+        return taskStateData[state] ?? ""
+    }
+                    
+    static private let taskStateData: [TTaskState:String] = [
+        .created : "Приступить к выполнению",
+        .cancelled : "Отменена",
+        .completed : "Завершена",
+        .processed : "В процессе выполнения"
+    ]
     
     static private let data: [String:String] = [
         "apiErrorText_signInByPassword": "Ошибка входа",
@@ -58,6 +74,9 @@ final class Locales {
         "vc_profile_name": "Имя",
         "vc_profile_email": "Почта",
         "vc_profile_signOut": "Выйти",
+        
+        "vc_task_title": "Задача #%value%",
+        "vc_task_description": "Описание",
         
         "vc_taskCreate_title": "Новая задача",
         "vc_taskCreate_name": "Название",

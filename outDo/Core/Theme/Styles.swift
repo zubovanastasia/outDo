@@ -60,10 +60,13 @@ final class Styles {
         tf[label.r16ffffffC] = MFont(fs.fs16, fontR, .white, NSTextAlignment.center)
         tf[label.r16mainA05] = MFont(fs.fs16, fontR, .fcMain, NSTextAlignment.left, false, 0.5)
         tf[label.r18main] = MFont(fs.fs18, fontR, .fcMain, NSTextAlignment.left)
+        tf[label.r18white] = MFont(fs.fs18, fontR, .white, NSTextAlignment.left)
+        tf[label.r20white] = MFont(fs.fs20, fontR, .white, NSTextAlignment.left)
         tf[label.r20main] = MFont(fs.fs20, fontR, .fcMain, NSTextAlignment.left)
         tf[label.b20mainC] = MFont(fs.fs20, fontB, .fcMain, NSTextAlignment.center)
         tf[label.b229796a9] = MFont(fs.fs22, fontB, .c9796a9, NSTextAlignment.center)
         tf[label.b22main] = MFont(fs.fs22, fontB, .fcMain, NSTextAlignment.left)
+        tf[label.b22white] = MFont(fs.fs22, fontB, .white, NSTextAlignment.left)
         
         tf[tfs.odPh] = MFont(fs.fs24, fontR, .white, NSTextAlignment.left, false, 0.4)
         tf[tfs.odPr] = MFont(fs.fs24, fontB, .white, NSTextAlignment.left)
@@ -358,10 +361,13 @@ final class LabelStyles {
     let r16ffffffC = "r16ffffffC"
     let r16mainA05 = "r16mainA05"
     let r18main = "r18main"
+    let r18white = "r18white"
     let r20main = "r20main"
     let b20mainC = "b20mainC"
+    let r20white = "r20white"
     let b229796a9 = "b229796a9"
     let b22main = "b22main"
+    let b22white = "b22white"
     
     func applyStyle(_ style: String, _ label: UILabel) {
         let fontStyle = Styles.shared.getFontStyle(style)

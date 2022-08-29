@@ -115,10 +115,25 @@
 		A066460228BA3D8F002C40B5 /* DatePickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460128BA3D8F002C40B5 /* DatePickerPresenter.swift */; };
 		A066460428BA3D97002C40B5 /* DatePickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460328BA3D97002C40B5 /* DatePickerInteractor.swift */; };
 		A066460628BA4795002C40B5 /* TaskCreateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460528BA4795002C40B5 /* TaskCreateProvider.swift */; };
-		A066460828BA47B8002C40B5 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460728BA47B8002C40B5 /* TaskService.swift */; };
+		A066460828BA47B8002C40B5 /* TaskCreateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460728BA47B8002C40B5 /* TaskCreateService.swift */; };
 		A066460A28BA4E3E002C40B5 /* TaskRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460928BA4E3E002C40B5 /* TaskRequestFactory.swift */; };
 		A066460D28BA4EE8002C40B5 /* TaskCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460C28BA4EE8002C40B5 /* TaskCreateRequest.swift */; };
 		A066461028BA4FA9002C40B5 /* TaskCreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A066460F28BA4FA9002C40B5 /* TaskCreateResponse.swift */; };
+		A0B3352A28BD001E00E58402 /* TaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3352928BD001E00E58402 /* TaskCoordinator.swift */; };
+		A0B3352E28BD0E3C00E58402 /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3352C28BD0E3C00E58402 /* TaskVC.swift */; };
+		A0B3352F28BD0E3C00E58402 /* TaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B3352D28BD0E3C00E58402 /* TaskVC.xib */; };
+		A0B3353128BD0E4200E58402 /* TaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3353028BD0E4200E58402 /* TaskPresenter.swift */; };
+		A0B3353328BD0E4800E58402 /* TaskInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3353228BD0E4800E58402 /* TaskInteractor.swift */; };
+		A0B3353528BD11E900E58402 /* TaskProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3353428BD11E900E58402 /* TaskProvider.swift */; };
+		A0B3353728BD128D00E58402 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3353628BD128D00E58402 /* TaskService.swift */; };
+		A0B3353B28BD18BB00E58402 /* TaskTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3353928BD18BB00E58402 /* TaskTitleCell.swift */; };
+		A0B3353C28BD18BB00E58402 /* TaskTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B3353A28BD18BB00E58402 /* TaskTitleCell.xib */; };
+		A0B3354D28BD1B1400E58402 /* ITaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3354C28BD1B1400E58402 /* ITaskCell.swift */; };
+		A0B3355028BD1B5A00E58402 /* TaskCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3354F28BD1B5A00E58402 /* TaskCellModel.swift */; };
+		A0B3355328BD1B8400E58402 /* TaskDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3355128BD1B8400E58402 /* TaskDateCell.swift */; };
+		A0B3355428BD1B8400E58402 /* TaskDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B3355228BD1B8400E58402 /* TaskDateCell.xib */; };
+		A0B3355728BD259400E58402 /* TaskDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3355528BD259400E58402 /* TaskDescriptionCell.swift */; };
+		A0B3355828BD259400E58402 /* TaskDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B3355628BD259400E58402 /* TaskDescriptionCell.xib */; };
 		A0C607D328A960C0002327C3 /* DialogBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D228A960C0002327C3 /* DialogBuilder.swift */; };
 		A0C607D628A9611F002327C3 /* DialogRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D528A9611F002327C3 /* DialogRootVC.swift */; };
 		A0C607D828A96162002327C3 /* DimmPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C607D728A96162002327C3 /* DimmPresentationController.swift */; };
@@ -290,10 +305,25 @@
 		A066460128BA3D8F002C40B5 /* DatePickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPresenter.swift; sourceTree = "<group>"; };
 		A066460328BA3D97002C40B5 /* DatePickerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerInteractor.swift; sourceTree = "<group>"; };
 		A066460528BA4795002C40B5 /* TaskCreateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreateProvider.swift; sourceTree = "<group>"; };
-		A066460728BA47B8002C40B5 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		A066460728BA47B8002C40B5 /* TaskCreateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreateService.swift; sourceTree = "<group>"; };
 		A066460928BA4E3E002C40B5 /* TaskRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRequestFactory.swift; sourceTree = "<group>"; };
 		A066460C28BA4EE8002C40B5 /* TaskCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreateRequest.swift; sourceTree = "<group>"; };
 		A066460F28BA4FA9002C40B5 /* TaskCreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreateResponse.swift; sourceTree = "<group>"; };
+		A0B3352928BD001E00E58402 /* TaskCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCoordinator.swift; sourceTree = "<group>"; };
+		A0B3352C28BD0E3C00E58402 /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
+		A0B3352D28BD0E3C00E58402 /* TaskVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskVC.xib; sourceTree = "<group>"; };
+		A0B3353028BD0E4200E58402 /* TaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPresenter.swift; sourceTree = "<group>"; };
+		A0B3353228BD0E4800E58402 /* TaskInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInteractor.swift; sourceTree = "<group>"; };
+		A0B3353428BD11E900E58402 /* TaskProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProvider.swift; sourceTree = "<group>"; };
+		A0B3353628BD128D00E58402 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		A0B3353928BD18BB00E58402 /* TaskTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTitleCell.swift; sourceTree = "<group>"; };
+		A0B3353A28BD18BB00E58402 /* TaskTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTitleCell.xib; sourceTree = "<group>"; };
+		A0B3354C28BD1B1400E58402 /* ITaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITaskCell.swift; sourceTree = "<group>"; };
+		A0B3354F28BD1B5A00E58402 /* TaskCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellModel.swift; sourceTree = "<group>"; };
+		A0B3355128BD1B8400E58402 /* TaskDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDateCell.swift; sourceTree = "<group>"; };
+		A0B3355228BD1B8400E58402 /* TaskDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskDateCell.xib; sourceTree = "<group>"; };
+		A0B3355528BD259400E58402 /* TaskDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDescriptionCell.swift; sourceTree = "<group>"; };
+		A0B3355628BD259400E58402 /* TaskDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskDescriptionCell.xib; sourceTree = "<group>"; };
 		A0C607D228A960C0002327C3 /* DialogBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogBuilder.swift; sourceTree = "<group>"; };
 		A0C607D528A9611F002327C3 /* DialogRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRootVC.swift; sourceTree = "<group>"; };
 		A0C607D728A96162002327C3 /* DimmPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmPresentationController.swift; sourceTree = "<group>"; };
@@ -478,6 +508,7 @@
 				A0C607F628A96525002327C3 /* NavigationDrawerPopup */,
 				A0C6081E28A97D11002327C3 /* ProfileScreen */,
 				636F884D289FE14B00179125 /* SignUpScreen */,
+				A0B3352B28BD0E2A00E58402 /* TaskScreen */,
 				A0153F2F28B89EF600FA581B /* TaskCreateScreen */,
 				A0C607EC28A964EE002327C3 /* ToastPopup */,
 				A0C6082328A97D28002327C3 /* WebScreen */,
@@ -646,6 +677,7 @@
 				A01703192896D13400E81C73 /* DeviceProvider.swift */,
 				A01703282896D26B00E81C73 /* ProfileProvider.swift */,
 				A0EE967228B3DB8E00F056CB /* TasksProvider.swift */,
+				A0B3353428BD11E900E58402 /* TaskProvider.swift */,
 				A066460528BA4795002C40B5 /* TaskCreateProvider.swift */,
 				A017034C2896D57400E81C73 /* UserDefaultsProvider.swift */,
 			);
@@ -658,8 +690,9 @@
 				A01702FA2896CE6E00E81C73 /* AuthService.swift */,
 				A017031B2896D16700E81C73 /* DeviceService.swift */,
 				A017032C2896D2B900E81C73 /* ProfileService.swift */,
+				A0B3353628BD128D00E58402 /* TaskService.swift */,
 				A0EE967628B3DC7800F056CB /* TasksService.swift */,
-				A066460728BA47B8002C40B5 /* TaskService.swift */,
+				A066460728BA47B8002C40B5 /* TaskCreateService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -772,6 +805,7 @@
 				A0466462289D5F030011035E /* MainCoordinator.swift */,
 				A0C6082828A97D65002327C3 /* ProfileCoordinator.swift */,
 				A00EE21628A922870018F298 /* SignUpCoordinator.swift */,
+				A0B3352928BD001E00E58402 /* TaskCoordinator.swift */,
 				A0153F2D28B89E4800FA581B /* TaskCreateCoordinator.swift */,
 				A0C6082E28A97E36002327C3 /* WebCoordinator.swift */,
 			);
@@ -833,6 +867,49 @@
 				A066460F28BA4FA9002C40B5 /* TaskCreateResponse.swift */,
 			);
 			path = Task;
+			sourceTree = "<group>";
+		};
+		A0B3352B28BD0E2A00E58402 /* TaskScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A0B3353828BD18A000E58402 /* Cells */,
+				A0B3354E28BD1B5000E58402 /* Model */,
+				A0B3354B28BD1B0900E58402 /* Protocol */,
+				A0B3352C28BD0E3C00E58402 /* TaskVC.swift */,
+				A0B3352D28BD0E3C00E58402 /* TaskVC.xib */,
+				A0B3353028BD0E4200E58402 /* TaskPresenter.swift */,
+				A0B3353228BD0E4800E58402 /* TaskInteractor.swift */,
+			);
+			path = TaskScreen;
+			sourceTree = "<group>";
+		};
+		A0B3353828BD18A000E58402 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0B3355128BD1B8400E58402 /* TaskDateCell.swift */,
+				A0B3355228BD1B8400E58402 /* TaskDateCell.xib */,
+				A0B3355528BD259400E58402 /* TaskDescriptionCell.swift */,
+				A0B3355628BD259400E58402 /* TaskDescriptionCell.xib */,
+				A0B3353928BD18BB00E58402 /* TaskTitleCell.swift */,
+				A0B3353A28BD18BB00E58402 /* TaskTitleCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A0B3354B28BD1B0900E58402 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A0B3354C28BD1B1400E58402 /* ITaskCell.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A0B3354E28BD1B5000E58402 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0B3354F28BD1B5A00E58402 /* TaskCellModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A0C607D128A960AE002327C3 /* Builder */ = {
@@ -1124,14 +1201,18 @@
 				A01703682896DA9600E81C73 /* Main.storyboard in Resources */,
 				63998CCC289597A200266599 /* LaunchScreen.storyboard in Resources */,
 				63998CC9289597A200266599 /* Assets.xcassets in Resources */,
+				A0B3355428BD1B8400E58402 /* TaskDateCell.xib in Resources */,
 				A0C6082228A97D24002327C3 /* ProfileVC.xib in Resources */,
+				A0B3353C28BD18BB00E58402 /* TaskTitleCell.xib in Resources */,
 				A0C6081228A973B1002327C3 /* NavigationDrawerCell.xib in Resources */,
 				A0C6081D28A97D09002327C3 /* AboutAppVC.xib in Resources */,
 				A0C607F128A96507002327C3 /* AlertPopup.xib in Resources */,
 				A066460028BA3D39002C40B5 /* DatePickerPopup.xib in Resources */,
 				A0EE968128B3F59200F056CB /* MainSpacerCell.xib in Resources */,
+				A0B3352F28BD0E3C00E58402 /* TaskVC.xib in Resources */,
 				A017036D2896DD6300E81C73 /* SourceSansPro-Regular.ttf in Resources */,
 				A0C607FA28A9653A002327C3 /* NavigationDrawerPopup.xib in Resources */,
+				A0B3355828BD259400E58402 /* TaskDescriptionCell.xib in Resources */,
 				A017036E2896DD6300E81C73 /* SourceSansPro-SemiBold.ttf in Resources */,
 				A017036F2896DD6300E81C73 /* SourceSansPro-Light.ttf in Resources */,
 			);
@@ -1152,7 +1233,9 @@
 				A0C6083128A986B0002327C3 /* WebPresenter.swift in Sources */,
 				636F8851289FE79F00179125 /* SignUpInteractor.swift in Sources */,
 				A01703582896D78D00E81C73 /* LoginCoordinator.swift in Sources */,
+				A0B3352E28BD0E3C00E58402 /* TaskVC.swift in Sources */,
 				A0EE967C28B3EDE800F056CB /* MainCell.swift in Sources */,
+				A0B3354D28BD1B1400E58402 /* ITaskCell.swift in Sources */,
 				A017031C2896D16700E81C73 /* DeviceService.swift in Sources */,
 				A01703132896D09A00E81C73 /* Stopwatch.swift in Sources */,
 				A0C607D828A96162002327C3 /* DimmPresentationController.swift in Sources */,
@@ -1168,9 +1251,11 @@
 				A0C6080028A965D1002327C3 /* AlertData.swift in Sources */,
 				A017030D2896CFEE00E81C73 /* AuthSignOutResponse.swift in Sources */,
 				A0153F3728B89FAA00FA581B /* TaskCreateInteractor.swift in Sources */,
+				A0B3353128BD0E4200E58402 /* TaskPresenter.swift in Sources */,
 				A0466463289D5F030011035E /* MainCoordinator.swift in Sources */,
 				636F885B289FF4D200179125 /* AuthSignUpResponse.swift in Sources */,
 				A0EE967928B3E23E00F056CB /* MainCellModelBuilder.swift in Sources */,
+				A0B3355328BD1B8400E58402 /* TaskDateCell.swift in Sources */,
 				A01703352896D38800E81C73 /* RequestFactory.swift in Sources */,
 				A0C607D628A9611F002327C3 /* DialogRootVC.swift in Sources */,
 				A01702DE2896C8A400E81C73 /* UIView-Extension.swift in Sources */,
@@ -1181,6 +1266,7 @@
 				A01703422896D45400E81C73 /* CustomDecodableSerializer.swift in Sources */,
 				A017033B2896D3E700E81C73 /* ProfileRequestFactory.swift in Sources */,
 				A017031A2896D13400E81C73 /* DeviceProvider.swift in Sources */,
+				A0B3353B28BD18BB00E58402 /* TaskTitleCell.swift in Sources */,
 				A01703092896CF6C00E81C73 /* AuthSignInRequest.swift in Sources */,
 				A01702E82896C98A00E81C73 /* KeychainItemAccessibility.swift in Sources */,
 				A01703512896D65E00E81C73 /* ApiError.swift in Sources */,
@@ -1201,9 +1287,10 @@
 				A066460D28BA4EE8002C40B5 /* TaskCreateRequest.swift in Sources */,
 				A01702FD2896CE9600E81C73 /* AuthStatusProvider.swift in Sources */,
 				A01703232896D1DA00E81C73 /* Device.swift in Sources */,
+				A0B3353328BD0E4800E58402 /* TaskInteractor.swift in Sources */,
 				A017033E2896D43300E81C73 /* AbstractRequestFactory.swift in Sources */,
 				A01703402896D44700E81C73 /* AbstractErrorParser.swift in Sources */,
-				A066460828BA47B8002C40B5 /* TaskService.swift in Sources */,
+				A066460828BA47B8002C40B5 /* TaskCreateService.swift in Sources */,
 				A017032B2896D29000E81C73 /* ProfileRepository.swift in Sources */,
 				A0EE968028B3F59200F056CB /* MainSpacerCell.swift in Sources */,
 				A01703332896D34B00E81C73 /* Profile.swift in Sources */,
@@ -1222,6 +1309,7 @@
 				A01702FF2896CEBC00E81C73 /* AuthCredentials.swift in Sources */,
 				A0EE966B28B3D8A300F056CB /* TasksGetResponse.swift in Sources */,
 				A0C6082128A97D24002327C3 /* ProfileVC.swift in Sources */,
+				A0B3355028BD1B5A00E58402 /* TaskCellModel.swift in Sources */,
 				A0EE967028B3D8F200F056CB /* Assignee.swift in Sources */,
 				A01702EB2896C9E000E81C73 /* Styles.swift in Sources */,
 				A0C6083328A986BB002327C3 /* WebInteractor.swift in Sources */,
@@ -1241,12 +1329,14 @@
 				A01703372896D3AF00E81C73 /* AuthRequestFactory.swift in Sources */,
 				A0C6080C28A97386002327C3 /* NavigationDrawerCellModelBuilder.swift in Sources */,
 				A0EE966628B3D82700F056CB /* TasksGetRequest.swift in Sources */,
+				A0B3353728BD128D00E58402 /* TaskService.swift in Sources */,
 				A01703612896D7EF00E81C73 /* LoginVC.swift in Sources */,
 				A01703272896D24800E81C73 /* DeviceSaveResponse.swift in Sources */,
 				A01702F12896CCB700E81C73 /* Locales.swift in Sources */,
 				A01702CE2896C7EC00E81C73 /* UIButton-Extension.swift in Sources */,
 				A00EE21728A922870018F298 /* SignUpCoordinator.swift in Sources */,
 				A01702C62896C75B00E81C73 /* Int-Extension.swift in Sources */,
+				A0B3352A28BD001E00E58402 /* TaskCoordinator.swift in Sources */,
 				A066460628BA4795002C40B5 /* TaskCreateProvider.swift in Sources */,
 				A0C6082B28A97DD4002327C3 /* ProfilePresenter.swift in Sources */,
 				63998CC0289597A000266599 /* AppDelegate.swift in Sources */,
@@ -1274,6 +1364,7 @@
 				636F8859289FF18800179125 /* SignUpCredentials.swift in Sources */,
 				A0EE967728B3DC7800F056CB /* TasksService.swift in Sources */,
 				A01703312896D30F00E81C73 /* ProfileGetResponse.swift in Sources */,
+				A0B3355728BD259400E58402 /* TaskDescriptionCell.swift in Sources */,
 				A00EE21A28A928FB0018F298 /* SignUpVC.swift in Sources */,
 				A0153F2A28B891D300FA581B /* MainAddButton.swift in Sources */,
 				A0C6081628A97B43002327C3 /* WebData.swift in Sources */,
@@ -1291,6 +1382,7 @@
 				636F885D28A154E400179125 /* SignUpProvider.swift in Sources */,
 				A017034D2896D57400E81C73 /* UserDefaultsProvider.swift in Sources */,
 				A0EE967528B3DC0B00F056CB /* TasksRepository.swift in Sources */,
+				A0B3353528BD11E900E58402 /* TaskProvider.swift in Sources */,
 				A0C607E728A9638C002327C3 /* UIPanGestureRecognizer-Extension.swift in Sources */,
 				A0C6080228A9663A002327C3 /* NavigationDrawerPresenter.swift in Sources */,
 			);

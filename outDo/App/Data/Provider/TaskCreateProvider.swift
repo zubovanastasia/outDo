@@ -15,9 +15,9 @@ protocol TaskCreateProvider {
 
 final class TaskCreateProviderImpl: TaskCreateProvider {
     
-    private var taskService: TaskService
+    private var taskService: TaskCreateService
     
-    init(taskService: TaskService) {
+    init(taskService: TaskCreateService) {
         self.taskService = taskService
     }
     

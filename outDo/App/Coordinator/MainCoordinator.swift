@@ -38,6 +38,8 @@ final class MainCoordinator: BaseCoordinator {
                 self?.runPolicyFlow(data as? NavigationDrawerCellModel)
             case .signIn:
                 self?.finishFlow?()
+            case .task:
+                self?.runTaskFlow(data as? Int)
             default: return
             }
         }
@@ -71,6 +73,16 @@ final class MainCoordinator: BaseCoordinator {
             url: Config.shared.urlPolicy)
         let coordinator = coordinatorFactory.makeWebCoordinator(router: router, data: webData)
         coordinator.finishFlow = { [weak self] in
+            self?.removeDependency(coordinator)
+        }
+        self.addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    private func runTaskFlow(_ taskId: Int?) {
+        guard let taskId = taskId else { return }
+        let coordinator = coordinatorFactory.makeTaskCoordinator(router: router, taskId: taskId)
+        coordinator.finishFlow = { [weak self, weak coordinator] in
             self?.removeDependency(coordinator)
         }
         self.addDependency(coordinator)

@@ -13,6 +13,7 @@ protocol MainInteractor: AnyObject {
     
     func onTapAdd()
     func onTapMenu()
+    func onTapTask(_ task: MainCellModel)
     func updateCells()
     func viewDidAppear()
     func viewDidLoad()
@@ -36,6 +37,10 @@ final class MainInteractorImpl: MainInteractor {
         DialogBuilder.shared.showNavigationDrawer { [weak self] action, data in
             self?.presenter?.onHandleAction?(action, data)
         }
+    }
+    
+    func onTapTask(_ task: MainCellModel) {
+        presenter?.onHandleAction?(.task, task.id)
     }
     
     func updateCells() {
@@ -89,6 +94,7 @@ extension MainInteractorImpl {
             .setStateColor(UIColor.getMainStateColor(task.state))
             .setBgColor(UIColor.getMainBgColor(task.state))
             .setDate(task.fromDateValue > 0 ? task.fromDateDate.withFormat("d MMM, HH:mm"): "")
+            .setId(task.id)
             .build()
     }
 }
